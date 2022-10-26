@@ -12,18 +12,19 @@ public class FarmingObject : MonoBehaviour
 
     private void Update()
     {
-        //Drop();
+        Drop();
     }
 
 
 
     public void Digging()
     {
-            prefab_obj = Instantiate(dropItem);
-            prefab_obj.transform.position = this.transform.position;
-            prefab_obj.name = dropItem.name;
+        //prefab_obj = Instantiate(dropItem);
+        //prefab_obj.transform.position = this.transform.position;
+        //prefab_obj.name = dropItem.name;
 
-            Destroy(gameObject);
+        //Destroy(gameObject);
+        hp--;
     }
 
     public void Drop()

@@ -215,7 +215,7 @@ public class PickUpScript : MonoBehaviour
             }
         }
 
-        if (Input.GetKey(InteractiveKey))
+        if (Input.GetKeyDown(InteractiveKey))
         {
             if (hit != null)
             {
