@@ -6,15 +6,35 @@ using UnityEngine.UI;
 
 public class FarmingObject : MonoBehaviour
 {
+    public int hp = 3;
     public GameObject dropItem;
     private GameObject prefab_obj;
-    
+
+    private void Update()
+    {
+        //Drop();
+    }
+
+
+
     public void Digging()
     {
-        prefab_obj = Instantiate(dropItem);
-        prefab_obj.transform.position = this.transform.position;
-        prefab_obj.name = dropItem.name;
-        
-        Destroy(gameObject);
+            prefab_obj = Instantiate(dropItem);
+            prefab_obj.transform.position = this.transform.position;
+            prefab_obj.name = dropItem.name;
+
+            Destroy(gameObject);
+    }
+
+    public void Drop()
+    {
+        if (hp == 0)
+        {
+            prefab_obj = Instantiate(dropItem);
+            prefab_obj.transform.position = this.transform.position;
+            prefab_obj.name = dropItem.name;
+
+            Destroy(gameObject);
+        }
     }
 }

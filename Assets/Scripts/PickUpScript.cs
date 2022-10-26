@@ -206,7 +206,10 @@ public class PickUpScript : MonoBehaviour
                     }
                     else if (hit.gameObject.name == "Last_Machine")
                     {
-                        hit.GetComponent<FinalMachineScript>().PickUp(Hand);
+                        if(this.gameObject.name == "Player 1")
+                        {
+                            hit.GetComponent<FinalMachineScript>().PickUp(Hand);
+                        }
                     }
                 }
             }
@@ -219,22 +222,38 @@ public class PickUpScript : MonoBehaviour
                 if (isHold != true)
                 {
                     //기계가 만들준비가 되었다면 제작
-                    if (hit.gameObject.name == "Sawmill")
+                    //if (hit.gameObject.name == "Sawmill")
+                    //{
+                    //    hit.GetComponent<MachineScript>().CraftOn();
+                    //}
+                    //else if (hit.gameObject.name == "Stonecutter")
+                    //{
+                    //    hit.GetComponent<MachineScript>().CraftOn();
+                    //}
+                    //else if (hit.gameObject.name == "Mill")
+                    //{
+                    //    hit.GetComponent<MachineScript>().CraftOn();
+                    //}
+                    //else if (hit.gameObject.name == "Last_Machine")
+                    //{
+                    //    hit.GetComponent<FinalMachineScript>().CraftOn();    
+                    //}
+                    if (hit.gameObject.name == "RockMachineButton")                 //기계 버튼을 누를 시 기계 가동
                     {
-                        hit.GetComponent<MachineScript>().CraftOn();
+                        hit.GetComponent<MachineButtonScript>().MachineRun();
                     }
-                    else if (hit.gameObject.name == "Stonecutter")
+                    else if (hit.gameObject.name == "MushMachineButton")
                     {
-                        hit.GetComponent<MachineScript>().CraftOn();
+                        hit.GetComponent<MachineButtonScript>().MachineRun();
                     }
-                    else if (hit.gameObject.name == "Mill")
+                    else if (hit.gameObject.name == "TreeMachineButton")
                     {
-                        hit.GetComponent<MachineScript>().CraftOn();
+                        hit.GetComponent<MachineButtonScript>().MachineRun();
                     }
-                    else if (hit.gameObject.name == "Last_Machine")
-                    {
-                        hit.GetComponent<FinalMachineScript>().CraftOn();    
-                    }
+                    //else if (hit.gameObject.name == "Last_Machine")
+                    //{
+                    //    hit.GetComponent<FinalMachineScript>().CraftOn();
+                    //}
                 }
             }
         }

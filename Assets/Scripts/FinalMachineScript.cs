@@ -45,6 +45,8 @@ public class FinalMachineScript : MonoBehaviour
     
     void Update()
     {
+        CraftOn();      //모든 재료가 들어갔을 때 바로 실행되게
+
         GaugeBar();
         if (state != MachineState.None)
         {
@@ -131,9 +133,6 @@ public class FinalMachineScript : MonoBehaviour
         {
             CreateDone(hand);
             recipcheck.GetComponent<RecipeScript>().recipeOrder++;
-            mushcheck.GetComponent<RecipeDawnCheck>().checkInit();
-            rockcheck.GetComponent<RecipeDawnCheck>().checkInit();
-            treecheck.GetComponent<RecipeDawnCheck>().checkInit();
         }
     }
 
@@ -168,6 +167,9 @@ public class FinalMachineScript : MonoBehaviour
         { 
             Destroy(this.transform.GetChild(i).gameObject);
         }
+        mushcheck.GetComponent<RecipeDawnCheck>().checkInit();
+        rockcheck.GetComponent<RecipeDawnCheck>().checkInit();
+        treecheck.GetComponent<RecipeDawnCheck>().checkInit();
         recipes.GetComponent<RecipeScript>().RecipeSetting();
     } 
     
