@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     private Animator _animator;
     public string currentState;
 
+    public PickUpScript pickUpScript;
+
     private enum States
     {
         Idle,
@@ -122,16 +124,45 @@ public class PlayerController : MonoBehaviour
         switch (direction)
         {
             case Dir.Up:
-                ChangeAnimation("Player_Idle_Up");
+                if (pickUpScript.isHold)
+                {
+                    ChangeAnimation("Player_P_Idle_Up");
+                }
+                else
+                {
+                    ChangeAnimation("Player_Idle_Up");     
+                }
                 break;
             case Dir.Down:
-                ChangeAnimation("Player_Idle_Down");
+                if (pickUpScript.isHold)
+                {
+                    ChangeAnimation("Player_P_Idle_Down");
+                }
+                else
+                {
+                    ChangeAnimation("Player_Idle_Down");
+                }
+
                 break;
             case Dir.Left:
-                ChangeAnimation("Player_Idle_Left");;
+                if (pickUpScript.isHold)
+                {
+                    ChangeAnimation("Player_P_Idle_Left");;
+                }
+                else
+                {
+                    ChangeAnimation("Player_Idle_Left");;
+                }
                 break;
             case Dir.Right:
-                ChangeAnimation("Player_Idle_Right");
+                if (pickUpScript.isHold)
+                {                
+                    ChangeAnimation("Player_P_Idle_Right");
+                }
+                else
+                {
+                    ChangeAnimation("Player_Idle_Right");
+                }
                 break;
         }
 
@@ -160,16 +191,47 @@ public class PlayerController : MonoBehaviour
         switch (direction)
         {
             case Dir.Up:
-                ChangeAnimation("Player_Walk_Up");
+                if (pickUpScript.isHold)
+                {
+                    ChangeAnimation("Player_P_Walk_Up");
+                }
+                else
+                {
+                    ChangeAnimation("Player_Walk_Up");
+                }
                 break;
             case Dir.Down:
-                ChangeAnimation("Player_Walk_Down");
+                if (pickUpScript.isHold)
+                {
+                    ChangeAnimation("Player_P_Walk_Down");
+                }
+                else
+                {
+                    ChangeAnimation("Player_Walk_Down");
+
+                }
                 break;
             case Dir.Left:
-                ChangeAnimation("Player_Walk_Left");;
+                if (pickUpScript.isHold)
+                {
+                    ChangeAnimation("Player_P_Walk_Left");
+                }
+                else
+                {
+                    ChangeAnimation("Player_Walk_Left");
+
+                }
                 break;
             case Dir.Right:
-                ChangeAnimation("Player_Walk_Right");
+                if (pickUpScript.isHold)
+                {
+                    ChangeAnimation("Player_P_Walk_Right");
+                }
+                else
+                {
+                    ChangeAnimation("Player_Walk_Right");
+
+                }
                 break;
         }
         
