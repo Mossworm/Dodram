@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class MachineScript : MonoBehaviour
 {
+    public GameObject recipecheck;  //레시피 체크용
+
     public float craftTime;
     public float destroyTime;
     public float workTime;
@@ -115,6 +117,7 @@ public class MachineScript : MonoBehaviour
         if (state == MachineState.Destroying)
         {
             CreateDone(hand);
+            recipecheck.GetComponent<RecipeDawnCheck>().check();
         }
     }
 

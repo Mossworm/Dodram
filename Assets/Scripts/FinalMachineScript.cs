@@ -6,6 +6,11 @@ using UnityEngine.UI;
 
 public class FinalMachineScript : MonoBehaviour
 {
+    public GameObject recipcheck;
+    public GameObject mushcheck;
+    public GameObject rockcheck;
+    public GameObject treecheck;
+
     public float craftTime;
     public float destroyTime;
     public float workTime;
@@ -40,6 +45,8 @@ public class FinalMachineScript : MonoBehaviour
     
     void Update()
     {
+        CraftOn();      //모든 재료가 들어갔을 때 바로 실행되게
+
         GaugeBar();
         if (state != MachineState.None)
         {
@@ -125,6 +132,7 @@ public class FinalMachineScript : MonoBehaviour
         if (state == MachineState.Destroying)
         {
             CreateDone(hand);
+            recipcheck.GetComponent<RecipeScript>().recipeOrder++;
         }
     }
 
@@ -159,6 +167,9 @@ public class FinalMachineScript : MonoBehaviour
         { 
             Destroy(this.transform.GetChild(i).gameObject);
         }
+        mushcheck.GetComponent<RecipeDawnCheck>().checkInit();
+        rockcheck.GetComponent<RecipeDawnCheck>().checkInit();
+        treecheck.GetComponent<RecipeDawnCheck>().checkInit();
         recipes.GetComponent<RecipeScript>().RecipeSetting();
     } 
     
