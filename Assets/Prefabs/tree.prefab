@@ -124,4 +124,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27196748f73de9a4d8c3f57ee4f0a209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 3
+  maxhp: 0
   dropItem: {fileID: 2041883255594010392, guid: ce48307ae675aea4bb0d14e8fdb5bf97, type: 3}
+  prfGaugeBar: {fileID: 6077395782407935344, guid: 21b0a8999c7a9034d9217db9436dea06, type: 3}
+  canvas: {fileID: 0}
+  height: 1.5
