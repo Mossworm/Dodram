@@ -75,12 +75,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 763c271cc4e5dae468ea87cdefa6d32d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c4e6c6eeba23928479e2c1c7e587cefd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.94, y: 0.97}
+  m_Size: {x: 1.35, y: 1.6}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -98,10 +98,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ff3e99a4117c74c88515b851cfb891, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  recipecheck: {fileID: 0}
   craftTime: 3
   destroyTime: 10
   workTime: 0
   state: 0
+  ingredient: {fileID: 0}
   productionArray:
   - {fileID: 7304092036641427738, guid: 2eef76e23f6ed3f43abf04d79df39063, type: 3}
   - {fileID: 7304092036641427738, guid: e5a89ea214c930d4aba9a70f6cc44684, type: 3}
