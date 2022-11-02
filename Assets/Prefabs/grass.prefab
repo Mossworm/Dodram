@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: bc4d999c2eb86ec4c9eb3ebb8af5a3e9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f3aff6960a02bf84eb0ac658d5f1e0ed, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -102,7 +102,7 @@ BoxCollider2D:
   m_Offset: {x: 0.0042188168, y: -0.012247682}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0}
     oldSize: {x: 0.93, y: 0.97}
     newSize: {x: 0.39, y: 0.65}
     adaptiveTilingThreshold: 0.5
@@ -125,4 +125,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 3
+  maxhp: 0
   dropItem: {fileID: 5549948290299783770, guid: 4390bccc47a2a7b46919c1893e09f63f, type: 3}
+  prfGaugeBar: {fileID: 6077395782407935344, guid: 21b0a8999c7a9034d9217db9436dea06, type: 3}
+  canvas: {fileID: 0}
+  height: 1.5

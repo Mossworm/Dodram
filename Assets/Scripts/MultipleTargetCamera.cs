@@ -58,8 +58,8 @@ public class MultipleTargetCamera : MonoBehaviour
         {
             bounds.Encapsulate(targets[i].position);
         }
-
-        return (bounds.size.x+bounds.size.y)/2;
+        // +bounds.size.y
+        return (bounds.size.x)/2;
     }
     
     Vector3 GetCenterPoint()

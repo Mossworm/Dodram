@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
+using UnityEditor.PackageManager;
 using UnityEngine.Serialization;
 
 public class PickUpScript : MonoBehaviour
@@ -18,15 +19,6 @@ public class PickUpScript : MonoBehaviour
 
     [FormerlySerializedAs("DiggingPer")] public float GaugePer;
 
-    public GameObject prfGaugeBar;
-    public GameObject canvas;
-
-    private RectTransform gaugeBar;
-    public float height = 0.0f;
-    private Image nowGaugebar;
-
-    public float diggingSpd = 20.0f;
-
     [SerializeField] private GameObject targetObject;
     [SerializeField] private GameObject targetEndObject;
 
@@ -38,6 +30,10 @@ public class PickUpScript : MonoBehaviour
 
     [SerializeField] private KeyCode InteractiveKey;
     [SerializeField] private KeyCode PickupKey;
+
+    private PlayerController.Dir dir;
+
+    private Animator animator;
     
     // Start is called before the first frame update
     void Start()
@@ -45,8 +41,8 @@ public class PickUpScript : MonoBehaviour
         isHold = false;
         
         GaugePer = 0.0f;
-        gaugeBar = Instantiate(prfGaugeBar, canvas.transform).GetComponent<RectTransform>();
-        nowGaugebar = gaugeBar.transform.GetChild(0).GetComponent<Image>();
+
+        animator = GetComponent<Animator>();
 
         if (this.GetComponent<PlayerController>().isMainPlayer)
         {
@@ -64,7 +60,6 @@ public class PickUpScript : MonoBehaviour
     void Update()
     {
         Interactive(); //상호작용
-        GaugeBar(); //게이지 바
         if (Hand.transform.childCount != 0)
         {
             isHold = true;
@@ -74,7 +69,8 @@ public class PickUpScript : MonoBehaviour
             isHold = false;
         }
 
-        var dir = this.gameObject.GetComponent<PlayerController>().direction;
+        dir = this.gameObject.GetComponent<PlayerController>().direction;
+        
         if (dir == PlayerController.Dir.Down)
         {
             boxTransform = new Vector3(0, -0.12f, 0);
@@ -92,27 +88,8 @@ public class PickUpScript : MonoBehaviour
             boxTransform = new Vector3(0.61f, 0.4f, 0);
         }
 
-
-
     }
 
-    void GaugeBar()
-    {
-        Vector3 _gaugeBarPos = Camera.main.WorldToScreenPoint(new Vector3(transform.position.x, transform.position.y + height, 0));
-        gaugeBar.position = _gaugeBarPos;
-
-        if (GaugePer <= 0)
-        {
-            gaugeBar.gameObject.SetActive(false);
-        }
-        else
-        {
-            gaugeBar.gameObject.SetActive(true);
-        }
-
-        nowGaugebar.fillAmount = GaugePer / 100.0f;
-    }
-    
     void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
@@ -221,23 +198,6 @@ public class PickUpScript : MonoBehaviour
             {
                 if (isHold != true)
                 {
-                    //기계가 만들준비가 되었다면 제작
-                    //if (hit.gameObject.name == "Sawmill")
-                    //{
-                    //    hit.GetComponent<MachineScript>().CraftOn();
-                    //}
-                    //else if (hit.gameObject.name == "Stonecutter")
-                    //{
-                    //    hit.GetComponent<MachineScript>().CraftOn();
-                    //}
-                    //else if (hit.gameObject.name == "Mill")
-                    //{
-                    //    hit.GetComponent<MachineScript>().CraftOn();
-                    //}
-                    //else if (hit.gameObject.name == "Last_Machine")
-                    //{
-                    //    hit.GetComponent<FinalMachineScript>().CraftOn();    
-                    //}
                     if (hit.gameObject.name == "RockMachineButton")                 //기계 버튼을 누를 시 기계 가동
                     {
                         hit.GetComponent<MachineButtonScript>().MachineRun();
@@ -271,8 +231,8 @@ public class PickUpScript : MonoBehaviour
                     {
                         if (hit.CompareTag("Tree"))
                         {
-                            GaugePer += diggingSpd * Time.deltaTime;
-                            if (GaugePer >= 100)
+                            GaugePer += (100.0f/animator.GetCurrentAnimatorStateInfo(0).length) * Time.deltaTime;
+                            if (GaugePer >= 100.0f)
                             {
                                 hit.GetComponent<FarmingObject>().Digging();
                                 GaugePer = 0.0f;
@@ -283,7 +243,7 @@ public class PickUpScript : MonoBehaviour
                     {
                         if (hit.CompareTag("Stone"))
                         {
-                            GaugePer += diggingSpd * Time.deltaTime;
+                            GaugePer += (100.0f/animator.GetCurrentAnimatorStateInfo(0).length) * Time.deltaTime;
                             if (GaugePer >= 100)
                             {
                                 hit.GetComponent<FarmingObject>().Digging();
@@ -295,7 +255,7 @@ public class PickUpScript : MonoBehaviour
                     {
                         if (hit.CompareTag("Grass"))
                         {
-                            GaugePer += diggingSpd * Time.deltaTime;
+                            GaugePer += (100.0f/animator.GetCurrentAnimatorStateInfo(0).length) * Time.deltaTime;
                             if (GaugePer >= 100)
                             {
                                 hit.GetComponent<FarmingObject>().Digging();
@@ -309,6 +269,10 @@ public class PickUpScript : MonoBehaviour
         else if(Input.GetKeyUp(InteractiveKey))
         {
             GaugePer = 0.0f;
+            if (hit.CompareTag("Tree") || hit.CompareTag("Stone") || hit.CompareTag("Grass"))
+            {
+                hit.GetComponent<FarmingObject>().hp = hit.GetComponent<FarmingObject>().maxhp;
+            }
         }
         
         
@@ -325,12 +289,32 @@ public class PickUpScript : MonoBehaviour
                         //바꾸기
                     {
                         changeHold = hit.gameObject;
+                        
+                        //든 아이템(도구) 내려놓기
                         if (Hand.transform.GetChild(0).gameObject.CompareTag("tool"))
                         {
                             Hand.transform.GetChild(0).gameObject.SetActive(true);
                         }
                         Hand.transform.GetChild(0).gameObject.layer = 6;
+                        if (dir == PlayerController.Dir.Down)
+                        {
+                            Hand.transform.GetChild(0).localPosition = new Vector3(0f,-1.41f,0f);   
+                        }
+                        else if(dir == PlayerController.Dir.Up)
+                        {
+                            Hand.transform.GetChild(0).localPosition = new Vector3(0f,-0.37f,0f);   
+                        }
+                        else if(dir == PlayerController.Dir.Left)
+                        {
+                            Hand.transform.GetChild(0).localPosition = new Vector3(-0.6f,-1.02f,0f);   
+                        }
+                        else if(dir == PlayerController.Dir.Right)
+                        {
+                            Hand.transform.GetChild(0).localPosition = new Vector3(0.6f,-1.02f,0f);   
+                        }
                         Hand.transform.DetachChildren();
+
+                        //바꿀 아이템 들기
                         changeHold.transform.SetParent(Hand.transform);
                         changeHold.transform.localPosition = Vector2.zero;
                         changeHold.layer = 0;
@@ -365,6 +349,24 @@ public class PickUpScript : MonoBehaviour
                         Hand.transform.GetChild(0).gameObject.SetActive(true);
                     }
                     Hand.transform.GetChild(0).gameObject.layer = 6;
+
+                    if (dir == PlayerController.Dir.Down)
+                    {
+                        Hand.transform.GetChild(0).localPosition = new Vector3(0f,-1.41f,0f);   
+                    }
+                    else if(dir == PlayerController.Dir.Up)
+                    {
+                        Hand.transform.GetChild(0).localPosition = new Vector3(0f,-0.37f,0f);   
+                    }
+                    else if(dir == PlayerController.Dir.Left)
+                    {
+                        Hand.transform.GetChild(0).localPosition = new Vector3(-0.6f,-1.02f,0f);   
+                    }
+                    else if(dir == PlayerController.Dir.Right)
+                    {
+                        Hand.transform.GetChild(0).localPosition = new Vector3(0.6f,-1.02f,0f);   
+                    }
+                    
                     Hand.transform.DetachChildren();
                     return;
                 }
