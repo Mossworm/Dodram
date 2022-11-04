@@ -4,64 +4,97 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class MachineScript : MonoBehaviour
 {
     public GameObject recipecheck;  //레시피 체크용
+    public bool isBreak;
+    public bool randomON;
 
+    public int per;
     public float craftTime;
     public float destroyTime;
     public float workTime;
+    public float stopTime;
 
     public enum MachineState
     {
         None,
         Working,
-        Destroying
+        Destroying,
+        Breakdown
     }
 
     public MachineState state;
+    public MachineState saveState;
 
     public GameObject ingredient;
 
     public GameObject[] productionArray;
-    
-    
+
+
     public GameObject prfGaugeBar;
     public GameObject canvas;
     private RectTransform gaugeBar;
     public float height = 0.0f;
     private Image nowGaugebar;
-    
-    
+
+
     private void Start()
     {
         gaugeBar = Instantiate(prfGaugeBar, canvas.transform).GetComponent<RectTransform>();
         nowGaugebar = gaugeBar.transform.GetChild(0).GetComponent<Image>();
         state = MachineState.None;
+        saveState = state;
+        if (randomON == true)
+        {
+            InvokeRepeating("Breakdown", 1f, 1f);
+        }
     }
 
     private void Update()
     {
         GaugeBar();
-        if (state != MachineState.None)
+        if (isBreak == false)
         {
-            workTime += Time.deltaTime;
-        }
-        
-        
-        if (state == MachineState.Destroying)
-        {
-            if (workTime >= destroyTime)
+            if (state == MachineState.Working)
             {
-                ChildDestroy();
-                state = MachineState.None;
-                workTime = 0;
+                workTime += Time.deltaTime;
+                stopTime = workTime;
+            }
+            else if (state == MachineState.Destroying)
+            {
+                Crafting();
+                workTime += Time.deltaTime;
+                stopTime = workTime;
+            }
+            else if(state == MachineState.Breakdown)
+            {
+                workTime = stopTime;
+            }
+
+            if(state == MachineState.Working)
+            {
+                if (workTime >= craftTime)
+                {
+                    workTime = 0;
+                    state = MachineState.Destroying;
+                }
+            }
+            else if (state == MachineState.Destroying)
+            {
+                if (workTime >= destroyTime)
+                {
+                    ChildDestroy();
+                    state = MachineState.None;
+                    saveState = state;
+                    workTime = 0;
+                }
             }
         }
-        
     }
-    
+
     void GaugeBar()
     {
         Vector3 _gaugeBarPos = Camera.main.WorldToScreenPoint(new Vector3(transform.position.x, transform.position.y + height, 0));
@@ -78,27 +111,34 @@ public class MachineScript : MonoBehaviour
 
         if (state == MachineState.Working)
         {
-            nowGaugebar.fillAmount = workTime / craftTime;   
-            nowGaugebar.color= Color.white;
+            nowGaugebar.fillAmount = workTime / craftTime;
+            nowGaugebar.color = Color.white;
         }
         else if (state == MachineState.Destroying)
         {
             nowGaugebar.fillAmount = 1 - (workTime / destroyTime);
-            nowGaugebar.color= Color.red;
+            nowGaugebar.color = Color.red;
         }
-        
+        else if (state == MachineState.Breakdown)
+        {
+            nowGaugebar.color = Color.gray;
+        }
+
     }
 
     public void SubCount(GameObject hand)      //기계에 넣기 
     {
-        if (this.transform.childCount < productionArray.Length && state == MachineState.None)
+        if (isBreak == false)
         {
-            GameObject playerItem;
-            playerItem = hand.transform.GetChild(0).gameObject;
-            if (ingredient.name == playerItem.name)
+            if (this.transform.childCount < productionArray.Length && state == MachineState.None)
             {
-                playerItem.transform.SetParent(this.transform);
-                playerItem.SetActive(false);      
+                GameObject playerItem;
+                playerItem = hand.transform.GetChild(0).gameObject;
+                if (ingredient.name == playerItem.name)
+                {
+                    playerItem.transform.SetParent(this.transform);
+                    playerItem.SetActive(false);
+                }
             }
         }
     }
@@ -107,53 +147,73 @@ public class MachineScript : MonoBehaviour
     {
         if (state == MachineState.None && this.transform.childCount != 0)
         {
-            Invoke("Crafting", craftTime);
+            //Invoke("Crafting", craftTime);
             state = MachineState.Working;
+            saveState = state;
         }
     }
 
     public void PickUp(GameObject hand) //꺼내기
     {
-        if (state == MachineState.Destroying)
+        if (isBreak == false)
         {
-            CreateDone(hand);
-            recipecheck.GetComponent<RecipeDawnCheck>().check();
+            if (state == MachineState.Destroying)
+            {
+                CreateDone(hand);
+                recipecheck.GetComponent<RecipeDawnCheck>().check();
+            }
         }
     }
 
     public void Crafting()      //제작완성 및 삭제중 상태로 이동
     {
-        state = MachineState.Destroying;
-        workTime = 0;
+            //state = MachineState.Destroying;
+            saveState = state;
+            //workTime = 0;
     }
-    
+
 
     public void CreateDone(GameObject hand)   //완성품 꺼내기
     {
-        var go =Instantiate(productionArray[transform.childCount-1], Vector2.zero, quaternion.identity);
+        var go = Instantiate(productionArray[transform.childCount - 1], Vector2.zero, quaternion.identity);
 
         int index = go.name.IndexOf("(Clone)");
         if (index > 0)
         {
             go.name = go.name.Substring(0, index);
         }
-        
+
         go.transform.SetParent(hand.transform);
         go.transform.localPosition = Vector2.zero;
         go.layer = 0;
         state = MachineState.None;
+        saveState = state;
         workTime = 0;
         ChildDestroy();
     }
 
-     public void ChildDestroy() //자식 삭제
-     {
-         for (int i = 0; i < this.transform.childCount; i++)
-         { 
-             Destroy(this.transform.GetChild(i).gameObject);
-         }
-     } 
-     
+    public void ChildDestroy() //자식 삭제
+    {
+        for (int i = 0; i < this.transform.childCount; i++)
+        {
+            Destroy(this.transform.GetChild(i).gameObject);
+        }
+    }
+
+    public void Breakdown()
+    {
+        int max = Random.Range(0, 100);
+        if (max < per)
+        {
+            state = MachineState.Breakdown;
+            isBreak = true;
+        }
+    }
 
 
+    public void MachinePix()
+    {
+        state = saveState;
+        isBreak = false;
+    }
 }

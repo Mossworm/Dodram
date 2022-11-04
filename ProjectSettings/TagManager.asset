@@ -12,6 +12,7 @@ TagManager:
   - Grass
   - Object
   - artefact
+  - Machine
   layers:
   - Default
   - TransparentFX
