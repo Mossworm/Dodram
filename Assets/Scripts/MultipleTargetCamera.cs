@@ -19,6 +19,24 @@ public class MultipleTargetCamera : MonoBehaviour
     private Vector3 velocity;
     private Camera cam;
 
+    #region Singleton
+
+    public static MultipleTargetCamera Instance { get; private set; }
+
+    private void Awake()
+    {
+        if (Instance==null)
+        {
+            Instance = this;
+        }
+        else if (Instance != this)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    #endregion
+
     private void Start()
     {
         cam = GetComponent<Camera>();
@@ -38,7 +56,7 @@ public class MultipleTargetCamera : MonoBehaviour
 
     void Zoom()
     {
-        newZoom = Mathf.Lerp(maxZoom, minZoom, GetGreatestDistance() / zoomLimiter);
+        newZoom =  Mathf.Lerp(maxZoom, minZoom, GetGreatestDistance() / zoomLimiter);
         cam.orthographicSize = Mathf.Lerp(cam.orthographicSize ,newZoom, Time.deltaTime);
     }
     
@@ -58,8 +76,7 @@ public class MultipleTargetCamera : MonoBehaviour
         {
             bounds.Encapsulate(targets[i].position);
         }
-        // +bounds.size.y
-        return (bounds.size.x)/2;
+        return bounds.size.x > bounds.size.y ? bounds.size.x/3 : bounds.size.y/2;
     }
     
     Vector3 GetCenterPoint()

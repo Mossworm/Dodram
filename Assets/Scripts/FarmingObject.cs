@@ -45,7 +45,7 @@ public class FarmingObject : MonoBehaviour
             gaugeBar.gameObject.SetActive(true);
         }
         
-        nowGaugebar.fillAmount = ((float)hp / (float)maxhp);
+        nowGaugebar.fillAmount = ((float)(maxhp-hp) / (float)maxhp);
     }
 
     public void Digging()

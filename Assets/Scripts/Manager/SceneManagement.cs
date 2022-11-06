@@ -7,7 +7,7 @@ public class SceneManagement : MonoBehaviour
 {
 
     public Animator transitionAnim;
-    public int sceneNum = 1;
+    public int sceneNum;
 
     // Start is called before the first frame update
     void Start()

@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using MonsterLove.StateMachine;
 
@@ -6,7 +7,6 @@ public class PlayerController : MonoBehaviour
 {
 
     [SerializeField] private float speed;
-    [SerializeField] private float dashPower;
     private Rigidbody2D _characterRigidbody;
     private Vector2 _movement;
 
@@ -17,6 +17,17 @@ public class PlayerController : MonoBehaviour
 
     public PickUpScript pickUpScript;
 
+    private bool canDash = true;
+    private bool isDashing;
+    private float dashingPower = 10f;
+    private float dashingTime = 0.2f;
+    private float dashingCooldown = 0.3f;
+
+    [SerializeField] private TrailRenderer tr;
+
+    private KeyCode[] ArrayDashKey = new KeyCode[] { KeyCode.LeftAlt, KeyCode.RightAlt };
+    [SerializeField] private KeyCode DashKey;
+    
     private enum States
     {
         Idle,
@@ -78,17 +89,41 @@ public class PlayerController : MonoBehaviour
         _animator = GetComponent<Animator>();
         _characterRigidbody = GetComponent<Rigidbody2D>();
         direction = Dir.Down;
+        
+        if (isMainPlayer)
+        {
+            DashKey = ArrayDashKey[0];
+        }
+        else 
+        {
+            DashKey = ArrayDashKey[1];
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        //대쉬중엔 아래코드 실행안함
+        if (isDashing)
+        {
+            return;
+        }
+        
         UpdateDir();
         FSM.Driver.Update.Invoke();
+        if (Input.GetKeyDown(DashKey) && canDash)
+        {
+            StartCoroutine(Dash());
+        }
     }
 
     private void FixedUpdate()
     {
+        if (isDashing)
+        {
+            return;
+        }
+        
         _movement.Normalize();
         _characterRigidbody.velocity = _movement * speed;
     }
@@ -112,6 +147,24 @@ public class PlayerController : MonoBehaviour
             direction = Dir.Down;
         }
     }
+
+    //대쉬 구현
+    private IEnumerator Dash()
+    {
+        canDash = false;
+        isDashing = true;
+        _characterRigidbody.velocity = new Vector2(_movement.x * dashingPower, _movement.y * dashingPower);
+        tr.emitting = true;
+        yield return new WaitForSeconds(dashingTime);
+        tr.emitting = false;
+        isDashing = false;
+        yield return new WaitForSeconds(dashingCooldown);
+        canDash = true;
+    }
+    
+    //----------------------------------------------------------------------------------
+    //  FSM 구현
+    //----------------------------------------------------------------------------------
 
     /**************************************** Idle ************************************/
     void Idle_Enter()
