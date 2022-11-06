@@ -183,10 +183,7 @@ public class PickUpScript : MonoBehaviour
                     }
                     else if (hit.gameObject.name == "Last_Machine")
                     {
-                        if (this.gameObject.name == "Player 1")
-                        {
-                            hit.GetComponent<FinalMachineScript>().PickUp(Hand);
-                        }
+                        hit.GetComponent<FinalMachineScript>().PickUp(Hand);
                     }
                 }
             }

@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     private bool isDashing;
     private float dashingPower = 10f;
     private float dashingTime = 0.2f;
-    private float dashingCooldown = 0.3f;
+    private float dashingCooldown = 0.2f;
 
     [SerializeField] private TrailRenderer tr;
 
@@ -121,6 +121,7 @@ public class PlayerController : MonoBehaviour
     {
         if (isDashing)
         {
+            _characterRigidbody.velocity = _movement.normalized * dashingPower;
             return;
         }
         
@@ -153,7 +154,6 @@ public class PlayerController : MonoBehaviour
     {
         canDash = false;
         isDashing = true;
-        _characterRigidbody.velocity = new Vector2(_movement.x * dashingPower, _movement.y * dashingPower);
         tr.emitting = true;
         yield return new WaitForSeconds(dashingTime);
         tr.emitting = false;
