@@ -429,7 +429,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 648d2421c200d9a4385e2e6b10fa216d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 18c4a75ff883f6f46b27b49fec30250b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1195,6 +1195,10 @@ PrefabInstance:
     - target: {fileID: 1222349470022041510, guid: 88b2c01766796d84d8bf834ee0105495, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1440896990685914953, guid: 88b2c01766796d84d8bf834ee0105495, type: 3}
+      propertyPath: m_Mass
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1440896990685914953, guid: 88b2c01766796d84d8bf834ee0105495, type: 3}
       propertyPath: m_BodyType
@@ -2568,7 +2572,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1440896990685914953, guid: 88b2c01766796d84d8bf834ee0105495, type: 3}
       propertyPath: m_Mass
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1440896990685914953, guid: 88b2c01766796d84d8bf834ee0105495, type: 3}
       propertyPath: m_BodyType
