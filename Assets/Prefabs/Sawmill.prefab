@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6333255070644420420}
   m_Layer: 6
   m_Name: Sawmill
-  m_TagString: Untagged
+  m_TagString: Machine
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 5157850088090168011}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -8.05, y: 0.67, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8541, y: 0.8541, z: 0.8541}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c4e6c6eeba23928479e2c1c7e587cefd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 41e5679af6792c9479edb7e8ab716d15, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,11 +99,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   recipecheck: {fileID: 0}
-  craftTime: 3
-  destroyTime: 10
+  isBreak: 0
+  randomON: 1
+  per: 20
+  craftTime: 6
+  destroyTime: 5
   workTime: 0
+  stopTime: 0
   state: 0
-  ingredient: {fileID: 0}
+  saveState: 0
+  ingredient: {fileID: 2041883255594010392, guid: ce48307ae675aea4bb0d14e8fdb5bf97, type: 3}
   productionArray:
   - {fileID: 7304092036641427738, guid: 2eef76e23f6ed3f43abf04d79df39063, type: 3}
   - {fileID: 7304092036641427738, guid: e5a89ea214c930d4aba9a70f6cc44684, type: 3}
@@ -124,6 +129,6 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.15590222, y: 0.55}
+  m_Offset: {x: 0, y: -0.25}
   m_Size: {x: 1.480528, y: 1.0027152}
   m_Direction: 1
