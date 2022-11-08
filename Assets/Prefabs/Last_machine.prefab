@@ -83,7 +83,7 @@ SpriteRenderer:
   m_Size: {x: 2.69, y: 2.42}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
 --- !u!70 &6095845008429996965
@@ -114,6 +114,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 335c42d86600c2f4db80c4cf0b17c123, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  recipcheck: {fileID: 0}
+  mushcheck: {fileID: 0}
+  rockcheck: {fileID: 0}
+  treecheck: {fileID: 0}
   craftTime: 1
   destroyTime: 15
   workTime: 0
