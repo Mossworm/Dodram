@@ -3989,6 +3989,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1621739338}
     - target: {fileID: 6095845008429996967, guid: 0178228ff029b2649b5becaa60cf067e, type: 3}
+      propertyPath: height
+      value: 1.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 6095845008429996967, guid: 0178228ff029b2649b5becaa60cf067e, type: 3}
       propertyPath: recipes
       value: 
       objectReference: {fileID: 696564784}
