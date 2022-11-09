@@ -97,7 +97,7 @@ public class MachineScript : MonoBehaviour
 
     void GaugeBar()
     {
-        Vector3 _gaugeBarPos = Camera.main.WorldToScreenPoint(new Vector3(transform.position.x, transform.position.y + height, 0));
+        Vector3 _gaugeBarPos = new Vector3(transform.position.x, transform.position.y + height, 0);
         gaugeBar.position = _gaugeBarPos;
 
         if (state == MachineState.None)

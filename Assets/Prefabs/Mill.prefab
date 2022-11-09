@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3475668764816430607}
   m_Layer: 6
   m_Name: Mill
-  m_TagString: Untagged
+  m_TagString: Machine
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -75,12 +75,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4d944f12ec2a235418cfe7c9f8215f5b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: db1c4b0724552a540b1d398c62f6ca3e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.95, y: 0.96}
+  m_Size: {x: 2.64, y: 2.58}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -98,17 +98,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ff3e99a4117c74c88515b851cfb891, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  craftTime: 10
-  destroyTime: 10
+  recipecheck: {fileID: 0}
+  isBreak: 0
+  randomON: 1
+  per: 20
+  craftTime: 6
+  destroyTime: 5
   workTime: 0
+  stopTime: 0
   state: 0
+  saveState: 0
+  ingredient: {fileID: 5549948290299783770, guid: 4390bccc47a2a7b46919c1893e09f63f, type: 3}
   productionArray:
   - {fileID: 7706093404112877944, guid: acf9be343d4070444b7f7602cd02c3d7, type: 3}
   - {fileID: 7706093404112877944, guid: bad104e57b13898478589bf39cb73f47, type: 3}
   - {fileID: 7706093404112877944, guid: a130c2067d6a10b41b3a15cb86ed4358, type: 3}
   prfGaugeBar: {fileID: 6077395782407935344, guid: 21b0a8999c7a9034d9217db9436dea06, type: 3}
   canvas: {fileID: 0}
-  height: 2
+  height: 1.18
 --- !u!70 &3475668764816430607
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -122,6 +129,6 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.031104809, y: 0.32}
-  m_Size: {x: 1.5735209, y: 0.6315418}
+  m_Offset: {x: -0.031104809, y: -0.24}
+  m_Size: {x: 1.5735209, y: 1}
   m_Direction: 1

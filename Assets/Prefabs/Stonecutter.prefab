@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1868086439437037591}
   m_Layer: 6
   m_Name: Stonecutter
-  m_TagString: Untagged
+  m_TagString: Machine
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -75,12 +75,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4aa0d3ad3a8410f44b40377bd674763b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 73454babd6dcfbe47a67e3228a2c34e1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.7, y: 0.67}
+  m_Size: {x: 2.64, y: 2.58}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -98,17 +98,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ff3e99a4117c74c88515b851cfb891, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  craftTime: 3
-  destroyTime: 10
+  recipecheck: {fileID: 0}
+  isBreak: 0
+  randomON: 1
+  per: 5
+  craftTime: 6
+  destroyTime: 5
   workTime: 0
+  stopTime: 0
   state: 0
+  saveState: 0
+  ingredient: {fileID: 3788197747174437531, guid: d74827f7dff1f5c42a9833c828b7b4b8, type: 3}
   productionArray:
   - {fileID: 5816583132714194346, guid: c6d467c4872395f48a1fe5274b166981, type: 3}
   - {fileID: 5816583132714194346, guid: 45cc25a0099c56b468f29a19be71b777, type: 3}
   - {fileID: 5816583132714194346, guid: 3ef62a25984a6e1459e55796250d2f21, type: 3}
   prfGaugeBar: {fileID: 6077395782407935344, guid: 21b0a8999c7a9034d9217db9436dea06, type: 3}
   canvas: {fileID: 0}
-  height: 2
+  height: 1.18
 --- !u!70 &1868086439437037591
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -122,6 +129,6 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.12242795, y: 0.3}
-  m_Size: {x: 0.9751401, y: 0.48543102}
+  m_Offset: {x: 0.03, y: -0.26}
+  m_Size: {x: 1.38, y: 1}
   m_Direction: 1
