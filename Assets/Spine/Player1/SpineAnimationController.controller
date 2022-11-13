@@ -1,0 +1,2347 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1102 &-9115565828343841169
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Player_P_Walk_Left
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours:
+  - {fileID: -1439221042954689132}
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: -3500022444818933130, guid: 6cfe14f99f17c0142b2ddf97dd5521d2, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1102 &-8827914268313611649
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Player_Walk_Axe_Up
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours:
+  - {fileID: 1067178177994566067}
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: -2066904443647925518, guid: 8c4c195b35cfba64a919fbf94dc8cacb, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1102 &-8426491805264399425
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Player_Idle_Axe_Up
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours:
+  - {fileID: -2425443474469608752}
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: -6917870582861559454, guid: 8c4c195b35cfba64a919fbf94dc8cacb, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!114 &-7877621737182810264
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaec12f6616ce1548818f41045a13338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motion: {fileID: -2202996050616852492, guid: a56ef1990f8e1e14fab6beb19d12f358, type: 2}
+  isLoop: 1
+  layer: 0
+  timeScale: 1
+  exitTime: 0.85
+  formerDirection: 0
+--- !u!114 &-7861623200774653653
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaec12f6616ce1548818f41045a13338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motion: {fileID: -3788201193505235638, guid: 8c4c195b35cfba64a919fbf94dc8cacb, type: 2}
+  isLoop: 1
+  layer: 0
+  timeScale: 1
+  exitTime: 0.85
+  formerDirection: 0
+--- !u!1102 &-7840134964002473281
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Player_Idle_Left
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours:
+  - {fileID: -679042189432295461}
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 1083051793196924112, guid: 6cfe14f99f17c0142b2ddf97dd5521d2, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!114 &-7754305861099509670
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaec12f6616ce1548818f41045a13338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motion: {fileID: 1699494950417331532, guid: a56ef1990f8e1e14fab6beb19d12f358, type: 2}
+  isLoop: 1
+  layer: 0
+  timeScale: 1
+  exitTime: 0.85
+  formerDirection: 0
+--- !u!114 &-7644334178017829813
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaec12f6616ce1548818f41045a13338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motion: {fileID: 7174333170021882048, guid: 6cfe14f99f17c0142b2ddf97dd5521d2, type: 2}
+  isLoop: 1
+  layer: 0
+  timeScale: 1
+  exitTime: 0.85
+  formerDirection: 0
+--- !u!1102 &-7363161445374349239
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Player_Walk_Pickaxe_Right
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours:
+  - {fileID: -4544951675662640552}
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 8622895267058001744, guid: eb55bc3bd3d9a3e48b5ffa305325f92b, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1107 &-7344766578850376698
+AnimatorStateMachine:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Base Layer
+  m_ChildStates:
+  - serializedVersion: 1
+    m_State: {fileID: -3175227342450602662}
+    m_Position: {x: 30, y: 40, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 9218318413306575498}
+    m_Position: {x: 30, y: -30, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 3298926514157048840}
+    m_Position: {x: 30, y: 100, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 6886020506401753823}
+    m_Position: {x: 30, y: 160, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -6573845578300445131}
+    m_Position: {x: 20, y: 220, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 7730113778066431854}
+    m_Position: {x: 20, y: 290, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 7346853302038925928}
+    m_Position: {x: 20, y: 420, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 6334344383897279764}
+    m_Position: {x: 20, y: 480, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 8177922560359290322}
+    m_Position: {x: 20, y: 620, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 2362826525640324956}
+    m_Position: {x: 10, y: 700, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -5085345602760289021}
+    m_Position: {x: 20, y: 770, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -651205078359146918}
+    m_Position: {x: 20, y: 550, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -8426491805264399425}
+    m_Position: {x: 428.44696, y: -29.942566, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -1788606801407881652}
+    m_Position: {x: 440, y: 40, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -3247182135535875284}
+    m_Position: {x: 440, y: 100, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -2146130264873426995}
+    m_Position: {x: 432.30542, y: 162.98038, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 6027297930087707409}
+    m_Position: {x: 436.16388, y: 215.06955, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -4498735801177924100}
+    m_Position: {x: 440, y: 280, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -2235653063737643237}
+    m_Position: {x: 420, y: 410, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -8827914268313611649}
+    m_Position: {x: 424.5885, y: 473.58633, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -4489121029805125369}
+    m_Position: {x: 434.23462, y: 544.9678, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -1756319887447089910}
+    m_Position: {x: 430, y: 620, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -633717804870341229}
+    m_Position: {x: 430, y: 690, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 3041266893426586927}
+    m_Position: {x: 420, y: 760, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 4068742868640278616}
+    m_Position: {x: 820, y: -20, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -7059781149702043043}
+    m_Position: {x: 856.73596, y: 47.226593, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -7840134964002473281}
+    m_Position: {x: 854.80664, y: 99.315796, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 5231365967730225487}
+    m_Position: {x: 850, y: 180, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -3141658954391054931}
+    m_Position: {x: 870.2405, y: 257.5126, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 1890638504928182575}
+    m_Position: {x: 880, y: 310, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -9115565828343841169}
+    m_Position: {x: 830, y: 420, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -5559850643840341799}
+    m_Position: {x: 829.7267, y: 485.1617, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -5622272000012894046}
+    m_Position: {x: 830, y: 540, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 2451305546495324944}
+    m_Position: {x: 847.08984, y: 591.2693, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -3306942161265990171}
+    m_Position: {x: 860, y: 660, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 8862309198818787896}
+    m_Position: {x: 876.0282, y: 745.60767, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -5903295648194784495}
+    m_Position: {x: 1231.0065, y: -18.367203, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -4493751543280166075}
+    m_Position: {x: 1240, y: 50, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 2310739493458316682}
+    m_Position: {x: 1230, y: 100, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -4723667939813765785}
+    m_Position: {x: 1240, y: 150, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 5099702760857128503}
+    m_Position: {x: 1232.9357, y: 228.57416, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -6882888680054044315}
+    m_Position: {x: 1248.3695, y: 307.67258, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -2638739267612227353}
+    m_Position: {x: 1240, y: 420, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 4251769216658847883}
+    m_Position: {x: 1259.945, y: 506.38324, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 5193222050460673336}
+    m_Position: {x: 1250.2988, y: 585.4816, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -7363161445374349239}
+    m_Position: {x: 1230, y: 660, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -5626646511848608252}
+    m_Position: {x: 1269.5911, y: 710.88153, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -2615683947672495966}
+    m_Position: {x: 1259.945, y: 766.8292, z: 0}
+  m_ChildStateMachines: []
+  m_AnyStateTransitions: []
+  m_EntryTransitions: []
+  m_StateMachineTransitions: {}
+  m_StateMachineBehaviours: []
+  m_AnyStatePosition: {x: 40, y: -210, z: 0}
+  m_EntryPosition: {x: 40, y: -160, z: 0}
+  m_ExitPosition: {x: 1040, y: -210, z: 0}
+  m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
+  m_DefaultState: {fileID: -3175227342450602662}
+--- !u!1102 &-7059781149702043043
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Player_Idle_Hammer_Left
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours:
+  - {fileID: -4829025199519159989}
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 27534791575538308, guid: 6cfe14f99f17c0142b2ddf97dd5521d2, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!114 &-6930494905481979852
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaec12f6616ce1548818f41045a13338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motion: {fileID: 2435703885573713939, guid: 8c4c195b35cfba64a919fbf94dc8cacb, type: 2}
+  isLoop: 1
+  layer: 0
+  timeScale: 1
+  exitTime: 0.85
+  formerDirection: 0
+--- !u!1102 &-6882888680054044315
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Player_P_Idle_Right
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours:
+  - {fileID: 3322638744770623054}
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: -189012382881853439, guid: eb55bc3bd3d9a3e48b5ffa305325f92b, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!114 &-6585223933866887946
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaec12f6616ce1548818f41045a13338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motion: {fileID: -5368589506251794316, guid: eb55bc3bd3d9a3e48b5ffa305325f92b, type: 2}
+  isLoop: 1
+  layer: 0
+  timeScale: 1
+  exitTime: 0.85
+  formerDirection: 0
+--- !u!1102 &-6573845578300445131
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Player_Idle_Shovel_Down
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours:
+  - {fileID: -7754305861099509670}
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 1699494950417331532, guid: a56ef1990f8e1e14fab6beb19d12f358, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!114 &-6155295565441591714
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaec12f6616ce1548818f41045a13338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motion: {fileID: -5692066379069508377, guid: a56ef1990f8e1e14fab6beb19d12f358, type: 2}
+  isLoop: 1
+  layer: 0
+  timeScale: 1
+  exitTime: 0.85
+  formerDirection: 0
+--- !u!114 &-6008496749183834546
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaec12f6616ce1548818f41045a13338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motion: {fileID: -6008059641602561802, guid: eb55bc3bd3d9a3e48b5ffa305325f92b, type: 2}
+  isLoop: 1
+  layer: 0
+  timeScale: 1
+  exitTime: 0.85
+  formerDirection: 0
+--- !u!1102 &-5903295648194784495
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Player_Idle_Axe_Right
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours:
+  - {fileID: -4858948584950549695}
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: -8901425173515400890, guid: eb55bc3bd3d9a3e48b5ffa305325f92b, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1102 &-5626646511848608252
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Player_Walk_Right
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours:
+  - {fileID: -6008496749183834546}
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: -6008059641602561802, guid: eb55bc3bd3d9a3e48b5ffa305325f92b, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1102 &-5622272000012894046
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Player_Walk_Hammer_Left
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours:
+  - {fileID: -4018308896950024480}
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 8316540216265569668, guid: 6cfe14f99f17c0142b2ddf97dd5521d2, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1102 &-5559850643840341799
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Player_Walk_Axe_Left
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours:
+  - {fileID: 1943481649794292165}
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 2644811861966958415, guid: 6cfe14f99f17c0142b2ddf97dd5521d2, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!114 &-5459402773025712890
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaec12f6616ce1548818f41045a13338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motion: {fileID: -3216408266086283200, guid: eb55bc3bd3d9a3e48b5ffa305325f92b, type: 2}
+  isLoop: 1
+  layer: 0
+  timeScale: 1
+  exitTime: 0.85
+  formerDirection: 0
+--- !u!114 &-5355829464408799902
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaec12f6616ce1548818f41045a13338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motion: {fileID: 6203629640543915589, guid: eb55bc3bd3d9a3e48b5ffa305325f92b, type: 2}
+  isLoop: 1
+  layer: 0
+  timeScale: 1
+  exitTime: 0.85
+  formerDirection: 0
+--- !u!114 &-5130661843274184877
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaec12f6616ce1548818f41045a13338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motion: {fileID: -4783835629957021164, guid: a56ef1990f8e1e14fab6beb19d12f358, type: 2}
+  isLoop: 1
+  layer: 0
+  timeScale: 1
+  exitTime: 0.85
+  formerDirection: 0
+--- !u!1102 &-5085345602760289021
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Player_Walk_Shovel_Down
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours:
+  - {fileID: 3351125566388575031}
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: -7515142668935567242, guid: a56ef1990f8e1e14fab6beb19d12f358, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!114 &-4858948584950549695
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaec12f6616ce1548818f41045a13338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motion: {fileID: -8901425173515400890, guid: eb55bc3bd3d9a3e48b5ffa305325f92b, type: 2}
+  isLoop: 1
+  layer: 0
+  timeScale: 1
+  exitTime: 0.85
+  formerDirection: 0
+--- !u!114 &-4829025199519159989
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaec12f6616ce1548818f41045a13338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motion: {fileID: 27534791575538308, guid: 6cfe14f99f17c0142b2ddf97dd5521d2, type: 2}
+  isLoop: 1
+  layer: 0
+  timeScale: 1
+  exitTime: 0.85
+  formerDirection: 0
+--- !u!1102 &-4723667939813765785
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Player_Idle_Right
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours:
+  - {fileID: 2247086245359415827}
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 2194062269928233630, guid: eb55bc3bd3d9a3e48b5ffa305325f92b, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!114 &-4544951675662640552
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaec12f6616ce1548818f41045a13338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motion: {fileID: 8622895267058001744, guid: eb55bc3bd3d9a3e48b5ffa305325f92b, type: 2}
+  isLoop: 1
+  layer: 0
+  timeScale: 1
+  exitTime: 0.85
+  formerDirection: 0
+--- !u!114 &-4502735697463392213
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaec12f6616ce1548818f41045a13338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motion: {fileID: -3788201193505235638, guid: 8c4c195b35cfba64a919fbf94dc8cacb, type: 2}
+  isLoop: 1
+  layer: 0
+  timeScale: 1
+  exitTime: 0.85
+  formerDirection: 0
+--- !u!1102 &-4498735801177924100
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Player_P_Idle_Up
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours:
+  - {fileID: -1734036011172024175}
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 6715399480238818453, guid: 8c4c195b35cfba64a919fbf94dc8cacb, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1102 &-4493751543280166075
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Player_Idle_Hammer_Right
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours:
+  - {fileID: 1836138459029963497}
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: -854691745078240975, guid: eb55bc3bd3d9a3e48b5ffa305325f92b, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1102 &-4489121029805125369
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Player_Walk_Hammer_Up
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours:
+  - {fileID: 4315726751829295188}
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: -7053254161516841420, guid: 8c4c195b35cfba64a919fbf94dc8cacb, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!114 &-4018308896950024480
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaec12f6616ce1548818f41045a13338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motion: {fileID: 8316540216265569668, guid: 6cfe14f99f17c0142b2ddf97dd5521d2, type: 2}
+  isLoop: 1
+  layer: 0
+  timeScale: 1
+  exitTime: 0.85
+  formerDirection: 0
+--- !u!1102 &-3306942161265990171
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Player_Walk_Pickaxe_Left
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours:
+  - {fileID: -7644334178017829813}
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7174333170021882048, guid: 6cfe14f99f17c0142b2ddf97dd5521d2, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1102 &-3247182135535875284
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Player_Idle_Pickaxe_Up
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours:
+  - {fileID: 8194384261931788484}
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 1657588692335609587, guid: 8c4c195b35cfba64a919fbf94dc8cacb, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1102 &-3175227342450602662
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Player_Idle_Down
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours:
+  - {fileID: 4800276525846173446}
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 4613264490510527991, guid: a56ef1990f8e1e14fab6beb19d12f358, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!114 &-3157571160342738254
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaec12f6616ce1548818f41045a13338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motion: {fileID: 26692542632926761, guid: eb55bc3bd3d9a3e48b5ffa305325f92b, type: 2}
+  isLoop: 1
+  layer: 0
+  timeScale: 1
+  exitTime: 0.85
+  formerDirection: 0
+--- !u!1102 &-3141658954391054931
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Player_Idle_Shovel_Left
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours:
+  - {fileID: 2724821060229757782}
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: -1053853526140170970, guid: 6cfe14f99f17c0142b2ddf97dd5521d2, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!114 &-3091773284962254973
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaec12f6616ce1548818f41045a13338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motion: {fileID: 459245017486801209, guid: a56ef1990f8e1e14fab6beb19d12f358, type: 2}
+  isLoop: 1
+  layer: 0
+  timeScale: 1
+  exitTime: 0.85
+  formerDirection: 0
+--- !u!1102 &-2638739267612227353
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Player_P_Walk_Right
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours:
+  - {fileID: 7949521722166748936}
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: -1659607162233205149, guid: eb55bc3bd3d9a3e48b5ffa305325f92b, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1102 &-2615683947672495966
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Player_Walk_Shovel_Right
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours:
+  - {fileID: -5355829464408799902}
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 6203629640543915589, guid: eb55bc3bd3d9a3e48b5ffa305325f92b, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!114 &-2425443474469608752
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaec12f6616ce1548818f41045a13338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motion: {fileID: -6917870582861559454, guid: 8c4c195b35cfba64a919fbf94dc8cacb, type: 2}
+  isLoop: 1
+  layer: 0
+  timeScale: 1
+  exitTime: 0.85
+  formerDirection: 0
+--- !u!1102 &-2235653063737643237
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Player_P_Walk_Up
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours:
+  - {fileID: 6913513429089496395}
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 1396199692898013929, guid: 8c4c195b35cfba64a919fbf94dc8cacb, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1102 &-2146130264873426995
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Player_Idle_Shovel_Up
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours:
+  - {fileID: -4502735697463392213}
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 4391032189860513259, guid: 8c4c195b35cfba64a919fbf94dc8cacb, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!114 &-2132694569106044530
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaec12f6616ce1548818f41045a13338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motion: {fileID: 5095275351032972801, guid: a56ef1990f8e1e14fab6beb19d12f358, type: 2}
+  isLoop: 1
+  layer: 0
+  timeScale: 1
+  exitTime: 0.85
+  formerDirection: 0
+--- !u!1102 &-1788606801407881652
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Player_Idle_Hammer_Up
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours:
+  - {fileID: -6930494905481979852}
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 2435703885573713939, guid: 8c4c195b35cfba64a919fbf94dc8cacb, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1102 &-1756319887447089910
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Player_Walk_Pickaxe_Up
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours:
+  - {fileID: 3994858446699651499}
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: -8362792738524048145, guid: 8c4c195b35cfba64a919fbf94dc8cacb, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!114 &-1734036011172024175
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaec12f6616ce1548818f41045a13338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motion: {fileID: 6715399480238818453, guid: 8c4c195b35cfba64a919fbf94dc8cacb, type: 2}
+  isLoop: 1
+  layer: 0
+  timeScale: 1
+  exitTime: 0.85
+  formerDirection: 0
+--- !u!114 &-1671305417344849377
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaec12f6616ce1548818f41045a13338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motion: {fileID: 3585769715028528807, guid: 6cfe14f99f17c0142b2ddf97dd5521d2, type: 2}
+  isLoop: 1
+  layer: 0
+  timeScale: 1
+  exitTime: 0.85
+  formerDirection: 0
+--- !u!114 &-1644816293679904442
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaec12f6616ce1548818f41045a13338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motion: {fileID: -9106185743259328919, guid: 8c4c195b35cfba64a919fbf94dc8cacb, type: 2}
+  isLoop: 1
+  layer: 0
+  timeScale: 1
+  exitTime: 0.85
+  formerDirection: 0
+--- !u!114 &-1439221042954689132
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaec12f6616ce1548818f41045a13338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motion: {fileID: -3500022444818933130, guid: 6cfe14f99f17c0142b2ddf97dd5521d2, type: 2}
+  isLoop: 1
+  layer: 0
+  timeScale: 1
+  exitTime: 0.85
+  formerDirection: 0
+--- !u!114 &-1229492756926839766
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaec12f6616ce1548818f41045a13338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motion: {fileID: 1083051793196924112, guid: 6cfe14f99f17c0142b2ddf97dd5521d2, type: 2}
+  isLoop: 1
+  layer: 0
+  timeScale: 1
+  exitTime: 0.85
+  formerDirection: 0
+--- !u!114 &-679042189432295461
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaec12f6616ce1548818f41045a13338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motion: {fileID: -6269673699386947503, guid: 6cfe14f99f17c0142b2ddf97dd5521d2, type: 2}
+  isLoop: 1
+  layer: 0
+  timeScale: 1
+  exitTime: 0.85
+  formerDirection: 0
+--- !u!1102 &-651205078359146918
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Player_Walk_Down
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours:
+  - {fileID: -3091773284962254973}
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 459245017486801209, guid: a56ef1990f8e1e14fab6beb19d12f358, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1102 &-633717804870341229
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Player_Walk_Shovel_Up
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours:
+  - {fileID: 8625313225292265125}
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: -1793121880392775569, guid: 8c4c195b35cfba64a919fbf94dc8cacb, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!91 &9100000
+AnimatorController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SpineAnimationController
+  serializedVersion: 5
+  m_AnimatorParameters: []
+  m_AnimatorLayers:
+  - serializedVersion: 5
+    m_Name: Base Layer
+    m_StateMachine: {fileID: -7344766578850376698}
+    m_Mask: {fileID: 0}
+    m_Motions: []
+    m_Behaviours: []
+    m_BlendingMode: 0
+    m_SyncedLayerIndex: -1
+    m_DefaultWeight: 0
+    m_IKPass: 0
+    m_SyncedLayerAffectsTiming: 0
+    m_Controller: {fileID: 9100000}
+--- !u!114 &54833160387422760
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaec12f6616ce1548818f41045a13338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motion: {fileID: 1950234897325468457, guid: a56ef1990f8e1e14fab6beb19d12f358, type: 2}
+  isLoop: 1
+  layer: 0
+  timeScale: 1
+  exitTime: 0.85
+  formerDirection: 0
+--- !u!114 &1067178177994566067
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaec12f6616ce1548818f41045a13338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motion: {fileID: -2066904443647925518, guid: 8c4c195b35cfba64a919fbf94dc8cacb, type: 2}
+  isLoop: 1
+  layer: 0
+  timeScale: 1
+  exitTime: 0.85
+  formerDirection: 0
+--- !u!114 &1836138459029963497
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaec12f6616ce1548818f41045a13338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motion: {fileID: -854691745078240975, guid: eb55bc3bd3d9a3e48b5ffa305325f92b, type: 2}
+  isLoop: 1
+  layer: 0
+  timeScale: 1
+  exitTime: 0.85
+  formerDirection: 0
+--- !u!1102 &1890638504928182575
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Player_P_Idle_Left
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours:
+  - {fileID: -1229492756926839766}
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: -6269673699386947503, guid: 6cfe14f99f17c0142b2ddf97dd5521d2, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!114 &1943481649794292165
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaec12f6616ce1548818f41045a13338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motion: {fileID: 2644811861966958415, guid: 6cfe14f99f17c0142b2ddf97dd5521d2, type: 2}
+  isLoop: 1
+  layer: 0
+  timeScale: 1
+  exitTime: 0.85
+  formerDirection: 0
+--- !u!114 &2247086245359415827
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaec12f6616ce1548818f41045a13338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motion: {fileID: 2194062269928233630, guid: eb55bc3bd3d9a3e48b5ffa305325f92b, type: 2}
+  isLoop: 1
+  layer: 0
+  timeScale: 1
+  exitTime: 0.85
+  formerDirection: 0
+--- !u!1102 &2310739493458316682
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Player_Idle_Pickaxe_Right
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours:
+  - {fileID: -3157571160342738254}
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 26692542632926761, guid: eb55bc3bd3d9a3e48b5ffa305325f92b, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1102 &2362826525640324956
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Player_Walk_Pickaxe_Down
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours:
+  - {fileID: -7877621737182810264}
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: -2202996050616852492, guid: a56ef1990f8e1e14fab6beb19d12f358, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1102 &2451305546495324944
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Player_Walk_Left
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours:
+  - {fileID: -1671305417344849377}
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 3585769715028528807, guid: 6cfe14f99f17c0142b2ddf97dd5521d2, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!114 &2458403233583146000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaec12f6616ce1548818f41045a13338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motion: {fileID: 1491602245896773621, guid: eb55bc3bd3d9a3e48b5ffa305325f92b, type: 2}
+  isLoop: 1
+  layer: 0
+  timeScale: 1
+  exitTime: 0.85
+  formerDirection: 0
+--- !u!114 &2724821060229757782
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaec12f6616ce1548818f41045a13338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motion: {fileID: -1053853526140170970, guid: 6cfe14f99f17c0142b2ddf97dd5521d2, type: 2}
+  isLoop: 1
+  layer: 0
+  timeScale: 1
+  exitTime: 0.85
+  formerDirection: 0
+--- !u!1102 &3041266893426586927
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Player_Walk_Up
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours:
+  - {fileID: -1644816293679904442}
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: -9106185743259328919, guid: 8c4c195b35cfba64a919fbf94dc8cacb, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1102 &3298926514157048840
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Player_Idle_Hammer_Down
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours:
+  - {fileID: -2132694569106044530}
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 5095275351032972801, guid: a56ef1990f8e1e14fab6beb19d12f358, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!114 &3322638744770623054
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaec12f6616ce1548818f41045a13338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motion: {fileID: -189012382881853439, guid: eb55bc3bd3d9a3e48b5ffa305325f92b, type: 2}
+  isLoop: 1
+  layer: 0
+  timeScale: 1
+  exitTime: 0.85
+  formerDirection: 0
+--- !u!114 &3351125566388575031
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaec12f6616ce1548818f41045a13338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motion: {fileID: -7515142668935567242, guid: a56ef1990f8e1e14fab6beb19d12f358, type: 2}
+  isLoop: 1
+  layer: 0
+  timeScale: 1
+  exitTime: 0.85
+  formerDirection: 0
+--- !u!114 &3994858446699651499
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaec12f6616ce1548818f41045a13338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motion: {fileID: -8362792738524048145, guid: 8c4c195b35cfba64a919fbf94dc8cacb, type: 2}
+  isLoop: 1
+  layer: 0
+  timeScale: 1
+  exitTime: 0.85
+  formerDirection: 0
+--- !u!1102 &4068742868640278616
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Player_Idle_Axe_Left
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours:
+  - {fileID: 5745362187317813584}
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: -3468375706474089125, guid: 6cfe14f99f17c0142b2ddf97dd5521d2, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1102 &4251769216658847883
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Player_Walk_Axe_Right
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours:
+  - {fileID: -6585223933866887946}
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: -5368589506251794316, guid: eb55bc3bd3d9a3e48b5ffa305325f92b, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!114 &4315726751829295188
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaec12f6616ce1548818f41045a13338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motion: {fileID: -7053254161516841420, guid: 8c4c195b35cfba64a919fbf94dc8cacb, type: 2}
+  isLoop: 1
+  layer: 0
+  timeScale: 1
+  exitTime: 0.85
+  formerDirection: 0
+--- !u!114 &4800276525846173446
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaec12f6616ce1548818f41045a13338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motion: {fileID: 4613264490510527991, guid: a56ef1990f8e1e14fab6beb19d12f358, type: 2}
+  isLoop: 1
+  layer: 0
+  timeScale: 1
+  exitTime: 0.85
+  formerDirection: 0
+--- !u!1102 &5099702760857128503
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Player_Idle_Shovel_Right
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours:
+  - {fileID: -5459402773025712890}
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: -3216408266086283200, guid: eb55bc3bd3d9a3e48b5ffa305325f92b, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1102 &5193222050460673336
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Player_Walk_Hammer_Right
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours:
+  - {fileID: 2458403233583146000}
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 1491602245896773621, guid: eb55bc3bd3d9a3e48b5ffa305325f92b, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1102 &5231365967730225487
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Player_Idle_Pickaxe_Left
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours:
+  - {fileID: 5896532144867873620}
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 1140720308957385448, guid: 6cfe14f99f17c0142b2ddf97dd5521d2, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!114 &5745362187317813584
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaec12f6616ce1548818f41045a13338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motion: {fileID: -3468375706474089125, guid: 6cfe14f99f17c0142b2ddf97dd5521d2, type: 2}
+  isLoop: 1
+  layer: 0
+  timeScale: 1
+  exitTime: 0.85
+  formerDirection: 0
+--- !u!114 &5896532144867873620
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaec12f6616ce1548818f41045a13338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motion: {fileID: 1140720308957385448, guid: 6cfe14f99f17c0142b2ddf97dd5521d2, type: 2}
+  isLoop: 1
+  layer: 0
+  timeScale: 1
+  exitTime: 0.85
+  formerDirection: 0
+--- !u!1102 &6027297930087707409
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Player_Idle_Up
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours:
+  - {fileID: -7861623200774653653}
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: -3788201193505235638, guid: 8c4c195b35cfba64a919fbf94dc8cacb, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1102 &6334344383897279764
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Player_Walk_Axe_Down
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours:
+  - {fileID: 54833160387422760}
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 1950234897325468457, guid: a56ef1990f8e1e14fab6beb19d12f358, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!114 &6434927754587705549
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaec12f6616ce1548818f41045a13338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motion: {fileID: 7569581807698092832, guid: 6cfe14f99f17c0142b2ddf97dd5521d2, type: 2}
+  isLoop: 1
+  layer: 0
+  timeScale: 1
+  exitTime: 0.85
+  formerDirection: 0
+--- !u!1102 &6886020506401753823
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Player_Idle_Pickaxe_Down
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours:
+  - {fileID: -5130661843274184877}
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: -4783835629957021164, guid: a56ef1990f8e1e14fab6beb19d12f358, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!114 &6895863821395992778
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaec12f6616ce1548818f41045a13338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motion: {fileID: -4327477026826124647, guid: a56ef1990f8e1e14fab6beb19d12f358, type: 2}
+  isLoop: 1
+  layer: 0
+  timeScale: 1
+  exitTime: 0.85
+  formerDirection: 0
+--- !u!114 &6913513429089496395
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaec12f6616ce1548818f41045a13338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motion: {fileID: 1396199692898013929, guid: 8c4c195b35cfba64a919fbf94dc8cacb, type: 2}
+  isLoop: 1
+  layer: 0
+  timeScale: 1
+  exitTime: 0.85
+  formerDirection: 0
+--- !u!1102 &7346853302038925928
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Player_P_Walk_Down
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours:
+  - {fileID: 6895863821395992778}
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: -4327477026826124647, guid: a56ef1990f8e1e14fab6beb19d12f358, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1102 &7730113778066431854
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Player_P_Idle_Down
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours:
+  - {fileID: 8507725228961445289}
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: -5976893552550787828, guid: a56ef1990f8e1e14fab6beb19d12f358, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!114 &7949521722166748936
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaec12f6616ce1548818f41045a13338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motion: {fileID: -1659607162233205149, guid: eb55bc3bd3d9a3e48b5ffa305325f92b, type: 2}
+  isLoop: 1
+  layer: 0
+  timeScale: 1
+  exitTime: 0.85
+  formerDirection: 0
+--- !u!114 &8167193587789211196
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaec12f6616ce1548818f41045a13338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motion: {fileID: 6791541840192404213, guid: a56ef1990f8e1e14fab6beb19d12f358, type: 2}
+  isLoop: 1
+  layer: 0
+  timeScale: 1
+  exitTime: 0.85
+  formerDirection: 0
+--- !u!1102 &8177922560359290322
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Player_Walk_Hammer_Down
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours:
+  - {fileID: 8167193587789211196}
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 6791541840192404213, guid: a56ef1990f8e1e14fab6beb19d12f358, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!114 &8194384261931788484
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaec12f6616ce1548818f41045a13338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motion: {fileID: 1657588692335609587, guid: 8c4c195b35cfba64a919fbf94dc8cacb, type: 2}
+  isLoop: 1
+  layer: 0
+  timeScale: 1
+  exitTime: 0.85
+  formerDirection: 0
+--- !u!114 &8507725228961445289
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaec12f6616ce1548818f41045a13338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motion: {fileID: -5976893552550787828, guid: a56ef1990f8e1e14fab6beb19d12f358, type: 2}
+  isLoop: 1
+  layer: 0
+  timeScale: 1
+  exitTime: 0.85
+  formerDirection: 0
+--- !u!114 &8625313225292265125
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaec12f6616ce1548818f41045a13338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motion: {fileID: -1793121880392775569, guid: 8c4c195b35cfba64a919fbf94dc8cacb, type: 2}
+  isLoop: 1
+  layer: 0
+  timeScale: 1
+  exitTime: 0.85
+  formerDirection: 0
+--- !u!1102 &8862309198818787896
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Player_Walk_Shovel_Left
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours:
+  - {fileID: 6434927754587705549}
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7569581807698092832, guid: 6cfe14f99f17c0142b2ddf97dd5521d2, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1102 &9218318413306575498
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Player_Idle_Axe_Down
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours:
+  - {fileID: -6155295565441591714}
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: -5692066379069508377, guid: a56ef1990f8e1e14fab6beb19d12f358, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 

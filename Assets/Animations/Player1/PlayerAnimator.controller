@@ -8,7 +8,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Player_Walk_Down
-  m_Speed: 0.1
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours: []
@@ -60,7 +60,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Player_Idle_Down
-  m_Speed: 0.1
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours: []
@@ -294,7 +294,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Player_P_Walk_Down
-  m_Speed: 0.1
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours: []
@@ -370,7 +370,7 @@ AnimatorStateMachine:
     m_Position: {x: -350, y: 560, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -7067512037889699232}
-    m_Position: {x: -350, y: 410, z: 0}
+    m_Position: {x: -340, y: 400, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -8524873889930225594}
     m_Position: {x: 120, y: 410, z: 0}
@@ -705,7 +705,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Player_P_Idle_Down
-  m_Speed: 0.1
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours: []
