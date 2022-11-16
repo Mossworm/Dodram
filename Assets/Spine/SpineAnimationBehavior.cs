@@ -43,11 +43,48 @@ public class SpineAnimationBehavior : StateMachineBehaviour
 
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        for(int i=0; i< _player.GetComponentsInChildren<SkeletonAnimation>(true).Length; i++)
+        for (int i = 0; i < _player.GetComponentsInChildren<SkeletonAnimation>(true).Length; i++)
         {
             _player.GetComponentsInChildren<SkeletonAnimation>(true)[i].gameObject.SetActive(false);
         }
 
+        if (_player.GetComponent<SpinePickUpScript>().GaugePer != 0.0f)
+        {
+            string _toolName = _player.GetComponent<SpinePickUpScript>().Hand.transform.GetChild(0).name;
+
+            switch (_spc.direction)
+            {
+                case SpinePlayerController.Dir.Up:
+                    if(_toolName== "Scythe")
+                    {
+                        _skeletonAnimation = animator.GetComponentsInChildren<SkeletonAnimation>(true)[5];
+                        _player.GetComponentsInChildren<SkeletonAnimation>(true)[5].gameObject.SetActive(true);
+                    }
+                    break;
+
+                case SpinePlayerController.Dir.Down:
+                    if (_toolName == "Scythe") {
+                        _skeletonAnimation = animator.GetComponentsInChildren<SkeletonAnimation>(true)[4];
+                        _player.GetComponentsInChildren<SkeletonAnimation>(true)[4].gameObject.SetActive(true);
+                    }               
+                   break;
+
+                case SpinePlayerController.Dir.Left:
+                    _skeletonAnimation = animator.GetComponentsInChildren<SkeletonAnimation>(true)[6];
+                    _player.GetComponentsInChildren<SkeletonAnimation>(true)[6].gameObject.SetActive(true);
+                    break;
+
+                case SpinePlayerController.Dir.Right:
+                    _skeletonAnimation = animator.GetComponentsInChildren<SkeletonAnimation>(true)[7];
+                    _player.GetComponentsInChildren<SkeletonAnimation>(true)[7].gameObject.SetActive(true);
+                    break;
+                default:
+                    break;
+
+            }
+        }
+        else
+        {
             switch (_spc.direction)
             {
                 case SpinePlayerController.Dir.Up:
@@ -72,7 +109,9 @@ public class SpineAnimationBehavior : StateMachineBehaviour
                 default:
                     break;
 
-        }        
+            }
+        }
+          
         _spineAnimationState = _skeletonAnimation.state;
 
         if (animationClip != null)

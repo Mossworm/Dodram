@@ -270,6 +270,7 @@ public class SpinePickUpScript : MonoBehaviour
                 }
             }
         }
+
         if (Input.GetKeyUp(InteractiveKey)&& hit != null)
         {
             if (hit.CompareTag("Tree") || hit.CompareTag("Stone") || hit.CompareTag("Grass"))
