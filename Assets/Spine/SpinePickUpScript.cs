@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
-using UnityEditor.PackageManager;
+//using UnityEditor.PackageManager;
 using UnityEngine.Serialization;
 
 public class SpinePickUpScript : MonoBehaviour
@@ -59,7 +59,7 @@ public class SpinePickUpScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Interactive(); //»óÈ£ÀÛ¿ë
+        Interactive(); //ìƒí˜¸ì‘ìš©
         if (Hand.transform.childCount != 0)
         {
             isHold = true;
@@ -77,7 +77,7 @@ public class SpinePickUpScript : MonoBehaviour
         }
         else if (dir == SpinePlayerController.Dir.Up)
         {
-            boxTransform = new Vector3(0, 0.7f, 0);
+            boxTransform = new Vector3(0, 0.6f, 0);
         }
         else if (dir == SpinePlayerController.Dir.Left)
         {
@@ -101,7 +101,7 @@ public class SpinePickUpScript : MonoBehaviour
         Collider2D hit = Physics2D.OverlapBox(transform.position + boxTransform, size, 0, whatIsLayer);
 
         //---------------------------------------
-        //  ¸ÓÅÍ¸®¾ó and Ã¤Ä¨ °ÔÀÌÁö ÃÊ±âÈ­
+        //  ë¨¸í„°ë¦¬ì–¼ and ì±„ì¹© ê²Œì´ì§€ ì´ˆê¸°í™”
         //---------------------------------------
         if (Physics2D.OverlapBox(transform.position + boxTransform, size, 0, whatIsLayer) == null)
         {
@@ -140,35 +140,35 @@ public class SpinePickUpScript : MonoBehaviour
             if (hit != null)
             {
                 //---------------------------------------
-                //  ±â°è¿¡ Àç·á ³Ö±â & ½ÇÇà½ÃÅ°±â
+                //  ê¸°ê³„ì— ì¬ë£Œ ë„£ê¸° & ì‹¤í–‰ì‹œí‚¤ê¸°
                 //---------------------------------------
 
-                if (isHold == true) //¹°°ÇÀ» µé°íÀÖ´Â »óÅÂ
+                if (isHold == true) // ë‚˜ë¬´ ê¸°ê³„ì— ë„£ê¸°
                 {
-                    if (hit.gameObject.name == "Sawmill") // ³ª¹« ±â°è¿¡ ³Ö±â
+                    if (hit.gameObject.name == "Sawmill") // ë‚˜ë¬´ ê¸°ê³„ì— ë„£ê¸°
                     {
                         hit.GetComponent<MachineScript>().SubCount(Hand);
                     }
-                    else if (hit.gameObject.name == "Stonecutter") // µ¹ ±â°è¿¡ ³Ö±â
+                    else if (hit.gameObject.name == "Stonecutter") // ëŒ ê¸°ê³„ì— ë„£ê¸°
                     {
                         hit.GetComponent<MachineScript>().SubCount(Hand);
                     }
-                    else if (hit.gameObject.name == "Mill") // ¹ö¼¸ ±â°è¿¡ ³Ö±â
+                    else if (hit.gameObject.name == "Mill") // ë²„ì„¯ ê¸°ê³„ì— ë„£ê¸°
                     {
                         hit.GetComponent<MachineScript>().SubCount(Hand);
                     }
-                    else if (hit.gameObject.name == "Last_Machine")  //2Â÷°¡°ø ±â°è¿¡ ³Ö±â
+                    else if (hit.gameObject.name == "Last_Machine")  //2ì°¨ê°€ê³µ ê¸°ê³„ì— ë„£ê¸°
                     {
                         hit.GetComponent<FinalMachineScript>().SubCount(Hand);
                     }
-                    else if (hit.gameObject.name == "House") //Áı¿¡ 2Â÷°¡°ø ¹°°Ç ³Ö±â
+                    else if (hit.gameObject.name == "House") //ì§‘ì— 2ì°¨ê°€ê³µ ë¬¼ê±´ ë„£ê¸°
                     {
                         hit.GetComponent<HouseScript>().Building(Hand);
                     }
                 }
-                else //¹°°ÇÀ» µé°íÀÖÁö ¾ÊÀº »óÅÂ
+                else //ë¬¼ê±´ì„ ë“¤ê³ ìˆì§€ ì•Šì€ ìƒíƒœ
                 {
-                    //±â°è°¡ ¾ÆÀÌÅÛÀ» ´Ù ¸¸µé¾ú´Ù¸é ²¨³¿
+                    //ê¸°ê³„ê°€ ì•„ì´í…œì„ ë‹¤ ë§Œë“¤ì—ˆë‹¤ë©´ êº¼ëƒ„
                     if (hit.gameObject.name == "Sawmill")
                     {
                         hit.GetComponent<MachineScript>().PickUp(Hand);
@@ -195,7 +195,7 @@ public class SpinePickUpScript : MonoBehaviour
             {
                 if (isHold != true)
                 {
-                    if (hit.gameObject.name == "RockMachineButton")                 //±â°è ¹öÆ°À» ´©¸¦ ½Ã ±â°è °¡µ¿
+                    if (hit.gameObject.name == "RockMachineButton")  //ê¸°ê³„ ë²„íŠ¼ì„ ëˆ„ë¥¼ ì‹œ ê¸°ê³„ ê°€ë™
                     {
                         hit.GetComponent<MachineButtonScript>().MachineRun();
                     }
@@ -216,7 +216,7 @@ public class SpinePickUpScript : MonoBehaviour
         }
 
         //---------------------------------------
-        //  ÀÚ¿ø Ä³±â
+        //  ìì› ìºê¸°
         //---------------------------------------
         if (Input.GetKey(InteractiveKey))
         {
@@ -224,7 +224,7 @@ public class SpinePickUpScript : MonoBehaviour
             {
                 if (isHold == true)
                 {
-                    if (Hand.transform.GetChild(0).name == "Axe") //³ª¹« Ä³±â
+                    if (Hand.transform.GetChild(0).name == "Axe") //ë‚˜ë¬´ ìºê¸°
                     {
                         if (hit.CompareTag("Tree"))
                         {
@@ -236,7 +236,7 @@ public class SpinePickUpScript : MonoBehaviour
                             }
                         }
                     }
-                    else if (Hand.transform.GetChild(0).name == "PickAxe") //µ¹ Ä³±â
+                    else if (Hand.transform.GetChild(0).name == "PickAxe") //ëŒ ìºê¸°
                     {
                         if (hit.CompareTag("Stone"))
                         {
@@ -248,7 +248,7 @@ public class SpinePickUpScript : MonoBehaviour
                             }
                         }
                     }
-                    else if (Hand.transform.GetChild(0).name == "Scythe")   //Ç® º£±â
+                    else if (Hand.transform.GetChild(0).name == "Scythe")   //í’€ ë² ê¸°
                     {
                         if (hit.CompareTag("Grass"))
                         {
@@ -260,7 +260,7 @@ public class SpinePickUpScript : MonoBehaviour
                             }
                         }
                     }
-                    else if (Hand.transform.GetChild(0).name == "Hammer")   //±â°è °íÄ¡±â
+                    else if (Hand.transform.GetChild(0).name == "Hammer")   //ê¸°ê³„ ê³ ì¹˜ê¸°
                     {
                         if (hit.CompareTag("Machine"))
                         {
@@ -270,18 +270,18 @@ public class SpinePickUpScript : MonoBehaviour
                 }
             }
         }
-        else if (Input.GetKeyUp(InteractiveKey))
+        if (Input.GetKeyUp(InteractiveKey)&& hit != null)
         {
-            GaugePer = 0.0f;
             if (hit.CompareTag("Tree") || hit.CompareTag("Stone") || hit.CompareTag("Grass"))
             {
+                GaugePer = 0.0f;
                 hit.GetComponent<FarmingObject>().hp = hit.GetComponent<FarmingObject>().maxhp;
             }
         }
 
 
         //---------------------------------------
-        //  ¾ÆÀÌÅÛ ÇÈ¾÷&ÇÈ´Ù¿î
+        //  ì•„ì´í…œ í”½ì—…&í”½ë‹¤ìš´
         //---------------------------------------
         else if (Input.GetKeyDown(PickupKey))
         {
@@ -290,35 +290,20 @@ public class SpinePickUpScript : MonoBehaviour
                 if (isHold == true)
                 {
                     if (hit.CompareTag("tool") || hit.CompareTag("item"))
-                    //¹Ù²Ù±â
+                    //ë°”ê¾¸ê¸°
                     {
                         changeHold = hit.gameObject;
 
-                        //µç ¾ÆÀÌÅÛ(µµ±¸) ³»·Á³õ±â
+                        //ë“  ì•„ì´í…œ(ë„êµ¬) ë‚´ë ¤ë†“ê¸°
                         if (Hand.transform.GetChild(0).gameObject.CompareTag("tool"))
                         {
                             Hand.transform.GetChild(0).gameObject.SetActive(true);
                         }
                         Hand.transform.GetChild(0).gameObject.layer = 6;
-                        if (dir == SpinePlayerController.Dir.Down)
-                        {
-                            Hand.transform.GetChild(0).localPosition = new Vector3(0f, -1.41f, 0f);
-                        }
-                        else if (dir == SpinePlayerController.Dir.Up)
-                        {
-                            Hand.transform.GetChild(0).localPosition = new Vector3(0f, -0.37f, 0f);
-                        }
-                        else if (dir == SpinePlayerController.Dir.Left)
-                        {
-                            Hand.transform.GetChild(0).localPosition = new Vector3(-0.6f, -1.02f, 0f);
-                        }
-                        else if (dir == SpinePlayerController.Dir.Right)
-                        {
-                            Hand.transform.GetChild(0).localPosition = new Vector3(0.6f, -1.02f, 0f);
-                        }
+                        Hand.transform.GetChild(0).position = boxTransform + transform.position + new Vector3(0f,-0.3f,0f);
                         Hand.transform.DetachChildren();
 
-                        //¹Ù²Ü ¾ÆÀÌÅÛ µé±â
+                        //ë°”ê¿€ ì•„ì´í…œ ë“¤ê¸°
                         changeHold.transform.SetParent(Hand.transform);
                         changeHold.transform.localPosition = Vector2.zero;
                         changeHold.layer = 0;
@@ -330,8 +315,8 @@ public class SpinePickUpScript : MonoBehaviour
                 }
                 else
                 {
-                    if (hit.CompareTag("tool") || hit.CompareTag("item"))
-                    //µé±â
+                    if (hit.CompareTag("tool") || hit.CompareTag("item")) 
+                        //ë“¤ê¸°
                     {
                         hit.gameObject.transform.SetParent(Hand.transform);
                         hit.transform.localPosition = Vector2.zero;
@@ -347,30 +332,13 @@ public class SpinePickUpScript : MonoBehaviour
             {
                 if (isHold == true)
                 {
-                    //³õ±â
+                    // ë†“ê¸°
                     if (Hand.transform.GetChild(0).gameObject.CompareTag("tool"))
                     {
                         Hand.transform.GetChild(0).gameObject.SetActive(true);
                     }
                     Hand.transform.GetChild(0).gameObject.layer = 6;
-
-                    if (dir == SpinePlayerController.Dir.Down)
-                    {
-                        Hand.transform.GetChild(0).localPosition = new Vector3(0f, -1.41f, 0f);
-                    }
-                    else if (dir == SpinePlayerController.Dir.Up)
-                    {
-                        Hand.transform.GetChild(0).localPosition = new Vector3(0f, -0.37f, 0f);
-                    }
-                    else if (dir == SpinePlayerController.Dir.Left)
-                    {
-                        Hand.transform.GetChild(0).localPosition = new Vector3(-0.6f, -1.02f, 0f);
-                    }
-                    else if (dir == SpinePlayerController.Dir.Right)
-                    {
-                        Hand.transform.GetChild(0).localPosition = new Vector3(0.6f, -1.02f, 0f);
-                    }
-
+                    Hand.transform.GetChild(0).position = boxTransform + transform.position + new Vector3(0f,-0.3f,0f);
                     Hand.transform.DetachChildren();
                     return;
                 }

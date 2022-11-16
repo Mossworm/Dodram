@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
-using UnityEditor.PackageManager;
+//using UnityEditor.PackageManager;
 using UnityEngine.Serialization;
 
 public class PickUpScript : MonoBehaviour
@@ -270,11 +270,11 @@ public class PickUpScript : MonoBehaviour
                 }
             }
         }
-        else if (Input.GetKeyUp(InteractiveKey))
+        if (Input.GetKeyUp(InteractiveKey) && hit != null)
         {
-            GaugePer = 0.0f;
             if (hit.CompareTag("Tree") || hit.CompareTag("Stone") || hit.CompareTag("Grass"))
             {
+                GaugePer = 0.0f;
                 hit.GetComponent<FarmingObject>().hp = hit.GetComponent<FarmingObject>().maxhp;
             }
         }

@@ -411,7 +411,7 @@ public class SpinePlayerController : MonoBehaviour
 
     protected virtual void Work_Update()
     {
-        if (this.GetComponent<PickUpScript>().GaugePer == 0.0f)
+        if (this.GetComponent<SpinePickUpScript>().GaugePer == 0.0f)
         {
             FSM.ChangeState(States.Idle);
         }
