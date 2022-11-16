@@ -1,6 +1,7 @@
 using MonsterLove.StateMachine;
 using System.Collections;
 using UnityEngine;
+using Spine.Unity;
 
 public class SpinePlayerController : MonoBehaviour
 {
@@ -27,6 +28,7 @@ public class SpinePlayerController : MonoBehaviour
 
     private KeyCode[] ArrayDashKey = new KeyCode[] { KeyCode.LeftAlt, KeyCode.RightAlt };
     [SerializeField] private KeyCode DashKey;
+
 
     private enum States
     {
@@ -411,7 +413,7 @@ public class SpinePlayerController : MonoBehaviour
 
     protected virtual void Work_Update()
     {
-        if (this.GetComponent<PickUpScript>().GaugePer == 0.0f)
+        if (this.GetComponent<SpinePickUpScript>().GaugePer == 0.0f)
         {
             FSM.ChangeState(States.Idle);
         }
@@ -424,7 +426,7 @@ public class SpinePlayerController : MonoBehaviour
                 if (_toolName == "PickAxe")
                     ChangeAnimation("Player_Idle_Pickaxe_Up");
                 if (_toolName == "Axe")
-                    ChangeAnimation("Player_Idle_Axe_Up");
+                    ChangeAnimation("Use_Axe_Up");
                 if (_toolName == "Scythe")
                     ChangeAnimation("Player_Idle_Shovel_Up");
                 if (_toolName == "Hammer")
@@ -434,7 +436,7 @@ public class SpinePlayerController : MonoBehaviour
                 if (_toolName == "PickAxe")
                     ChangeAnimation("Player_Idle_Pickaxe_Down");
                 if (_toolName == "Axe")
-                    ChangeAnimation("Player_Idle_Axe_Down");
+                    ChangeAnimation("Use_Axe_Down");
                 if (_toolName == "Scythe")
                     ChangeAnimation("Player_Idle_Shovel_Down");
                 if (_toolName == "Hammer")
@@ -444,7 +446,7 @@ public class SpinePlayerController : MonoBehaviour
                 if (_toolName == "PickAxe")
                     ChangeAnimation("Player_Idle_Pickaxe_Left");
                 if (_toolName == "Axe")
-                    ChangeAnimation("Player_Idle_Axe_Left");
+                    ChangeAnimation("Use_Axe_Left");
                 if (_toolName == "Scythe")
                     ChangeAnimation("Player_Idle_Shovel_Left");
                 if (_toolName == "Hammer")
@@ -454,7 +456,7 @@ public class SpinePlayerController : MonoBehaviour
                 if (_toolName == "PickAxe")
                     ChangeAnimation("Player_Idle_Pickaxe_Right");
                 if (_toolName == "Axe")
-                    ChangeAnimation("Player_Idle_Axe_Right");
+                    ChangeAnimation("Use_Axe_Right");
                 if (_toolName == "Scythe")
                     ChangeAnimation("Player_Idle_Shovel_Right");
                 if (_toolName == "Hammer")

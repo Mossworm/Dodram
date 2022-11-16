@@ -270,7 +270,7 @@ public class SpinePickUpScript : MonoBehaviour
                 }
             }
         }
-        else if (Input.GetKeyUp(InteractiveKey))
+        if (Input.GetKeyUp(InteractiveKey))
         {
             GaugePer = 0.0f;
             if (hit.CompareTag("Tree") || hit.CompareTag("Stone") || hit.CompareTag("Grass"))
