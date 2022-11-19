@@ -10,12 +10,14 @@ public class CameraScript : MonoBehaviour
     public Camera FstCam;
     public Camera SndCam;
 
+    public float maxCamSize;
+
     // Start is called before the first frame update
     void Start()
     {
         mainCam = GameObject.Find("Main Camera").GetComponent<Camera>();
-        FstCam = GameObject.Find("1PCamera").GetComponent<Camera>();
-        SndCam = GameObject.Find("2PCamera").GetComponent<Camera>();
+        //FstCam = GameObject.Find("1PCamera").GetComponent<Camera>();
+        //SndCam = GameObject.Find("2PCamera").GetComponent<Camera>();
 
         FstCam.enabled = false;
         SndCam.enabled = false;
@@ -31,7 +33,7 @@ public class CameraScript : MonoBehaviour
 
     void CameraMove()
     {
-        if (mainCam.orthographicSize >= 12f)
+        if (mainCam.orthographicSize >= maxCamSize)
         {
             Invoke("SecondCameraOn", 1f);
         }

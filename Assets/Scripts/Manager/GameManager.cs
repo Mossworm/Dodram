@@ -18,23 +18,20 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (SceneManager.GetActiveScene().name == "GameScene")
+            if (GameObject.Find("EndCanvas") != null){
+                //SceneManager.LoadScene("StartScene");
+            }
+            else
             {
-                if (GameObject.Find("EndCanvas") != null){
-                    //SceneManager.LoadScene("StartScene");
+                if (pauseCanvas.activeSelf)
+                {
+                    changeTimeScale();
+                    pauseCanvas.SetActive(false);
                 }
                 else
                 {
-                    if (pauseCanvas.activeSelf)
-                    {
-                        changeTimeScale();
-                        pauseCanvas.SetActive(false);
-                    }
-                    else
-                    {
-                        changeTimeScale();
-                        pauseCanvas.SetActive(true);
-                    }
+                    changeTimeScale();
+                    pauseCanvas.SetActive(true);
                 }
             }
         }
