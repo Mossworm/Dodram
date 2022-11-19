@@ -18,7 +18,7 @@ public class SpineAnimationBehavior : StateMachineBehaviour
     private Spine.TrackEntry _trackEntry;
 
     private float normalizedTime;
-    public float exitTime = .85f;
+    [SerializeField] private float exitTime=1f;
 
     private GameObject _player;
     private SpinePlayerController _spc;
@@ -33,6 +33,7 @@ public class SpineAnimationBehavior : StateMachineBehaviour
 
     private void Awake()
     {
+        exitTime = 1f;
         if (motion != null)
         {
             animationClip = motion.name;
@@ -140,6 +141,21 @@ public class SpineAnimationBehavior : StateMachineBehaviour
             _trackEntry = _spineAnimationState.SetAnimation(layer, animationClip, isLoop);
             _trackEntry.TimeScale = timeScale;
             Debug.Log(animationClip);
+        }
+
+    }
+
+    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        normalizedTime = _trackEntry.AnimationLast / _trackEntry.AnimationEnd;  //3.6기준
+                                                                              //normalizedTime = trackEntry.AnimationLast / trackEntry.AnimationEnd; //3.8 기준
+                                                                              // 스파인 런타임 쪽은 버젼 바뀔때 마다 함수 이름 바꾸는게 일인듯 . . .
+
+        //애니메이션이 루프가 아닐경우 , 애니메이션이 끝나면 트리거 실행
+        if (!isLoop && normalizedTime >= exitTime)
+        {
+            animator.SetTrigger("transition");
+            _spc.pickAnimEnd = true;
         }
     }
 

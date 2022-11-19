@@ -94,10 +94,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   motion: {fileID: 4193601195919632002, guid: c0c0ad5dd7f5ce6428a94d7d5e78151c, type: 2}
-  isLoop: 0
+  isLoop: 1
   layer: 0
   timeScale: 1
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!114 &-8571395103555245649
 MonoBehaviour:
@@ -115,7 +115,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 2
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!1102 &-8527160488393823707
 AnimatorState:
@@ -160,7 +160,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 1.5
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!114 &-8143342620199054160
 MonoBehaviour:
@@ -178,7 +178,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 2
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!1102 &-8121187718133205015
 AnimatorState:
@@ -223,7 +223,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 2
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!114 &-8021164732299328331
 MonoBehaviour:
@@ -241,7 +241,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 1.5
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!1102 &-8002962327141455119
 AnimatorState:
@@ -313,7 +313,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 2
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!1102 &-7807962574835606170
 AnimatorState:
@@ -382,10 +382,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   motion: {fileID: -1529217480208930500, guid: c0c0ad5dd7f5ce6428a94d7d5e78151c, type: 2}
-  isLoop: 0
+  isLoop: 1
   layer: 0
   timeScale: 1
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!1102 &-7450262378939836793
 AnimatorState:
@@ -454,10 +454,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   motion: {fileID: 6032121560324605630, guid: 56413df3b25f7f44a8bfdf98f07e2e71, type: 2}
-  isLoop: 0
+  isLoop: 1
   layer: 0
   timeScale: 1
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!1107 &-7344766578850376698
 AnimatorStateMachine:
@@ -470,10 +470,10 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 4340374288851346752}
-    m_Position: {x: 20, y: 100, z: 0}
+    m_Position: {x: 10, y: 90, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -5262010896192598612}
-    m_Position: {x: 20, y: -80, z: 0}
+    m_Position: {x: 30, y: -90, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4352914764161049459}
     m_Position: {x: 20, y: -20, z: 0}
@@ -560,10 +560,10 @@ AnimatorStateMachine:
     m_Position: {x: 300.5983, y: -79.55591, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -9198471141214812357}
-    m_Position: {x: 300.5983, y: -22.621277, z: 0}
+    m_Position: {x: 300, y: -20, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 7899202795337643091}
-    m_Position: {x: 301.48795, y: 38.761383, z: 0}
+    m_Position: {x: 300, y: 40, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -9152354788684033832}
     m_Position: {x: 300.5983, y: 98.36484, z: 0}
@@ -587,13 +587,13 @@ AnimatorStateMachine:
     m_Position: {x: 301.48795, y: 466.66077, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 7777802471340247387}
-    m_Position: {x: 300.59836, y: 520.9266, z: 0}
+    m_Position: {x: 300, y: 520, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -41170245447112570}
     m_Position: {x: 300, y: 580, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 6166526994915979684}
-    m_Position: {x: 302.3775, y: 637.46466, z: 0}
+    m_Position: {x: 300, y: 640, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4722878243538049254}
     m_Position: {x: 301.4879, y: 697.9577, z: 0}
@@ -608,7 +608,7 @@ AnimatorStateMachine:
     m_Position: {x: 300.78052, y: 879.52795, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 9034089766517363914}
-    m_Position: {x: 300.78052, y: 938.18274, z: 0}
+    m_Position: {x: 300, y: 940, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 7131594756240307814}
     m_Position: {x: 302.64258, y: 999.6307, z: 0}
@@ -653,7 +653,7 @@ AnimatorStateMachine:
     m_Position: {x: 600, y: 510, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1056029959205255567}
-    m_Position: {x: 597.7796, y: 577.846, z: 0}
+    m_Position: {x: 600, y: 580, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -6459970023428947597}
     m_Position: {x: 599.4608, y: 637.53033, z: 0}
@@ -737,7 +737,7 @@ AnimatorStateMachine:
     m_Position: {x: 900.20654, y: 568.5002, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 8893424128120822118}
-    m_Position: {x: 907.12933, y: 632.7832, z: 0}
+    m_Position: {x: 900, y: 630, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -7425944635347830616}
     m_Position: {x: 918.997, y: 696.0773, z: 0}
@@ -770,7 +770,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 1
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!1102 &-7143680714006033933
 AnimatorState:
@@ -815,7 +815,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 1.5
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!1102 &-6970099059487304643
 AnimatorState:
@@ -860,7 +860,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 2
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!114 &-6882701044542152705
 MonoBehaviour:
@@ -878,7 +878,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 1
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!1102 &-6765420303435627994
 AnimatorState:
@@ -923,7 +923,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 1.5
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!1102 &-6581606939609754598
 AnimatorState:
@@ -1103,7 +1103,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 1
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!1102 &-6155643486047253488
 AnimatorState:
@@ -1145,10 +1145,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   motion: {fileID: -8997995410209111657, guid: c0c0ad5dd7f5ce6428a94d7d5e78151c, type: 2}
-  isLoop: 0
+  isLoop: 1
   layer: 0
   timeScale: 1
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!114 &-5975694177847440556
 MonoBehaviour:
@@ -1163,10 +1163,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   motion: {fileID: -4366506533697614055, guid: 56413df3b25f7f44a8bfdf98f07e2e71, type: 2}
-  isLoop: 0
+  isLoop: 1
   layer: 0
   timeScale: 1
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!1102 &-5689996560430879857
 AnimatorState:
@@ -1235,10 +1235,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   motion: {fileID: -6235677570033354979, guid: 56413df3b25f7f44a8bfdf98f07e2e71, type: 2}
-  isLoop: 0
+  isLoop: 1
   layer: 0
   timeScale: 1
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!1102 &-5416467522044446295
 AnimatorState:
@@ -1310,7 +1310,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 2
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!1102 &-5262010896192598612
 AnimatorState:
@@ -1406,10 +1406,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   motion: {fileID: -1306155794302813026, guid: 13e9fdf4d83a4f849ab2619edadfdf09, type: 2}
-  isLoop: 0
+  isLoop: 1
   layer: 0
   timeScale: 1
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!114 &-4936536667219308923
 MonoBehaviour:
@@ -1427,7 +1427,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 2
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!114 &-4871584028581515239
 MonoBehaviour:
@@ -1445,7 +1445,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 1
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!114 &-4740068352323395701
 MonoBehaviour:
@@ -1463,7 +1463,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 1
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!1102 &-4722878243538049254
 AnimatorState:
@@ -1508,7 +1508,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 2
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!114 &-4445523095888245956
 MonoBehaviour:
@@ -1526,7 +1526,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 1.5
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!1102 &-4198717007121090010
 AnimatorState:
@@ -1625,7 +1625,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 1
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!114 &-3371728534936772170
 MonoBehaviour:
@@ -1643,7 +1643,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 1.5
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!1102 &-3256101518679644773
 AnimatorState:
@@ -1715,7 +1715,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 1
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!1102 &-2827685004978534709
 AnimatorState:
@@ -1760,7 +1760,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 1
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!114 &-2782591205014467886
 MonoBehaviour:
@@ -1778,7 +1778,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 1
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!1102 &-2764585870592628572
 AnimatorState:
@@ -1877,7 +1877,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 2
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!114 &-2398167386832919565
 MonoBehaviour:
@@ -1895,7 +1895,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 1
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!114 &-2335360575589212978
 MonoBehaviour:
@@ -1910,10 +1910,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   motion: {fileID: 325721475668890891, guid: 13e9fdf4d83a4f849ab2619edadfdf09, type: 2}
-  isLoop: 0
+  isLoop: 1
   layer: 0
   timeScale: 1
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!114 &-2220937904338131933
 MonoBehaviour:
@@ -1928,10 +1928,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   motion: {fileID: 2664491146471437101, guid: cfd53fafb0e1e1c4999a5340c13688a7, type: 2}
-  isLoop: 0
+  isLoop: 1
   layer: 0
   timeScale: 1
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!114 &-2186810028806794074
 MonoBehaviour:
@@ -1949,7 +1949,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 1
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!114 &-2132274985344117153
 MonoBehaviour:
@@ -1967,7 +1967,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 1.5
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!1102 &-2127961771778073032
 AnimatorState:
@@ -2012,7 +2012,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 2
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!114 &-1629368130037653365
 MonoBehaviour:
@@ -2027,10 +2027,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   motion: {fileID: 1245776374132189911, guid: cfd53fafb0e1e1c4999a5340c13688a7, type: 2}
-  isLoop: 0
+  isLoop: 1
   layer: 0
   timeScale: 1
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!1102 &-1599763846363926762
 AnimatorState:
@@ -2099,10 +2099,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   motion: {fileID: -2657308194467157586, guid: 56413df3b25f7f44a8bfdf98f07e2e71, type: 2}
-  isLoop: 0
+  isLoop: 1
   layer: 0
   timeScale: 1
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!114 &-888476505838529438
 MonoBehaviour:
@@ -2120,7 +2120,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 1
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!114 &-865530538236510714
 MonoBehaviour:
@@ -2138,7 +2138,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 1
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!114 &-765274108645442676
 MonoBehaviour:
@@ -2156,7 +2156,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 1
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!114 &-631222207653894600
 MonoBehaviour:
@@ -2174,7 +2174,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 1.5
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!1102 &-562400018202190527
 AnimatorState:
@@ -2219,7 +2219,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 1
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!1102 &-484814888387903053
 AnimatorState:
@@ -2318,7 +2318,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 1.5
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!114 &-305403845273345606
 MonoBehaviour:
@@ -2336,7 +2336,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 1.5
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!114 &-253464802739666411
 MonoBehaviour:
@@ -2354,7 +2354,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 1
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!1102 &-148457945569868221
 AnimatorState:
@@ -2396,10 +2396,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   motion: {fileID: 3997893235512681374, guid: cfd53fafb0e1e1c4999a5340c13688a7, type: 2}
-  isLoop: 0
+  isLoop: 1
   layer: 0
   timeScale: 1
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!114 &-111531678234767086
 MonoBehaviour:
@@ -2417,7 +2417,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 1
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!1102 &-101282889668292552
 AnimatorState:
@@ -2565,7 +2565,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 1.5
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!114 &18061147766825458
 MonoBehaviour:
@@ -2583,7 +2583,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 1
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!114 &226969582489739643
 MonoBehaviour:
@@ -2601,7 +2601,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 2
   timeScale: 1
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!114 &292808144369133123
 MonoBehaviour:
@@ -2619,7 +2619,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 2
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!1102 &300772144505165162
 AnimatorState:
@@ -2691,7 +2691,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 2
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!114 &615722143308568715
 MonoBehaviour:
@@ -2708,8 +2708,8 @@ MonoBehaviour:
   motion: {fileID: -6232632594639587157, guid: c0c0ad5dd7f5ce6428a94d7d5e78151c, type: 2}
   isLoop: 0
   layer: 0
-  timeScale: 1
-  exitTime: 0.85
+  timeScale: 2
+  exitTime: 0
   formerDirection: 0
 --- !u!1102 &1056029959205255567
 AnimatorState:
@@ -2778,10 +2778,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   motion: {fileID: -7709104162997042061, guid: cfd53fafb0e1e1c4999a5340c13688a7, type: 2}
-  isLoop: 0
+  isLoop: 1
   layer: 0
   timeScale: 1
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!1102 &1332547716105163360
 AnimatorState:
@@ -2826,7 +2826,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 1
   timeScale: 1.5
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!114 &1648033414116014350
 MonoBehaviour:
@@ -2844,7 +2844,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 1.5
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!114 &1836645731634266949
 MonoBehaviour:
@@ -2862,7 +2862,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 2
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!114 &1854752323011504350
 MonoBehaviour:
@@ -2879,8 +2879,8 @@ MonoBehaviour:
   motion: {fileID: 4573331595170041978, guid: 56413df3b25f7f44a8bfdf98f07e2e71, type: 2}
   isLoop: 0
   layer: 0
-  timeScale: 1
-  exitTime: 0.85
+  timeScale: 2
+  exitTime: 0
   formerDirection: 0
 --- !u!1102 &1900815639050433901
 AnimatorState:
@@ -2925,7 +2925,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 2
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!1102 &2188048713524157074
 AnimatorState:
@@ -2997,7 +2997,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 2
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!114 &2463811793052616793
 MonoBehaviour:
@@ -3014,8 +3014,8 @@ MonoBehaviour:
   motion: {fileID: 3902034243026651049, guid: 13e9fdf4d83a4f849ab2619edadfdf09, type: 2}
   isLoop: 0
   layer: 0
-  timeScale: 1
-  exitTime: 0.85
+  timeScale: 2
+  exitTime: 0
   formerDirection: 0
 --- !u!1102 &2530656331540728419
 AnimatorState:
@@ -3057,10 +3057,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   motion: {fileID: 2490156275823574944, guid: c0c0ad5dd7f5ce6428a94d7d5e78151c, type: 2}
-  isLoop: 0
+  isLoop: 1
   layer: 0
   timeScale: 1
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!114 &2566896644496541212
 MonoBehaviour:
@@ -3078,7 +3078,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 2
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!114 &2651063855039409711
 MonoBehaviour:
@@ -3093,10 +3093,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   motion: {fileID: 3785904696978887443, guid: c0c0ad5dd7f5ce6428a94d7d5e78151c, type: 2}
-  isLoop: 0
+  isLoop: 1
   layer: 0
   timeScale: 1
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!1102 &2774375152032941525
 AnimatorState:
@@ -3221,8 +3221,8 @@ MonoBehaviour:
   motion: {fileID: 7203394267197769360, guid: cfd53fafb0e1e1c4999a5340c13688a7, type: 2}
   isLoop: 0
   layer: 0
-  timeScale: 1
-  exitTime: 0.85
+  timeScale: 2
+  exitTime: 0
   formerDirection: 0
 --- !u!1102 &3340038435514590337
 AnimatorState:
@@ -3291,10 +3291,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   motion: {fileID: 6794376134750914934, guid: 13e9fdf4d83a4f849ab2619edadfdf09, type: 2}
-  isLoop: 0
+  isLoop: 1
   layer: 0
   timeScale: 1
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!1102 &4259501996622057260
 AnimatorState:
@@ -3393,7 +3393,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 2
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!114 &4496942505767440688
 MonoBehaviour:
@@ -3411,7 +3411,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 2
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!1102 &4560997940983660619
 AnimatorState:
@@ -3483,7 +3483,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 1
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!114 &4789553419864667696
 MonoBehaviour:
@@ -3501,7 +3501,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 1.5
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!114 &4980378597771364015
 MonoBehaviour:
@@ -3519,7 +3519,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 1
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!1102 &5072817809556181689
 AnimatorState:
@@ -3564,7 +3564,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 1
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!1102 &5191704652210579122
 AnimatorState:
@@ -3633,10 +3633,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   motion: {fileID: -720661425858372411, guid: cfd53fafb0e1e1c4999a5340c13688a7, type: 2}
-  isLoop: 0
+  isLoop: 1
   layer: 0
   timeScale: 1
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!1102 &5325018983158396256
 AnimatorState:
@@ -3681,7 +3681,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 2
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!114 &5497268693400504375
 MonoBehaviour:
@@ -3699,7 +3699,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 2
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!1102 &5510795848859009348
 AnimatorState:
@@ -3771,7 +3771,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 1
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!114 &5662663919533394397
 MonoBehaviour:
@@ -3789,7 +3789,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 1.5
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!114 &6143747970014423459
 MonoBehaviour:
@@ -3807,7 +3807,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 1
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!1102 &6166526994915979684
 AnimatorState:
@@ -3852,7 +3852,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 2
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!1102 &6294035085884761537
 AnimatorState:
@@ -3897,7 +3897,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 2
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!1102 &6676673862410318618
 AnimatorState:
@@ -3966,10 +3966,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   motion: {fileID: 6482335596151343927, guid: cfd53fafb0e1e1c4999a5340c13688a7, type: 2}
-  isLoop: 0
+  isLoop: 1
   layer: 0
   timeScale: 1
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!114 &7008608936056708953
 MonoBehaviour:
@@ -3983,11 +3983,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaec12f6616ce1548818f41045a13338, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  motion: {fileID: -1222726606486515428, guid: 65aefe6e13c75b047af0e6a684e394cc, type: 2}
+  motion: {fileID: -7334283453961998765, guid: c0c0ad5dd7f5ce6428a94d7d5e78151c, type: 2}
   isLoop: 1
   layer: 0
   timeScale: 1
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!114 &7042909432048567018
 MonoBehaviour:
@@ -4002,10 +4002,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   motion: {fileID: 6601181513195622480, guid: 56413df3b25f7f44a8bfdf98f07e2e71, type: 2}
-  isLoop: 0
+  isLoop: 1
   layer: 0
   timeScale: 1
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!1102 &7120297298907676672
 AnimatorState:
@@ -4074,10 +4074,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   motion: {fileID: 3363514065670434791, guid: 56413df3b25f7f44a8bfdf98f07e2e71, type: 2}
-  isLoop: 0
+  isLoop: 1
   layer: 0
   timeScale: 1
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!114 &7464838614556001883
 MonoBehaviour:
@@ -4092,10 +4092,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   motion: {fileID: -7957658856569137701, guid: c0c0ad5dd7f5ce6428a94d7d5e78151c, type: 2}
-  isLoop: 0
+  isLoop: 1
   layer: 0
   timeScale: 1
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!1102 &7777802471340247387
 AnimatorState:
@@ -4140,7 +4140,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 2
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!1102 &7899202795337643091
 AnimatorState:
@@ -4185,7 +4185,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 1
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!1102 &8267286813121739670
 AnimatorState:
@@ -4227,10 +4227,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   motion: {fileID: 5578117169475556346, guid: 13e9fdf4d83a4f849ab2619edadfdf09, type: 2}
-  isLoop: 0
+  isLoop: 1
   layer: 0
   timeScale: 1
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!114 &8588679282824192139
 MonoBehaviour:
@@ -4248,7 +4248,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 1
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!114 &8631312395063129151
 MonoBehaviour:
@@ -4266,7 +4266,7 @@ MonoBehaviour:
   isLoop: 1
   layer: 0
   timeScale: 1
-  exitTime: 0.85
+  exitTime: 0
   formerDirection: 0
 --- !u!1102 &8632043965744383859
 AnimatorState:

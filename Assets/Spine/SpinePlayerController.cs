@@ -1,7 +1,6 @@
 using MonsterLove.StateMachine;
 using System.Collections;
 using UnityEngine;
-using Spine.Unity;
 
 public class SpinePlayerController : MonoBehaviour
 {
@@ -28,13 +27,20 @@ public class SpinePlayerController : MonoBehaviour
 
     private KeyCode[] ArrayDashKey = new KeyCode[] { KeyCode.LeftAlt, KeyCode.RightAlt };
     [SerializeField] private KeyCode DashKey;
+    [SerializeField] private bool canPickUp = true;
+    public bool pickAnimEnd { get; set; } = false;
+
+
 
 
     private enum States
     {
         Idle,
         Walk,
-        Work
+        Work,
+        Dash,
+        Pick
+
     }
 
     StateMachine<States, StateDriverUnity> FSM;
@@ -117,6 +123,7 @@ public class SpinePlayerController : MonoBehaviour
         {
             StartCoroutine(Dash());
         }
+
     }
 
     private void FixedUpdate()
@@ -162,6 +169,7 @@ public class SpinePlayerController : MonoBehaviour
         isDashing = false;
         yield return new WaitForSeconds(dashingCooldown);
         canDash = true;
+
     }
 
     //----------------------------------------------------------------------------------
@@ -169,13 +177,32 @@ public class SpinePlayerController : MonoBehaviour
     //----------------------------------------------------------------------------------
 
     /**************************************** Idle ************************************/
+    #region Idle
     void Idle_Enter()
     {
-
+        _movement.x = 0f;
+        _movement.y = 0f;
     }
 
     void Idle_Update()
     {
+
+        if (IsInputMoveKey())
+        {
+            FSM.ChangeState(States.Walk);
+        }
+
+        if (Input.GetKey(pickUpScript.InteractiveKey) && pickUpScript.Hand.transform.childCount != 0)
+        {
+
+            FSM.ChangeState(States.Work);
+        }
+
+        if (Input.GetKeyDown(pickUpScript.PickupKey)&&canPickUp)
+        {
+            FSM.ChangeState(States.Pick);
+        }
+
         if (pickUpScript.isHold)
         {
             _toolName = pickUpScript.Hand.transform.GetChild(0).name;
@@ -249,6 +276,7 @@ public class SpinePlayerController : MonoBehaviour
         }
         else
         {
+            canPickUp = true;
             switch (direction)
             {
                 case Dir.Up:
@@ -268,21 +296,12 @@ public class SpinePlayerController : MonoBehaviour
 
 
 
-        if (IsInputMoveKey())
-        {
-            FSM.ChangeState(States.Walk);
-        }
-
-        if (Input.GetKey(pickUpScript.InteractiveKey) && pickUpScript.Hand.transform.childCount != 0)
-        {
-            FSM.ChangeState(States.Work);
-        }
-
     }
-
+    #endregion
 
 
     /**************************************** Walk ************************************/
+    #region Walk
     protected virtual void Walk_Enter()
     {
 
@@ -290,6 +309,21 @@ public class SpinePlayerController : MonoBehaviour
 
     protected void Walk_Update()
     {
+        if (Input.GetKeyDown(DashKey) && canDash)
+        {
+            FSM.ChangeState(States.Dash);
+        }
+
+        if (!IsInputMoveKey())
+        {
+            FSM.ChangeState(States.Idle);
+        }
+
+        if (Input.GetKey(pickUpScript.InteractiveKey))
+        {
+            FSM.ChangeState(States.Work);
+        }
+
         if (pickUpScript.isHold)
         {
             _toolName = pickUpScript.Hand.transform.GetChild(0).name;
@@ -390,21 +424,11 @@ public class SpinePlayerController : MonoBehaviour
             _movement.x = Input.GetAxisRaw("Horizontal2");
             _movement.y = Input.GetAxisRaw("Vertical2");
         }
-
-        if (!IsInputMoveKey())
-        {
-            FSM.ChangeState(States.Idle);
-        }
-
-        if (Input.GetKey(pickUpScript.InteractiveKey))
-        {
-            FSM.ChangeState(States.Work);
-        }
     }
-
+    #endregion
 
     /**************************************** Work ************************************/
-
+    #region Work
     protected virtual void Work_Enter()
     {
         _movement.x = 0.0f;
@@ -463,9 +487,149 @@ public class SpinePlayerController : MonoBehaviour
                     ChangeAnimation("Use_Hammer_Right");
                 break;
         }
+    }
+    #endregion
 
+
+    #region Dash
+    protected virtual void Dash_Enter()
+    {
+        if (pickUpScript.isHold)
+        {
+            _toolName = pickUpScript.Hand.transform.GetChild(0).name;
+
+            switch (direction)
+            {
+                case Dir.Up:
+                    if (_toolName == "PickAxe")
+                        ChangeAnimation("Run_Pickaxe_Up");
+
+                    else if (_toolName == "Axe")
+                        ChangeAnimation("Run_Axe_Up");
+
+                    else if (_toolName == "Scythe")
+                        ChangeAnimation("Run_Shovel_Up");
+
+                    else if (_toolName == "Hammer")
+                        ChangeAnimation("Run_Hammer_Up");
+                    else
+                        ChangeAnimation("P_Run_Up");
+                    break;
+
+                case Dir.Down:
+                    if (_toolName == "PickAxe")
+                        ChangeAnimation("Run_Pickaxe_Down");
+
+                    else if (_toolName == "Axe")
+                        ChangeAnimation("Run_Axe_Down");
+
+                    else if (_toolName == "Scythe")
+                        ChangeAnimation("Run_Shovel_Down");
+
+                    else if (_toolName == "Hammer")
+                        ChangeAnimation("Run_Hammer_Down");
+                    else
+                        ChangeAnimation("P_Run_Down");
+                    break;
+
+                case Dir.Left:
+                    if (_toolName == "PickAxe")
+                        ChangeAnimation("Run_Pickaxe_Left");
+
+                    else if (_toolName == "Axe")
+                        ChangeAnimation("Run_Axe_Left");
+
+                    else if (_toolName == "Scythe")
+                        ChangeAnimation("Run_Shovel_Left");
+
+                    else if (_toolName == "Hammer")
+                        ChangeAnimation("Run_Hammer_Left");
+                    else
+                        ChangeAnimation("P_Run_Left");
+                    break;
+
+                case Dir.Right:
+                    if (_toolName == "PickAxe")
+                        ChangeAnimation("Run_Pickaxe_Right");
+
+                    else if (_toolName == "Axe")
+                        ChangeAnimation("Run_Axe_Right");
+
+                    else if (_toolName == "Scythe")
+                        ChangeAnimation("Run_Shovel_Right");
+
+                    else if (_toolName == "Hammer")
+                        ChangeAnimation("Run_Hammer_Right");
+                    else
+                        ChangeAnimation("P_Run_Right");
+                    break;
+            }
+        }
+        else
+        {
+            switch (direction)
+            {
+                case Dir.Up:
+                    ChangeAnimation("Run_Up");
+                    break;
+                case Dir.Down:
+                    ChangeAnimation("Run_Down");
+                    break;
+                case Dir.Left:
+                    ChangeAnimation("Run_Left");
+                    break;
+                case Dir.Right:
+                    ChangeAnimation("Run_Right");
+                    break;
+            }
+        }
+    }
+    protected virtual void Dash_Update()
+    {
+        if (IsInputMoveKey())
+        {
+            FSM.ChangeState(States.Walk);
+        }
+        if (!isDashing)
+        {
+            FSM.ChangeState(States.Idle);
+        }
 
     }
+    #endregion
 
+    protected virtual void Pick_Enter()
+    {
+        canPickUp = false;
+        pickAnimEnd = false;
+    }
 
+    protected virtual void Pick_Update()
+    {
+        if (IsInputMoveKey())
+        {
+            FSM.ChangeState(States.Walk);
+        }
+
+        if ((Input.GetKeyDown(pickUpScript.PickupKey) && !canPickUp) || pickAnimEnd)
+        {
+            FSM.ChangeState(States.Idle);
+        }
+
+        switch (direction)
+        {
+            case Dir.Up:
+                ChangeAnimation("P_Up");
+                break;
+            case Dir.Down:
+                ChangeAnimation("P_Down");
+                break;
+            case Dir.Left:
+                ChangeAnimation("P_Left"); ;
+                break;
+            case Dir.Right:
+                ChangeAnimation("P_Right");
+                break;
+        }
+    }
 }
