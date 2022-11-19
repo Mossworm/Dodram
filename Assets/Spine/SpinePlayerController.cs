@@ -178,7 +178,7 @@ public class SpinePlayerController : MonoBehaviour
     {
         if (pickUpScript.isHold)
         {
-            _toolName = this.GetComponent<SpinePickUpScript>().Hand.transform.GetChild(0).name;
+            _toolName = pickUpScript.Hand.transform.GetChild(0).name;
 
             switch (direction)
             {
@@ -273,7 +273,7 @@ public class SpinePlayerController : MonoBehaviour
             FSM.ChangeState(States.Walk);
         }
 
-        if (this.GetComponent<SpinePickUpScript>().GaugePer != 0.0f)
+        if (Input.GetKey(pickUpScript.InteractiveKey) && pickUpScript.Hand.transform.childCount != 0)
         {
             FSM.ChangeState(States.Work);
         }
@@ -292,7 +292,7 @@ public class SpinePlayerController : MonoBehaviour
     {
         if (pickUpScript.isHold)
         {
-            _toolName = this.GetComponent<SpinePickUpScript>().Hand.transform.GetChild(0).name;
+            _toolName = pickUpScript.Hand.transform.GetChild(0).name;
 
             switch (direction)
             {
@@ -396,7 +396,7 @@ public class SpinePlayerController : MonoBehaviour
             FSM.ChangeState(States.Idle);
         }
 
-        if (this.GetComponent<SpinePickUpScript>().GaugePer != 0.0f)
+        if (Input.GetKey(pickUpScript.InteractiveKey))
         {
             FSM.ChangeState(States.Work);
         }
@@ -413,54 +413,54 @@ public class SpinePlayerController : MonoBehaviour
 
     protected virtual void Work_Update()
     {
-        if (this.GetComponent<SpinePickUpScript>().GaugePer == 0.0f)
+        if (Input.GetKeyUp(pickUpScript.InteractiveKey))
         {
             FSM.ChangeState(States.Idle);
         }
 
-        string _toolName = this.GetComponent<SpinePickUpScript>().Hand.transform.GetChild(0).name;
+        string _toolName = pickUpScript.Hand.transform.GetChild(0).name;
 
         switch (direction)
         {
             case Dir.Up:
                 if (_toolName == "PickAxe")
-                    ChangeAnimation("Player_Idle_Pickaxe_Up");
+                    ChangeAnimation("Use_Pickaxe_Up");
                 if (_toolName == "Axe")
                     ChangeAnimation("Use_Axe_Up");
                 if (_toolName == "Scythe")
-                    ChangeAnimation("Player_Idle_Shovel_Up");
+                    ChangeAnimation("Use_Shovel_Up");
                 if (_toolName == "Hammer")
-                    ChangeAnimation("Player_Idle_Hammer_Up");
+                    ChangeAnimation("Use_Hammer_Up");
                 break;
             case Dir.Down:
                 if (_toolName == "PickAxe")
-                    ChangeAnimation("Player_Idle_Pickaxe_Down");
+                    ChangeAnimation("Use_Pickaxe_Down");
                 if (_toolName == "Axe")
                     ChangeAnimation("Use_Axe_Down");
                 if (_toolName == "Scythe")
-                    ChangeAnimation("Player_Idle_Shovel_Down");
+                    ChangeAnimation("Use_Shovel_Down");
                 if (_toolName == "Hammer")
-                    ChangeAnimation("Player_Idle_Hammer_Up");
+                    ChangeAnimation("Use_Hammer_Down");
                 break;
             case Dir.Left:
                 if (_toolName == "PickAxe")
-                    ChangeAnimation("Player_Idle_Pickaxe_Left");
+                    ChangeAnimation("Use_Pickaxe_Left");
                 if (_toolName == "Axe")
                     ChangeAnimation("Use_Axe_Left");
                 if (_toolName == "Scythe")
-                    ChangeAnimation("Player_Idle_Shovel_Left");
+                    ChangeAnimation("Use_Shovel_Left");
                 if (_toolName == "Hammer")
-                    ChangeAnimation("Player_Idle_Hammer_Up");
+                    ChangeAnimation("Use_Hammer_Left");
                 break;
             case Dir.Right:
                 if (_toolName == "PickAxe")
-                    ChangeAnimation("Player_Idle_Pickaxe_Right");
+                    ChangeAnimation("Use_Pickaxe_Right");
                 if (_toolName == "Axe")
                     ChangeAnimation("Use_Axe_Right");
                 if (_toolName == "Scythe")
-                    ChangeAnimation("Player_Idle_Shovel_Right");
+                    ChangeAnimation("Use_Shovel_Right");
                 if (_toolName == "Hammer")
-                    ChangeAnimation("Player_Idle_Hammer_Up");
+                    ChangeAnimation("Use_Hammer_Right");
                 break;
         }
 

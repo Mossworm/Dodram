@@ -39,7 +39,7 @@ public class CameraScript : MonoBehaviour
         }
         else
         {
-            mainCam.orthographicSize += Time.deltaTime;
+            mainCam.orthographicSize += Time.deltaTime * 1.5f;
         }
     }
 
@@ -57,8 +57,8 @@ public class CameraScript : MonoBehaviour
     {
         if (FstCam.orthographicSize >= 6)
         {
-            FstCam.orthographicSize -= (Time.deltaTime * 3f);
-            SndCam.orthographicSize -= (Time.deltaTime * 3f);
+            FstCam.orthographicSize -= (Time.deltaTime * 5f);
+            SndCam.orthographicSize -= (Time.deltaTime * 5f);
         }
     }
 }

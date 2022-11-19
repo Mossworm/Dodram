@@ -28,8 +28,8 @@ public class SpinePickUpScript : MonoBehaviour
     private KeyCode[] ArrayInteractiveKey = new KeyCode[] { KeyCode.LeftControl, KeyCode.RightControl };
     private KeyCode[] ArrayPickupKey = new KeyCode[] { KeyCode.LeftShift, KeyCode.RightShift };
 
-    [SerializeField] private KeyCode InteractiveKey;
-    [SerializeField] private KeyCode PickupKey;
+    public KeyCode InteractiveKey;
+    public KeyCode PickupKey;
 
     private SpinePlayerController.Dir dir;
 
@@ -232,7 +232,7 @@ public class SpinePickUpScript : MonoBehaviour
                             if (GaugePer >= 100.0f)
                             {
                                 hit.GetComponent<FarmingObject>().Digging();
-                                GaugePer = 0.0f;
+                                GaugePer = 0.1f;
                             }
                         }
                     }
@@ -244,7 +244,7 @@ public class SpinePickUpScript : MonoBehaviour
                             if (GaugePer >= 100)
                             {
                                 hit.GetComponent<FarmingObject>().Digging();
-                                GaugePer = 0.0f;
+                                GaugePer = 0.1f;
                             }
                         }
                     }
@@ -256,7 +256,7 @@ public class SpinePickUpScript : MonoBehaviour
                             if (GaugePer >= 100)
                             {
                                 hit.GetComponent<FarmingObject>().Digging();
-                                GaugePer = 0.0f;
+                                GaugePer = 0.1f;
                             }
                         }
                     }

@@ -27,6 +27,8 @@ public class SpineAnimationBehavior : StateMachineBehaviour
     [SerializeField]
     private SpinePlayerController.Dir formerDirection;
 
+    private int _skeletonNum;
+
 
 
     private void Awake()
@@ -48,36 +50,56 @@ public class SpineAnimationBehavior : StateMachineBehaviour
             _player.GetComponentsInChildren<SkeletonAnimation>(true)[i].gameObject.SetActive(false);
         }
 
-        if (_player.GetComponent<SpinePickUpScript>().GaugePer != 0.0f)
+        if (Input.GetKey(pickUpScript.InteractiveKey)&& pickUpScript.Hand.transform.childCount!=0)
         {
-            string _toolName = _player.GetComponent<SpinePickUpScript>().Hand.transform.GetChild(0).name;
+            string _toolName = pickUpScript.Hand.transform.GetChild(0).name;
 
             switch (_spc.direction)
             {
                 case SpinePlayerController.Dir.Up:
-                    if(_toolName== "Scythe")
-                    {
-                        _skeletonAnimation = animator.GetComponentsInChildren<SkeletonAnimation>(true)[5];
-                        _player.GetComponentsInChildren<SkeletonAnimation>(true)[5].gameObject.SetActive(true);
-                    }
+                    if (_toolName == "Scythe")
+                        _skeletonNum = 5;
+
+                    else if (_toolName == "PickAxe")
+                        _skeletonNum = 9;
+
+                    else
+                        _skeletonNum = 1;
                     break;
 
                 case SpinePlayerController.Dir.Down:
-                    if (_toolName == "Scythe") {
-                        _skeletonAnimation = animator.GetComponentsInChildren<SkeletonAnimation>(true)[4];
-                        _player.GetComponentsInChildren<SkeletonAnimation>(true)[4].gameObject.SetActive(true);
-                    }               
-                   break;
+                    if (_toolName == "Scythe")
+                        _skeletonNum = 4;
+
+                    else if (_toolName == "PickAxe")
+                        _skeletonNum = 8;
+
+                    else
+                        _skeletonNum = 0;
+                    break;
 
                 case SpinePlayerController.Dir.Left:
-                    _skeletonAnimation = animator.GetComponentsInChildren<SkeletonAnimation>(true)[6];
-                    _player.GetComponentsInChildren<SkeletonAnimation>(true)[6].gameObject.SetActive(true);
+                    if (_toolName == "Scythe")
+                        _skeletonNum = 6;
+
+                    else if (_toolName == "PickAxe")
+                        _skeletonNum = 10;
+
+                    else
+                        _skeletonNum = 2;
                     break;
 
                 case SpinePlayerController.Dir.Right:
-                    _skeletonAnimation = animator.GetComponentsInChildren<SkeletonAnimation>(true)[7];
-                    _player.GetComponentsInChildren<SkeletonAnimation>(true)[7].gameObject.SetActive(true);
+                    if (_toolName == "Scythe")
+                        _skeletonNum = 7;
+
+                    else if (_toolName == "PickAxe")
+                        _skeletonNum = 11;
+
+                    else
+                        _skeletonNum = 3;
                     break;
+
                 default:
                     break;
 
@@ -88,30 +110,28 @@ public class SpineAnimationBehavior : StateMachineBehaviour
             switch (_spc.direction)
             {
                 case SpinePlayerController.Dir.Up:
-                    _skeletonAnimation = animator.GetComponentsInChildren<SkeletonAnimation>(true)[1];
-                    _player.GetComponentsInChildren<SkeletonAnimation>(true)[1].gameObject.SetActive(true);
+                    _skeletonNum = 1;
                     break;
 
                 case SpinePlayerController.Dir.Down:
-                    _skeletonAnimation = animator.GetComponentsInChildren<SkeletonAnimation>(true)[0];
-                    _player.GetComponentsInChildren<SkeletonAnimation>(true)[0].gameObject.SetActive(true);
+                    _skeletonNum = 0;
                     break;
 
                 case SpinePlayerController.Dir.Left:
-                    _skeletonAnimation = animator.GetComponentsInChildren<SkeletonAnimation>(true)[2];
-                    _player.GetComponentsInChildren<SkeletonAnimation>(true)[2].gameObject.SetActive(true);
+                    _skeletonNum = 2;
                     break;
 
                 case SpinePlayerController.Dir.Right:
-                    _skeletonAnimation = animator.GetComponentsInChildren<SkeletonAnimation>(true)[3];
-                    _player.GetComponentsInChildren<SkeletonAnimation>(true)[3].gameObject.SetActive(true);
+                    _skeletonNum = 3;
                     break;
                 default:
                     break;
 
-            }
+            }         
         }
-          
+        _skeletonAnimation = animator.GetComponentsInChildren<SkeletonAnimation>(true)[_skeletonNum];
+        _player.GetComponentsInChildren<SkeletonAnimation>(true)[_skeletonNum].gameObject.SetActive(true);
+
         _spineAnimationState = _skeletonAnimation.state;
 
         if (animationClip != null)

@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: pc1_left_side_SkeletonData
   m_EditorClassIdentifier: 
   atlasAssets:
-  - {fileID: 11400000, guid: accffa153972b3d4d897bce6348be1ef, type: 2}
+  - {fileID: 11400000, guid: 31788da1b56e6554c97ee9fed84843d7, type: 2}
   scale: 0.01
-  skeletonJSON: {fileID: 4900000, guid: ce884e2ab48020c40b7e5ac7919c1f19, type: 3}
+  skeletonJSON: {fileID: 4900000, guid: 2a161b5f14150404c9f775fe30af2f8c, type: 3}
   isUpgradingBlendModeMaterials: 0
   blendModeMaterials:
     requiresBlendModeMaterials: 0
-    applyAdditiveMaterial: 1
+    applyAdditiveMaterial: 0
     additiveMaterials: []
     multiplyMaterials: []
     screenMaterials: []
@@ -28,4 +28,4 @@ MonoBehaviour:
   toAnimation: []
   duration: []
   defaultMix: 0
-  controller: {fileID: 9100000, guid: 6cfe14f99f17c0142b2ddf97dd5521d2, type: 2}
+  controller: {fileID: 9100000, guid: cfd53fafb0e1e1c4999a5340c13688a7, type: 2}
