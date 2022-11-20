@@ -6,7 +6,7 @@ using System.Collections;
 public class UI_Timer : MonoBehaviour
 {
     public float _MAX_TIME;
-    [SerializeField] private float _currentTime;
+    public float _currentTime;
     public float width;
     public Vector2 currentSize;
     public float endWidth;

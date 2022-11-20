@@ -1,21 +1,68 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+
 
 public class GameManager : MonoBehaviour
 {
     public GameObject pauseCanvas;
+    public GameObject endCanvas;
+    public GameObject timer;
+    public GameObject highScoreUI;
+    public GameObject highScoreText;
+    public GameObject currentScoreText;
+
+    [SerializeField] private float playTime;
+
+    private bool isEndflag;
+    
     // Start is called before the first frame update
     void Start()
     {
-        
+        isEndflag = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (endCanvas.activeSelf && !isEndflag)
+        {
+            isEndflag = true;
+            playTime = timer.GetComponent<UI_Timer>()._MAX_TIME - timer.GetComponent<UI_Timer>()._currentTime;
+            string time = "";
+            
+            time += ((int)playTime / 60 + "분 ");
+            time += ((int)playTime % 60 + "초");
+
+            currentScoreText.GetComponent<TextMeshProUGUI>().text = time;
+
+
+            if (!PlayerPrefs.HasKey("highScore"))
+            {
+                PlayerPrefs.SetFloat("highScore", timer.GetComponent<UI_Timer>()._MAX_TIME);
+            }
+
+            float highScoreTime = PlayerPrefs.GetFloat("highScore");
+
+            if (highScoreTime > playTime)
+            {
+                highScoreUI.SetActive(true);
+                PlayerPrefs.SetFloat("highScore",playTime);
+                PlayerPrefs.Save();
+                highScoreTime = PlayerPrefs.GetFloat("highScore");
+            }
+            
+            string highScore = "";
+            highScore += ((int)highScoreTime / 60 + "분 ");
+            highScore += ((int)highScoreTime % 60 + "초");
+
+
+            highScoreText.GetComponent<TextMeshProUGUI>().text = "최고 랭킹 : " + highScore;
+        }
+        
+        
+        
+        
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (GameObject.Find("EndCanvas") != null){
