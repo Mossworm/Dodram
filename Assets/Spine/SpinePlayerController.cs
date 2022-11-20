@@ -134,6 +134,17 @@ public class SpinePlayerController : MonoBehaviour
             return;
         }
 
+        if (isMainPlayer)
+        {
+            _movement.x = Input.GetAxisRaw("Horizontal");
+            _movement.y = Input.GetAxisRaw("Vertical");
+        }
+        else
+        {
+            _movement.x = Input.GetAxisRaw("Horizontal2");
+            _movement.y = Input.GetAxisRaw("Vertical2");
+        }
+
         _movement.Normalize();
         _characterRigidbody.velocity = _movement * speed;
     }
@@ -192,13 +203,16 @@ public class SpinePlayerController : MonoBehaviour
             FSM.ChangeState(States.Walk);
         }
 
-        if (Input.GetKey(pickUpScript.InteractiveKey) && pickUpScript.Hand.transform.childCount != 0)
+        if (Input.GetKey(pickUpScript.InteractiveKey) && pickUpScript.isHold
+            && pickUpScript.Hand.transform.GetChild(0).CompareTag("tool"))
         {
 
             FSM.ChangeState(States.Work);
         }
 
-        if (Input.GetKeyDown(pickUpScript.PickupKey)&&canPickUp)
+        if (Input.GetKeyDown(pickUpScript.PickupKey)&&canPickUp && 
+            pickUpScript.isHold &&
+            pickUpScript.Hand.transform.GetChild(0).CompareTag("item"))
         {
             FSM.ChangeState(States.Pick);
         }
@@ -319,7 +333,8 @@ public class SpinePlayerController : MonoBehaviour
             FSM.ChangeState(States.Idle);
         }
 
-        if (Input.GetKey(pickUpScript.InteractiveKey))
+        if (Input.GetKey(pickUpScript.InteractiveKey)&&pickUpScript.isHold
+            &&pickUpScript.Hand.transform.GetChild(0).CompareTag("tool"))
         {
             FSM.ChangeState(States.Work);
         }
@@ -414,16 +429,16 @@ public class SpinePlayerController : MonoBehaviour
             }
         }
 
-        if (isMainPlayer)
-        {
-            _movement.x = Input.GetAxisRaw("Horizontal");
-            _movement.y = Input.GetAxisRaw("Vertical");
-        }
-        else
-        {
-            _movement.x = Input.GetAxisRaw("Horizontal2");
-            _movement.y = Input.GetAxisRaw("Vertical2");
-        }
+        //if (isMainPlayer)
+        //{
+        //    _movement.x = Input.GetAxisRaw("Horizontal");
+        //    _movement.y = Input.GetAxisRaw("Vertical");
+        //}
+        //else
+        //{
+        //    _movement.x = Input.GetAxisRaw("Horizontal2");
+        //    _movement.y = Input.GetAxisRaw("Vertical2");
+        //}
     }
     #endregion
 
@@ -441,6 +456,11 @@ public class SpinePlayerController : MonoBehaviour
         {
             FSM.ChangeState(States.Idle);
         }
+
+        //if (IsInputMoveKey())
+        //{
+        //    FSM.ChangeState(States.Walk);
+        //}
 
         string _toolName = pickUpScript.Hand.transform.GetChild(0).name;
 
@@ -601,7 +621,7 @@ public class SpinePlayerController : MonoBehaviour
     protected virtual void Pick_Enter()
     {
         canPickUp = false;
-        pickAnimEnd = false;
+        pickAnimEnd=false;
     }
 
     protected virtual void Pick_Update()
@@ -611,7 +631,7 @@ public class SpinePlayerController : MonoBehaviour
             FSM.ChangeState(States.Walk);
         }
 
-        if ((Input.GetKeyDown(pickUpScript.PickupKey) && !canPickUp) || pickAnimEnd)
+        if ((Input.GetKeyDown(pickUpScript.PickupKey) && !canPickUp)|| pickAnimEnd)
         {
             FSM.ChangeState(States.Idle);
         }

@@ -20,14 +20,14 @@ public class SpineAnimationBehavior : StateMachineBehaviour
     private float normalizedTime;
     [SerializeField] private float exitTime=1f;
 
-    private GameObject _player;
-    private SpinePlayerController _spc;
+    [SerializeField] private SpinePlayerController _spc;
     private SpinePickUpScript pickUpScript;
 
     [SerializeField]
     private SpinePlayerController.Dir formerDirection;
 
     private int _skeletonNum;
+    private Animator animator;
 
 
 
@@ -39,19 +39,23 @@ public class SpineAnimationBehavior : StateMachineBehaviour
             animationClip = motion.name;
             //Debug.Log(animationClip);
         }
-        _player = GameObject.Find("SpinePlayer1");
-        _spc = _player.GetComponent<SpinePlayerController>();
-        pickUpScript= _player.GetComponent<SpinePickUpScript>();
     }
 
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        for (int i = 0; i < _player.GetComponentsInChildren<SkeletonAnimation>(true).Length; i++)
+        if (_spc == null)
         {
-            _player.GetComponentsInChildren<SkeletonAnimation>(true)[i].gameObject.SetActive(false);
+            _spc = animator.GetComponent<SpinePlayerController>();
+            pickUpScript = animator.GetComponent<SpinePickUpScript>();
+
+        }
+        for (int i = 0; i < animator.GetComponentsInChildren<SkeletonAnimation>(true).Length; i++)
+        {
+            animator.GetComponentsInChildren<SkeletonAnimation>(true)[i].gameObject.SetActive(false);
         }
 
-        if (Input.GetKey(pickUpScript.InteractiveKey)&& pickUpScript.Hand.transform.childCount!=0)
+        if (Input.GetKey(pickUpScript.InteractiveKey)&& pickUpScript.isHold
+            &&pickUpScript.Hand.transform.GetChild(0).CompareTag("tool"))
         {
             string _toolName = pickUpScript.Hand.transform.GetChild(0).name;
 
@@ -131,7 +135,7 @@ public class SpineAnimationBehavior : StateMachineBehaviour
             }         
         }
         _skeletonAnimation = animator.GetComponentsInChildren<SkeletonAnimation>(true)[_skeletonNum];
-        _player.GetComponentsInChildren<SkeletonAnimation>(true)[_skeletonNum].gameObject.SetActive(true);
+        animator.GetComponentsInChildren<SkeletonAnimation>(true)[_skeletonNum].gameObject.SetActive(true);
 
         _spineAnimationState = _skeletonAnimation.state;
 
@@ -154,7 +158,6 @@ public class SpineAnimationBehavior : StateMachineBehaviour
         //애니메이션이 루프가 아닐경우 , 애니메이션이 끝나면 트리거 실행
         if (!isLoop && normalizedTime >= exitTime)
         {
-            animator.SetTrigger("transition");
             _spc.pickAnimEnd = true;
         }
     }

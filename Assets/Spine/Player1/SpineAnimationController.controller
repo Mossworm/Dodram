@@ -98,6 +98,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!114 &-8571395103555245649
 MonoBehaviour:
@@ -116,6 +117,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 2
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!1102 &-8527160488393823707
 AnimatorState:
@@ -161,6 +163,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1.5
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!114 &-8143342620199054160
 MonoBehaviour:
@@ -179,6 +182,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 2
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!1102 &-8121187718133205015
 AnimatorState:
@@ -224,6 +228,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 2
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!114 &-8021164732299328331
 MonoBehaviour:
@@ -242,6 +247,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1.5
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!1102 &-8002962327141455119
 AnimatorState:
@@ -314,6 +320,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 2
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!1102 &-7807962574835606170
 AnimatorState:
@@ -386,6 +393,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!1102 &-7450262378939836793
 AnimatorState:
@@ -458,6 +466,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!1107 &-7344766578850376698
 AnimatorStateMachine:
@@ -596,7 +605,7 @@ AnimatorStateMachine:
     m_Position: {x: 300, y: 640, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4722878243538049254}
-    m_Position: {x: 301.4879, y: 697.9577, z: 0}
+    m_Position: {x: 300, y: 700, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -5689996560430879857}
     m_Position: {x: 301.4879, y: 760.23, z: 0}
@@ -771,6 +780,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!1102 &-7143680714006033933
 AnimatorState:
@@ -816,6 +826,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1.5
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!1102 &-6970099059487304643
 AnimatorState:
@@ -861,6 +872,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 2
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!114 &-6882701044542152705
 MonoBehaviour:
@@ -879,6 +891,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!1102 &-6765420303435627994
 AnimatorState:
@@ -924,6 +937,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1.5
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!1102 &-6581606939609754598
 AnimatorState:
@@ -1104,6 +1118,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!1102 &-6155643486047253488
 AnimatorState:
@@ -1149,6 +1164,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!114 &-5975694177847440556
 MonoBehaviour:
@@ -1167,6 +1183,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!1102 &-5689996560430879857
 AnimatorState:
@@ -1239,6 +1256,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!1102 &-5416467522044446295
 AnimatorState:
@@ -1311,6 +1329,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 2
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!1102 &-5262010896192598612
 AnimatorState:
@@ -1410,6 +1429,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!114 &-4936536667219308923
 MonoBehaviour:
@@ -1428,6 +1448,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 2
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!114 &-4871584028581515239
 MonoBehaviour:
@@ -1446,6 +1467,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!114 &-4740068352323395701
 MonoBehaviour:
@@ -1464,6 +1486,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!1102 &-4722878243538049254
 AnimatorState:
@@ -1509,6 +1532,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 2
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!114 &-4445523095888245956
 MonoBehaviour:
@@ -1527,6 +1551,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1.5
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!1102 &-4198717007121090010
 AnimatorState:
@@ -1626,6 +1651,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!114 &-3371728534936772170
 MonoBehaviour:
@@ -1644,6 +1670,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1.5
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!1102 &-3256101518679644773
 AnimatorState:
@@ -1716,6 +1743,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!1102 &-2827685004978534709
 AnimatorState:
@@ -1761,6 +1789,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!114 &-2782591205014467886
 MonoBehaviour:
@@ -1779,6 +1808,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!1102 &-2764585870592628572
 AnimatorState:
@@ -1878,6 +1908,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 2
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!114 &-2398167386832919565
 MonoBehaviour:
@@ -1896,6 +1927,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!114 &-2335360575589212978
 MonoBehaviour:
@@ -1914,6 +1946,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!114 &-2220937904338131933
 MonoBehaviour:
@@ -1932,6 +1965,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!114 &-2186810028806794074
 MonoBehaviour:
@@ -1950,6 +1984,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!114 &-2132274985344117153
 MonoBehaviour:
@@ -1968,6 +2003,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1.5
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!1102 &-2127961771778073032
 AnimatorState:
@@ -2013,6 +2049,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 2
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!114 &-1629368130037653365
 MonoBehaviour:
@@ -2031,6 +2068,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!1102 &-1599763846363926762
 AnimatorState:
@@ -2103,6 +2141,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!114 &-888476505838529438
 MonoBehaviour:
@@ -2121,6 +2160,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!114 &-865530538236510714
 MonoBehaviour:
@@ -2139,6 +2179,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!114 &-765274108645442676
 MonoBehaviour:
@@ -2157,6 +2198,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!114 &-631222207653894600
 MonoBehaviour:
@@ -2175,6 +2217,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1.5
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!1102 &-562400018202190527
 AnimatorState:
@@ -2220,6 +2263,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!1102 &-484814888387903053
 AnimatorState:
@@ -2319,6 +2363,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1.5
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!114 &-305403845273345606
 MonoBehaviour:
@@ -2337,6 +2382,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1.5
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!114 &-253464802739666411
 MonoBehaviour:
@@ -2355,6 +2401,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!1102 &-148457945569868221
 AnimatorState:
@@ -2400,6 +2447,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!114 &-111531678234767086
 MonoBehaviour:
@@ -2418,6 +2466,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!1102 &-101282889668292552
 AnimatorState:
@@ -2566,6 +2615,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1.5
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!114 &18061147766825458
 MonoBehaviour:
@@ -2584,6 +2634,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!114 &226969582489739643
 MonoBehaviour:
@@ -2599,9 +2650,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   motion: {fileID: -3316977069381049852, guid: 13e9fdf4d83a4f849ab2619edadfdf09, type: 2}
   isLoop: 1
-  layer: 2
-  timeScale: 1
+  layer: 0
+  timeScale: 2
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!114 &292808144369133123
 MonoBehaviour:
@@ -2620,6 +2672,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 2
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!1102 &300772144505165162
 AnimatorState:
@@ -2692,6 +2745,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 2
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!114 &615722143308568715
 MonoBehaviour:
@@ -2710,6 +2764,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 2
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!1102 &1056029959205255567
 AnimatorState:
@@ -2782,6 +2837,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!1102 &1332547716105163360
 AnimatorState:
@@ -2827,6 +2883,7 @@ MonoBehaviour:
   layer: 1
   timeScale: 1.5
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!114 &1648033414116014350
 MonoBehaviour:
@@ -2845,6 +2902,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1.5
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!114 &1836645731634266949
 MonoBehaviour:
@@ -2863,6 +2921,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 2
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!114 &1854752323011504350
 MonoBehaviour:
@@ -2881,6 +2940,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 2
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!1102 &1900815639050433901
 AnimatorState:
@@ -2926,6 +2986,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 2
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!1102 &2188048713524157074
 AnimatorState:
@@ -2998,6 +3059,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 2
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!114 &2463811793052616793
 MonoBehaviour:
@@ -3016,6 +3078,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 2
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!1102 &2530656331540728419
 AnimatorState:
@@ -3061,6 +3124,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!114 &2566896644496541212
 MonoBehaviour:
@@ -3079,6 +3143,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 2
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!114 &2651063855039409711
 MonoBehaviour:
@@ -3097,6 +3162,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!1102 &2774375152032941525
 AnimatorState:
@@ -3223,6 +3289,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 2
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!1102 &3340038435514590337
 AnimatorState:
@@ -3295,6 +3362,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!1102 &4259501996622057260
 AnimatorState:
@@ -3394,6 +3462,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 2
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!114 &4496942505767440688
 MonoBehaviour:
@@ -3412,6 +3481,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 2
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!1102 &4560997940983660619
 AnimatorState:
@@ -3484,6 +3554,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!114 &4789553419864667696
 MonoBehaviour:
@@ -3502,6 +3573,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1.5
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!114 &4980378597771364015
 MonoBehaviour:
@@ -3520,6 +3592,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!1102 &5072817809556181689
 AnimatorState:
@@ -3565,6 +3638,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!1102 &5191704652210579122
 AnimatorState:
@@ -3637,6 +3711,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!1102 &5325018983158396256
 AnimatorState:
@@ -3682,6 +3757,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 2
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!114 &5497268693400504375
 MonoBehaviour:
@@ -3700,6 +3776,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 2
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!1102 &5510795848859009348
 AnimatorState:
@@ -3772,6 +3849,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!114 &5662663919533394397
 MonoBehaviour:
@@ -3790,6 +3868,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1.5
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!114 &6143747970014423459
 MonoBehaviour:
@@ -3808,6 +3887,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!1102 &6166526994915979684
 AnimatorState:
@@ -3853,6 +3933,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 2
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!1102 &6294035085884761537
 AnimatorState:
@@ -3898,6 +3979,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 2
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!1102 &6676673862410318618
 AnimatorState:
@@ -3970,6 +4052,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!114 &7008608936056708953
 MonoBehaviour:
@@ -3988,6 +4071,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!114 &7042909432048567018
 MonoBehaviour:
@@ -4006,6 +4090,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!1102 &7120297298907676672
 AnimatorState:
@@ -4078,6 +4163,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!114 &7464838614556001883
 MonoBehaviour:
@@ -4096,6 +4182,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!1102 &7777802471340247387
 AnimatorState:
@@ -4141,6 +4228,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 2
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!1102 &7899202795337643091
 AnimatorState:
@@ -4186,6 +4274,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!1102 &8267286813121739670
 AnimatorState:
@@ -4231,6 +4320,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!114 &8588679282824192139
 MonoBehaviour:
@@ -4249,6 +4339,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!114 &8631312395063129151
 MonoBehaviour:
@@ -4267,6 +4358,7 @@ MonoBehaviour:
   layer: 0
   timeScale: 1
   exitTime: 0
+  _spc: {fileID: 0}
   formerDirection: 0
 --- !u!1102 &8632043965744383859
 AnimatorState:
