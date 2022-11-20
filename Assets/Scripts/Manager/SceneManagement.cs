@@ -36,6 +36,11 @@ public class SceneManagement : MonoBehaviour
         Destroy(gameObject);
     }
 
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
+
 
 
 }

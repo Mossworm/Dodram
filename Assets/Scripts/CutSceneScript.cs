@@ -44,6 +44,11 @@ public class CutSceneScript : MonoBehaviour
                 CutScenes[currentImage].SetActive(true);
                 currentTime = 0;
             }
+            
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                cutSceneSpeed = 0.0f;
+            }
         }
         
         if (currentImage == CutScenes.Length - 1)
@@ -65,13 +70,13 @@ public class CutSceneScript : MonoBehaviour
             }
 
             if (isCutEnd != true) return;
-            if (EndSceneManager)
+            if (EndSceneManager) //마지막 캔버스라면 다음씬으로 이동
             {
                 if (currentTime != 0) return;
                 currentTime += Time.deltaTime;
                 sceneChanger.GetComponent<SceneManagement>().SceneChanger();
             }
-            else
+            else //아니라면 현재 이미지 비활성화 + 다음 캔버스 호출
             {
                 foreach (var t in CutScenes)
                 {
