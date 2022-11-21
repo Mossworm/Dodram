@@ -18,17 +18,21 @@ public class BGMController : MonoBehaviour
     //Pause
     public GameObject pauseCanvas;
 
+    private FMOD.Studio.Bus Master;
+    
 
     void Start()
     {
         emitter = GetComponent<FMODUnity.StudioEventEmitter>();
 
         _pureWidth = timer.GetComponent<UI_Timer>().width - timer.GetComponent<UI_Timer>().endWidth;
-
+        Master = FMODUnity.RuntimeManager.GetBus("bus:/");
     }
 
     void Update()
     {
+        Master.setVolume(PlayerPrefs.GetFloat("volume"));
+        
         //Zoom
         _zoom = mainCamera.GetComponent<MultipleTargetCamera>().newZoom;
         emitter.SetParameter("Zoom", _zoom);
