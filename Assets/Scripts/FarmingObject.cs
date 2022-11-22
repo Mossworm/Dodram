@@ -17,8 +17,8 @@ public class FarmingObject : MonoBehaviour
     public float height = 0.0f;
     private Image nowGaugebar;
     
-    
-    
+    public float regenTime;
+
     private void Start()
     {
         maxhp = hp;
@@ -58,10 +58,21 @@ public class FarmingObject : MonoBehaviour
     public void Drop()
     {
         prefab_obj = Instantiate(dropItem);
-            prefab_obj.transform.position = this.transform.position;
-            prefab_obj.name = dropItem.name;
-
-            Destroy(gaugeBar.gameObject);
-            Destroy(gameObject);
+        prefab_obj.transform.position = this.transform.position;
+        prefab_obj.name = dropItem.name;
+        StartCoroutine(Regen());
     }
+
+    IEnumerator Regen()
+    {
+        gaugeBar.gameObject.SetActive(false);
+        Vector3 tempPosition = this.transform.position;
+        transform.position = new Vector3(0.0f,-60.0f,0.0f);
+
+        yield return new WaitForSeconds(regenTime);
+
+        transform.position = tempPosition;
+        hp = maxhp;
+    }
+    
 }

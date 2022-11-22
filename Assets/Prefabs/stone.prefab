@@ -131,6 +131,7 @@ MonoBehaviour:
   prfGaugeBar: {fileID: 6077395782407935344, guid: 21b0a8999c7a9034d9217db9436dea06, type: 3}
   canvas: {fileID: 0}
   height: 1.5
+  regenTime: 3
 --- !u!1001 &8819672173021685834
 PrefabInstance:
   m_ObjectHideFlags: 0
