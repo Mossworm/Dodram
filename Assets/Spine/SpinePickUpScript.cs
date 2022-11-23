@@ -264,7 +264,14 @@ public class SpinePickUpScript : MonoBehaviour
                     {
                         if (hit.CompareTag("Machine"))
                         {
-                            hit.GetComponent<MachineScript>().MachinePix();
+                            GaugePer += (100.0f / animator.GetCurrentAnimatorStateInfo(0).length) * Time.deltaTime;
+                            if (GaugePer >= 100)
+                            {
+                                hit.GetComponent<MachineScript>().MachinePix();
+                                GaugePer = 0.1f;
+                            }
+
+                            //hit.GetComponent<MachineScript>().MachinePix();
                         }
                     }
                 }
