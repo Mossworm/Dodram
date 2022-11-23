@@ -14,6 +14,8 @@ public class BGMController : MonoBehaviour
     [SerializeField] private float _pureWidth;
     [SerializeField] private float _pureCurrentSizeX;
 
+    public int timeValue; //HalfTime==1, QuarterTime==2;
+
 
     //Pause
     public GameObject pauseCanvas;
@@ -50,10 +52,12 @@ public class BGMController : MonoBehaviour
         if (_pureCurrentSizeX <= (_pureWidth / 2)&& _pureCurrentSizeX > (_pureWidth / 4))
         {
             emitter.SetParameter("TimeLeft", 1); //HalfTime:Value==1
+            timeValue = 1;
         }
         else if (_pureCurrentSizeX <= (_pureWidth / 4)&& _pureCurrentSizeX >0)
         {
             emitter.SetParameter("TimeLeft", 2); //QuarterTime:Value==2
+            timeValue = 2;
         }
 
         //Pause
