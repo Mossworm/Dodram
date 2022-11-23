@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class UI_Babi_car : MonoBehaviour
 {
     
-    private RectTransform rect;
+    public RectTransform rect;
     public GameObject timer;
     [SerializeField] float startPosition_x;
     [SerializeField] float endPosition_x;

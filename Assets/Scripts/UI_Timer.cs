@@ -11,15 +11,19 @@ public class UI_Timer : MonoBehaviour
     // public Vector2 currentSize;
     // public float endWidth;
 
-    // RectTransform rect;
+    public RectTransform rect;
     
     public GameObject endCanvas;
     public GameObject Timer;
+    private float originX;
+    
 
     void Start()
     {
         _currentTime = 0;
         Timer.GetComponent<Image>().fillAmount = (_currentTime / _MAX_TIME);
+        originX = rect.localPosition.x;
+
         //rect = GetComponent<RectTransform>();
         //rect.sizeDelta = new Vector2(width, rect.sizeDelta.y);
     }
@@ -40,7 +44,14 @@ public class UI_Timer : MonoBehaviour
         else
         {
             _currentTime += Time.deltaTime;
-            Timer.GetComponent<Image>().fillAmount = (_currentTime / _MAX_TIME);
+            float amount = (_currentTime / _MAX_TIME);
+            Timer.GetComponent<Image>().fillAmount = amount;
+            float carRect = amount;
+            rect.localPosition = new Vector3(originX-(563+602)*amount, rect.localPosition.y, rect.localPosition.z);
+
+
+
+
             //currentSize = new Vector2((width-endWidth) * (_currentTime / _MAX_TIME)+endWidth, rect.sizeDelta.y);
             //rect.sizeDelta = currentSize;    
         }
