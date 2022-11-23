@@ -121,6 +121,10 @@ public class FinalMachineScript : MonoBehaviour
         {
             if (state == MachineState.None)
             {
+                for (int i = 0; i < this.transform.childCount; i++)
+                { 
+                    Destroy(this.transform.GetChild(i).gameObject);
+                }
                 Invoke("Crafting", craftTime);
                 state = MachineState.Working;
             }   
