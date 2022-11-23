@@ -102,9 +102,42 @@ public class FinalMachineScript : MonoBehaviour
                 {
                     for (int j = 0; j < this.transform.childCount; j++)
                     {
-                        if (this.transform.GetChild(j).name == playerItem.name) // 넣기전 이미 앞서 그 재료를 넣었다면 더 넣지않고 return 한다.
+                        int r = 0;
+                        int m = 0;
+                        int t = 0;
+                        if (this.transform.GetChild(j).name == "Stone_P_2")
                         {
-                            return;
+                            r++;
+                        }
+                        else if (this.transform.GetChild(j).name == "Mill_P_2")
+                        {
+                            m++;
+                        }
+                        else if (this.transform.GetChild(j).name == "Wood_P_2")
+                        {
+                            t++;
+                        }
+
+                        if (playerItem.name == "Stone_P_2") //넣기 전 재료량을 다 넣었다면 더 넣지 않고 return 한다.
+                        {
+                            if (r == recipes.GetComponent<RecipeScript>().rockNeed)
+                            {
+                                return;
+                            }
+                        }
+                        else if (playerItem.name == "Mill_P_2")
+                        {
+                            if (m == recipes.GetComponent<RecipeScript>().mushNeed)
+                            {
+                                return;
+                            }
+                        }
+                        else if (playerItem.name == "Wood_P_2")
+                        {
+                            if (t == recipes.GetComponent<RecipeScript>().treeNeed)
+                            {
+                                return;
+                            }
                         }
                     }
                     playerItem.transform.SetParent(this.transform); //아니라면 그 아이템을 기계에 넣는다.
