@@ -111,6 +111,10 @@ public class SpinePlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!Managers.isReady)
+        {
+            return;
+        }
         //대쉬중엔 아래코드 실행안함
         if (isDashing)
         {
@@ -128,6 +132,10 @@ public class SpinePlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!Managers.isReady)
+        {
+            return;
+        }
         if (isDashing)
         {
             _characterRigidbody.velocity = _movement.normalized * dashingPower;

@@ -25,7 +25,7 @@ public class BGMController : MonoBehaviour
     {
         emitter = GetComponent<FMODUnity.StudioEventEmitter>();
 
-        _pureWidth = timer.GetComponent<UI_Timer>().width - timer.GetComponent<UI_Timer>().endWidth;
+        _pureWidth = timer.GetComponent<UI_Timer>()._MAX_TIME - timer.GetComponent<UI_Timer>()._currentTime;
         Master = FMODUnity.RuntimeManager.GetBus("bus:/");
     }
 
@@ -38,8 +38,8 @@ public class BGMController : MonoBehaviour
         emitter.SetParameter("Zoom", _zoom);
 
         //Timer
-        _pureCurrentSizeX = timer.GetComponent<UI_Timer>().currentSize.x
-            - timer.GetComponent<UI_Timer>().endWidth;
+        _pureCurrentSizeX = timer.GetComponent<UI_Timer>()._MAX_TIME
+            - timer.GetComponent<UI_Timer>()._currentTime;
         //emitter.SetParameter("TimeLeft", 0);
 
         if (_pureCurrentSizeX == 0)

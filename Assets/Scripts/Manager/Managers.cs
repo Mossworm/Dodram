@@ -17,10 +17,12 @@ public class Managers : MonoBehaviour
     private ResourceManager _resource = new ResourceManager();
     public static ResourceManager Resource { get { return Instance._resource; } }
 
+    public static bool isReady;
 
     void Start()
     {
         Init();
+        isReady = false;
     }
     
     void Update()

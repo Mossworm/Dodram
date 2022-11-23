@@ -10,19 +10,20 @@ public class CameraScript : MonoBehaviour
     public Camera FstCam;
     public Camera SndCam;
 
-    public float maxCamSize;
+    public GameObject Arrow1;
+    public GameObject Arrow2;
+
+    public float CamMoveTime;
+    private float currentTime;
 
     // Start is called before the first frame update
     void Start()
     {
         mainCam = GameObject.Find("Main Camera").GetComponent<Camera>();
-        //FstCam = GameObject.Find("1PCamera").GetComponent<Camera>();
-        //SndCam = GameObject.Find("2PCamera").GetComponent<Camera>();
 
         FstCam.enabled = false;
         SndCam.enabled = false;
-
-        //CameraMove();
+        currentTime = 0.0f;
     }
 
     // Update is called once per frame
@@ -33,14 +34,23 @@ public class CameraScript : MonoBehaviour
 
     void CameraMove()
     {
-        if (mainCam.orthographicSize >= maxCamSize)
+        currentTime += Time.deltaTime;
+
+        if (CamMoveTime >= currentTime)
         {
-            Invoke("SecondCameraOn", 1f);
+            mainCam.transform.position += new Vector3(0.15f,0,0) * Time.deltaTime;
         }
         else
         {
-            mainCam.orthographicSize += Time.deltaTime * 1.5f;
+            Managers.isReady = true;
+            Arrow1.SetActive(false);
+            Arrow2.SetActive(false);
+            SecondCameraOn();
+            this.GetComponent<CameraScript>().enabled = false;
         }
+        
+        
+        
     }
 
     void SecondCameraOn()
@@ -48,17 +58,6 @@ public class CameraScript : MonoBehaviour
         FstCam.enabled = true;
         SndCam.enabled = true;
         mainCam.enabled = false;
-
-        Invoke("SecondCameraMove", 0.5f);
-
     }
-
-    void SecondCameraMove()
-    {
-        if (FstCam.orthographicSize >= 6)
-        {
-            FstCam.orthographicSize -= (Time.deltaTime * 5f);
-            SndCam.orthographicSize -= (Time.deltaTime * 5f);
-        }
-    }
+    
 }

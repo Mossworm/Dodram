@@ -5,37 +5,30 @@ using UnityEngine.UI;
 
 public class UI_Babi_car : MonoBehaviour
 {
-    public GameObject Timer;
-    public GameObject BabiCar;
-    float _MAX_TIME;
-
-    [SerializeField] RectTransform rect;
-    [SerializeField] Vector3 timerPosition;
-    [SerializeField] Vector3 startPosition;
-    [SerializeField] Vector3 babiPosition;
+    
+    private RectTransform rect;
+    public GameObject timer;
+    [SerializeField] float startPosition_x;
+    [SerializeField] float endPosition_x;
+    private float origin_x;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        _MAX_TIME = Timer.GetComponent<UI_Timer>()._MAX_TIME;
-        rect = Timer.GetComponent<RectTransform>();
-        timerPosition = Timer.transform.localPosition;
-        startPosition = new Vector3(timerPosition.x + (rect.sizeDelta.x / 2) -10, timerPosition.y, timerPosition.z);
-        babiPosition = BabiCar.transform.localPosition;
-        babiPosition = startPosition;
-        //BabiCar.transform.localPosition = startPosition;
+        rect = GetComponent<RectTransform>();
+        origin_x = rect.transform.position.x;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //    babiPosition = BabiCar.transform.localPosition;
-        if (babiPosition.x <= (timerPosition.x - rect.sizeDelta.x / 2)){
-            return;
-        }
-        babiPosition = new Vector3(babiPosition.x - rect.sizeDelta.x / _MAX_TIME, babiPosition.y, babiPosition.z);
-        BabiCar.transform.localPosition = babiPosition;
+        float value = timer.GetComponent<Image>().fillAmount;
+
+        float current_xScale = (startPosition_x - endPosition_x);
+        float current_x = current_xScale * value;
+
+        rect.position = new Vector3(origin_x-current_x, rect.transform.position.y, rect.transform.position.z);
     }
 }
 

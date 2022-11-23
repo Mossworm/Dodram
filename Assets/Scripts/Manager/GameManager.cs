@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
         if (endCanvas.activeSelf && !isEndflag)
         {
             isEndflag = true;
-            playTime = timer.GetComponent<UI_Timer>()._MAX_TIME - timer.GetComponent<UI_Timer>()._currentTime;
+            playTime = timer.GetComponent<UI_Timer>()._currentTime;
             string time = "";
             
             time += ((int)playTime / 60 + "분 ");
