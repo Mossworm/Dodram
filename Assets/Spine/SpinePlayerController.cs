@@ -148,6 +148,7 @@ public class SpinePlayerController : MonoBehaviour
         }
         if (this.GetComponent<SpinePickUpScript>().GaugePer > 0)
         {
+            _characterRigidbody.velocity = Vector2.zero;
             return;
         }
 
