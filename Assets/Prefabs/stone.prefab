@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 3
-  maxhp: 0
+  maxhp: 3
   dropItem: {fileID: 3788197747174437531, guid: d74827f7dff1f5c42a9833c828b7b4b8, type: 3}
   prfGaugeBar: {fileID: 6077395782407935344, guid: 21b0a8999c7a9034d9217db9436dea06, type: 3}
   canvas: {fileID: 0}
