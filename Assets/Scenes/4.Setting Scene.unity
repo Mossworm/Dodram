@@ -604,6 +604,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2311747508369236629, guid: c9715feb74f0d5549a77f3f4632b8045, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1453279733}
     - target: {fileID: 2311747508391871289, guid: c9715feb74f0d5549a77f3f4632b8045, type: 3}
       propertyPath: m_text
       value: Setting
@@ -615,7 +619,7 @@ PrefabInstance:
     - target: {fileID: 2311747508391871289, guid: c9715feb74f0d5549a77f3f4632b8045, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: -6106179117998842622, guid: f78b00372f8af5f4dac8155b9e87f4ac, type: 2}
+      objectReference: {fileID: -8104705537059560623, guid: f78b00372f8af5f4dac8155b9e87f4ac, type: 2}
     - target: {fileID: 2311747508723167658, guid: c9715feb74f0d5549a77f3f4632b8045, type: 3}
       propertyPath: m_Name
       value: SettingCanvas
