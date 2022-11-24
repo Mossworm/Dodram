@@ -35,13 +35,15 @@ public class HouseScript : MonoBehaviour
                 countNum -= changeValue;
 
                 var go = Instantiate(buildingParts[checkIndex]);
-                go.transform.SetParent(this.transform);
-                go.transform.localPosition = new Vector3(0, 0,go.transform.position.z);
+                go.transform.localScale = this.transform.localScale;
+                go.transform.position = new Vector3(this.transform.position.x, this.transform.position.y,checkIndex * 0.1f);
+                // go.transform.SetParent(this.transform);
+                // go.transform.localPosition = new Vector3(0, 0,go.transform.position.z);
 
                 checkIndex += 1;
             }
         }
-        if(checkIndex==31)
+        if(checkIndex==buildingParts.Length)
         {
             Time.timeScale = 0f;
             endCanvas.SetActive(true);
