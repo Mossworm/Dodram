@@ -35,6 +35,8 @@ public class SpinePickUpScript : MonoBehaviour
 
     private Animator animator;
 
+    [SerializeField]private bool isTool;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -98,7 +100,47 @@ public class SpinePickUpScript : MonoBehaviour
 
     void Interactive()
     {
-        Collider2D hit = Physics2D.OverlapBox(transform.position + boxTransform, size, 0, whatIsLayer);
+        Collider2D[] hits = Physics2D.OverlapBoxAll(transform.position + boxTransform, size, 0, whatIsLayer);
+        Collider2D hit=null;
+        isTool = false;
+
+        for (int i = 0; i < hits.Length; i++)
+        {
+            if (hits[i].CompareTag("tool"))
+            {
+                isTool = true;
+                hit = hits[i];
+            }
+        }
+
+        for (int i = 0; i < hits.Length; i++)
+        {
+            if (isTool)
+            {
+                if (hits[i].CompareTag("tool"))
+                {
+                    if (Vector2.Distance(this.transform.position, hit.transform.position) >
+                        Vector2.Distance(this.transform.position, hits[i].transform.position))
+                    {
+                        hit = hits[i];
+                    }
+                }
+            }
+            else
+            {
+                if (hit == null)
+                {
+                    hit = hits[0];
+                }
+                
+                if (Vector2.Distance(this.transform.position,hit.transform.position) > Vector2.Distance(this.transform.position,hits[i].transform.position))
+                {
+                    hit = hits[i];   
+                }
+            }
+        }
+
+        // Collider2D hit = Physics2D.OverlapBox(transform.position + boxTransform, size, 0, whatIsLayer);
 
         //---------------------------------------
         //  머터리얼 and 채칩 게이지 초기화
