@@ -42,10 +42,10 @@ public class CameraScript : MonoBehaviour
         }
         else
         {
-            Managers.isReady = true;
             Arrow1.SetActive(false);
             Arrow2.SetActive(false);
             SecondCameraOn();
+            Managers.isReady = true;
             this.GetComponent<CameraScript>().enabled = false;
         }
         
