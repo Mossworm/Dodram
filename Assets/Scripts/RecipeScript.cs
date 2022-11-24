@@ -140,19 +140,19 @@ public class RecipeScript : MonoBehaviour
         }
         else if (recipeOrder == 1)
         {
-            randArray = new[] { 1, 5, 6 };
+            randArray = new[] { 1, 3, 6 };
         }
         else if (recipeOrder == 2)
         {
-            randArray = new[] { 0, 5, 7 };
+            randArray = new[] { 1, 3, 6 };
         }
         else if (recipeOrder == 3)
         {
-            randArray = new[] { 1, 4, 7 };
+            randArray = new[] { 1, 3, 6 };
         }
         else if (recipeOrder == 4)
         {
-            randArray = new[] { 2, 5, 7 };
+            randArray = new[] { 1, 3, 7 };
         }
 
 
