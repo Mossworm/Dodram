@@ -19,9 +19,12 @@ public class FarmingObject : MonoBehaviour
     
     public float regenTime;
 
+    public bool isTarget;
+
     private void Start()
     {
         maxhp = hp;
+        isTarget = false;
         gaugeBar = Instantiate(prfGaugeBar, canvas.transform).GetComponent<RectTransform>();
         nowGaugebar = gaugeBar.transform.GetChild(0).GetComponent<Image>();
     }
@@ -36,7 +39,7 @@ public class FarmingObject : MonoBehaviour
         Vector3 _gaugeBarPos = new Vector3(transform.position.x, transform.position.y + height, 0);
         gaugeBar.position = _gaugeBarPos;
 
-        if (hp == maxhp)
+        if (hp == maxhp && isTarget == false) 
         {
             gaugeBar.gameObject.SetActive(false);
         }
@@ -66,6 +69,7 @@ public class FarmingObject : MonoBehaviour
     IEnumerator Regen()
     {
         gaugeBar.gameObject.SetActive(false);
+        isTarget = false;
         Vector3 tempPosition = this.transform.position;
         transform.position = new Vector3(0.0f,-60.0f,0.0f);
 

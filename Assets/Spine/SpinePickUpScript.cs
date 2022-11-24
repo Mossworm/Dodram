@@ -228,6 +228,7 @@ public class SpinePickUpScript : MonoBehaviour
                     {
                         if (hit.CompareTag("Tree"))
                         {
+                            hit.GetComponent<FarmingObject>().isTarget = true;
                             GaugePer += (100.0f / animator.GetCurrentAnimatorStateInfo(0).length) * Time.deltaTime;
                             if (GaugePer >= 100.0f)
                             {
@@ -240,6 +241,7 @@ public class SpinePickUpScript : MonoBehaviour
                     {
                         if (hit.CompareTag("Stone"))
                         {
+                            hit.GetComponent<FarmingObject>().isTarget = true;
                             GaugePer += (100.0f / animator.GetCurrentAnimatorStateInfo(0).length) * Time.deltaTime;
                             if (GaugePer >= 100)
                             {
@@ -252,6 +254,7 @@ public class SpinePickUpScript : MonoBehaviour
                     {
                         if (hit.CompareTag("Grass"))
                         {
+                            hit.GetComponent<FarmingObject>().isTarget = true;
                             GaugePer += (100.0f / animator.GetCurrentAnimatorStateInfo(0).length) * Time.deltaTime;
                             if (GaugePer >= 100)
                             {
@@ -284,6 +287,7 @@ public class SpinePickUpScript : MonoBehaviour
             {
                 GaugePer = 0.0f;
                 hit.GetComponent<FarmingObject>().hp = hit.GetComponent<FarmingObject>().maxhp;
+                hit.GetComponent<FarmingObject>().isTarget = false;
             }
         }
 

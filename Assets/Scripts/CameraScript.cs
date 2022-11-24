@@ -12,6 +12,7 @@ public class CameraScript : MonoBehaviour
 
     public GameObject Arrow1;
     public GameObject Arrow2;
+    public GameObject Separator;
 
     public float CamMoveTime;
     private float currentTime;
@@ -44,6 +45,7 @@ public class CameraScript : MonoBehaviour
         {
             Arrow1.SetActive(false);
             Arrow2.SetActive(false);
+            Separator.SetActive(true);
             SecondCameraOn();
             Managers.isReady = true;
             this.GetComponent<CameraScript>().enabled = false;
