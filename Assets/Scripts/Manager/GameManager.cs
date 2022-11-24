@@ -46,8 +46,17 @@ public class GameManager : MonoBehaviour
             playTime = timer.GetComponent<UI_Timer>()._currentTime;
             string time = "";
             
-            time += ((int)playTime / 60 + "분 ");
-            time += ((int)playTime % 60 + "초");
+            time += ("0"+(int)playTime / 60 + ":");
+
+            if ((int)playTime % 60 < 10)
+            {
+                time += ("0" + (int)playTime % 60);
+
+            }
+            else
+            {
+                time += ((int)playTime % 60);
+            }
 
             currentScoreText.GetComponent<TextMeshProUGUI>().text = time;
 
@@ -68,11 +77,20 @@ public class GameManager : MonoBehaviour
             }
             
             string highScore = "";
-            highScore += ((int)highScoreTime / 60 + "분 ");
-            highScore += ((int)highScoreTime % 60 + "초");
 
+            highScore += ("0" + (int)playTime / 60 + ":");
 
-            highScoreText.GetComponent<TextMeshProUGUI>().text = "최고 랭킹 : " + highScore;
+            if ((int)playTime % 60 < 10)
+            {
+                highScore += ("0" + (int)playTime % 60);
+
+            }
+            else
+            {
+                highScore += ((int)playTime % 60);
+            }
+
+            highScoreText.GetComponent<TextMeshProUGUI>().text =  highScore;
         }
         
         

@@ -165,25 +165,6 @@ MonoBehaviour:
   exitTime: 0
   _spc: {fileID: 0}
   formerDirection: 0
---- !u!114 &-8270325238630506826
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aaec12f6616ce1548818f41045a13338, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  motion: {fileID: 4924368091807945026, guid: 56413df3b25f7f44a8bfdf98f07e2e71, type: 2}
-  isLoop: 1
-  layer: 0
-  timeScale: 1.5
-  exitTime: 1
-  _spc: {fileID: 0}
-  formerDirection: 0
 --- !u!114 &-8143342620199054160
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -487,33 +468,6 @@ MonoBehaviour:
   exitTime: 0
   _spc: {fileID: 0}
   formerDirection: 0
---- !u!1102 &-7356078585869681142
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Use_Axe_Down 0
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours:
-  - {fileID: -8270325238630506826}
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 4924368091807945026, guid: 56413df3b25f7f44a8bfdf98f07e2e71, type: 2}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
 --- !u!1107 &-7344766578850376698
 AnimatorStateMachine:
   serializedVersion: 6
@@ -555,7 +509,7 @@ AnimatorStateMachine:
     m_Position: {x: 20, y: 470, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1244969605930498975}
-    m_Position: {x: 20, y: 520, z: 0}
+    m_Position: {x: 30, y: 520, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3256101518679644773}
     m_Position: {x: 20, y: 640, z: 0}
@@ -799,12 +753,6 @@ AnimatorStateMachine:
   - serializedVersion: 1
     m_State: {fileID: 5325018983158396256}
     m_Position: {x: 912.0742, y: 747.50366, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: -7356078585869681142}
-    m_Position: {x: 60, y: 1100, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: -2308747032932958152}
-    m_Position: {x: 340, y: 20, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -1586,25 +1534,6 @@ MonoBehaviour:
   exitTime: 0
   _spc: {fileID: 0}
   formerDirection: 0
---- !u!114 &-4531076113143649236
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aaec12f6616ce1548818f41045a13338, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  motion: {fileID: 3902034243026651049, guid: 13e9fdf4d83a4f849ab2619edadfdf09, type: 2}
-  isLoop: 0
-  layer: 0
-  timeScale: 2
-  exitTime: 1
-  _spc: {fileID: 0}
-  formerDirection: 0
 --- !u!114 &-4445523095888245956
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2019,33 +1948,6 @@ MonoBehaviour:
   exitTime: 0
   _spc: {fileID: 0}
   formerDirection: 0
---- !u!1102 &-2308747032932958152
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: P_Up 0
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours:
-  - {fileID: -4531076113143649236}
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 3902034243026651049, guid: 13e9fdf4d83a4f849ab2619edadfdf09, type: 2}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
 --- !u!114 &-2220937904338131933
 MonoBehaviour:
   m_ObjectHideFlags: 1
