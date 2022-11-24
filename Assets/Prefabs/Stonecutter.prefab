@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 2297720677327900920}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.38, y: 2.86, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8542, y: 0.8542, z: 0.8542}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -101,11 +101,12 @@ MonoBehaviour:
   recipecheck: {fileID: 0}
   isBreak: 0
   randomON: 1
-  per: 5
-  craftTime: 6
-  destroyTime: 5
+  per: 2
+  craftTime: 5
+  destroyTime: 10
   workTime: 0
-  stopTime: 0
+  stopTime: 30
+  breakCoolTime: 0
   state: 0
   saveState: 0
   ingredient: {fileID: 3788197747174437531, guid: d74827f7dff1f5c42a9833c828b7b4b8, type: 3}
