@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 6790146530951848526}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.38, y: 1.66, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0.5}
+  m_LocalScale: {x: 0.80094975, y: 0.80094975, z: 0.40047488}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -101,11 +101,12 @@ MonoBehaviour:
   recipecheck: {fileID: 0}
   isBreak: 0
   randomON: 1
-  per: 20
-  craftTime: 6
-  destroyTime: 5
+  per: 2
+  craftTime: 5
+  destroyTime: 10
   workTime: 0
-  stopTime: 0
+  stopTime: 30
+  breakCoolTime: 0
   state: 0
   saveState: 0
   ingredient: {fileID: 5549948290299783770, guid: 4390bccc47a2a7b46919c1893e09f63f, type: 3}
@@ -129,6 +130,6 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.031104809, y: -0.24}
+  m_Offset: {x: -0.031104809, y: -0.4}
   m_Size: {x: 1.5735209, y: 1}
   m_Direction: 1

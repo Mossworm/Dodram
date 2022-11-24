@@ -120,9 +120,14 @@ public class SpinePlayerController : MonoBehaviour
         {
             return;
         }
+        FSM.Driver.Update.Invoke();
+        
+        if (this.GetComponent<SpinePickUpScript>().GaugePer > 0)
+        {
+            return;
+        }
 
         UpdateDir();
-        FSM.Driver.Update.Invoke();
         if (Input.GetKeyDown(DashKey) && canDash)
         {
             StartCoroutine(Dash());
@@ -141,6 +146,11 @@ public class SpinePlayerController : MonoBehaviour
             _characterRigidbody.velocity = _movement.normalized * dashingPower;
             return;
         }
+        if (this.GetComponent<SpinePickUpScript>().GaugePer > 0)
+        {
+            return;
+        }
+
 
         if (isMainPlayer)
         {
