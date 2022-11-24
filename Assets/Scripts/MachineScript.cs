@@ -17,6 +17,7 @@ public class MachineScript : MonoBehaviour
     public float destroyTime;
     public float workTime;
     public float stopTime;
+    public float breakCoolTime;
 
     public enum MachineState
     {
@@ -43,6 +44,7 @@ public class MachineScript : MonoBehaviour
 
     private void Start()
     {
+        breakCoolTime = 5f;
         gaugeBar = Instantiate(prfGaugeBar, canvas.transform).GetComponent<RectTransform>();
         nowGaugebar = gaugeBar.transform.GetChild(0).GetComponent<Image>();
         state = MachineState.None;
@@ -56,6 +58,7 @@ public class MachineScript : MonoBehaviour
     private void Update()
     {
         GaugeBar();
+        BreakCoolDown();
         if (isBreak == false)
         {
             if (state == MachineState.Working)
@@ -203,10 +206,13 @@ public class MachineScript : MonoBehaviour
     public void Breakdown()
     {
         int max = Random.Range(0, 100);
-        if (max < per)
+        if(breakCoolTime <= 0)
         {
-            state = MachineState.Breakdown;
-            isBreak = true;
+            if (max < per)
+            {
+                state = MachineState.Breakdown;
+                isBreak = true;
+            }
         }
     }
 
@@ -215,5 +221,14 @@ public class MachineScript : MonoBehaviour
     {
         state = saveState;
         isBreak = false;
+        breakCoolTime = 10f;
+    }
+    public void BreakCoolDown()
+    {
+        breakCoolTime -= Time.deltaTime;
+        if(breakCoolTime <= 0)
+        {
+            breakCoolTime = 0;
+        }
     }
 }
