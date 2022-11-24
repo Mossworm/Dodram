@@ -6,6 +6,11 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public GameObject pauseCanvas;
+    public GameObject settingCanvas;
+    public GameObject guideCanvas;
+    
+    
+    
     public GameObject endCanvas;
     public GameObject timer;
     public GameObject highScoreUI;
@@ -20,6 +25,16 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         isEndflag = false;
+        if (settingCanvas == null)
+        {
+            settingCanvas = GameObject.Find("=====UI=====").transform.Find("SettingCanvas").gameObject;
+        }
+        if (guideCanvas == null)
+        {
+            guideCanvas = GameObject.Find("=====UI=====").transform.Find("GuideCanvas").gameObject;
+        }
+        
+        
     }
 
     // Update is called once per frame
@@ -65,10 +80,12 @@ public class GameManager : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (pauseCanvas.activeSelf)
+            if (pauseCanvas.activeSelf || settingCanvas.activeSelf || guideCanvas.activeSelf)
             {
                 changeTimeScale();
                 pauseCanvas.SetActive(false);
+                settingCanvas.SetActive(false);
+                guideCanvas.SetActive(false);
             }
             else
             {
