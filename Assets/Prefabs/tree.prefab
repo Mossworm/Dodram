@@ -126,12 +126,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 3
-  maxhp: 0
+  maxhp: 3
   dropItem: {fileID: 2041883255594010392, guid: ce48307ae675aea4bb0d14e8fdb5bf97, type: 3}
   prfGaugeBar: {fileID: 6077395782407935344, guid: 21b0a8999c7a9034d9217db9436dea06, type: 3}
   canvas: {fileID: 0}
   height: 1.5
-  regenTime: 3
+  regenTime: 10
   isTarget: 0
 --- !u!1001 &532671393940021962
 PrefabInstance:

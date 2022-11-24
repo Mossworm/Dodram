@@ -25,6 +25,11 @@ public class FarmingObject : MonoBehaviour
     {
         maxhp = hp;
         isTarget = false;
+        if (canvas == null)
+        {
+            canvas = GameObject.Find("ObjectCanvas");
+        }
+        
         gaugeBar = Instantiate(prfGaugeBar, canvas.transform).GetComponent<RectTransform>();
         nowGaugebar = gaugeBar.transform.GetChild(0).GetComponent<Image>();
     }
