@@ -115,12 +115,12 @@ public class MachineScript : MonoBehaviour
         if (state == MachineState.Working)
         {
             nowGaugebar.fillAmount = workTime / craftTime;
-            nowGaugebar.color = new Color(38, 162, 123);
+            nowGaugebar.color = new Color(38 / 255.0f, 162 / 255.0f, 123 / 255.0f);
         }
         else if (state == MachineState.Destroying)
         {
             nowGaugebar.fillAmount = 1 - (workTime / destroyTime);
-            nowGaugebar.color = new Color(172, 67, 63);
+            nowGaugebar.color = new Color(172 / 255.0f, 67 / 255.0f, 63 / 255.0f);
         }
         else if (state == MachineState.Breakdown)
         {

@@ -7,9 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public GameObject pauseCanvas;
     public GameObject settingCanvas;
-    public GameObject guideCanvas;
-    
-    
+    public GameObject guideCanvas; 
     
     public GameObject endCanvas;
     public GameObject timer;
@@ -20,10 +18,18 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float playTime;
 
     private bool isEndflag;
+
+    private GameObject _cutscene_Win;
+    private GameObject _win_Cut;
+    private GameObject _win_Icon;
     
     // Start is called before the first frame update
     void Start()
     {
+        _cutscene_Win = endCanvas.transform.Find("Cutscene_Win").gameObject;
+        _win_Cut = endCanvas.transform.Find("Win_Cut").gameObject;
+        _win_Icon = endCanvas.transform.Find("Win_Icon").gameObject;
+
         isEndflag = false;
         if (settingCanvas == null)
         {
@@ -32,9 +38,7 @@ public class GameManager : MonoBehaviour
         if (guideCanvas == null)
         {
             guideCanvas = GameObject.Find("=====UI=====").transform.Find("GuideCanvas").gameObject;
-        }
-        
-        
+        }     
     }
 
     // Update is called once per frame
