@@ -10,6 +10,7 @@ using Random = UnityEngine.Random;
 public class RecipeScript : MonoBehaviour
 {
     private int[] randArray;
+    private int[] recipeArray;
     public int recipeOrder = 0;
 
     public GameObject rockCheck;  //레시피 완성 체크용
@@ -25,18 +26,24 @@ public class RecipeScript : MonoBehaviour
     public int rockCnt;     //넣은 개수
     public int mushCnt;
     public int treeCnt;
-    public int rockNeed;    //필요 개수
-    public int mushNeed;
-    public int treeNeed;
+    public int nowRockNeed;    //필요 개수
+    public int nowMushNeed;
+    public int nowTreeNeed;
+    public int nextRockNeed;
+    public int nextMushNeed;
+    public int nextTreeNeed;
 
     public string[] ingredientStringArray;
 
     public int needNum;
     public List<GameObject> nowRecipe = new List<GameObject>();
     //public TextMeshProUGUI recipeText;
-    public TextMeshProUGUI mushText;
-    public TextMeshProUGUI rockText;
-    public TextMeshProUGUI treeText;
+    public TextMeshProUGUI nowMushText;
+    public TextMeshProUGUI nowRockText;
+    public TextMeshProUGUI nowTreeText;
+    public TextMeshProUGUI nextMushText;
+    public TextMeshProUGUI nextRockText;
+    public TextMeshProUGUI nextTreeText;
 
     private void Start()
     {
@@ -55,7 +62,7 @@ public class RecipeScript : MonoBehaviour
     void RecipeTextUpdate()
     {
         //string ingredientlist = "";
-        
+
         //for (int i = 0; i < randArray.Length; i++)
         //{
         //    ingredientlist += (ingredientStringArray[randArray[i]].ToString() + "\n");
@@ -72,19 +79,23 @@ public class RecipeScript : MonoBehaviour
         //rockText.text = mushCnt + "/" + ingredientStringArray[randArray[1]].ToString();
         //treeText.text = treeCnt + "/" + ingredientStringArray[randArray[2]].ToString();
 
-        rockText.text = rockCnt + "/" + rockNeed;
-        mushText.text = mushCnt + "/" + mushNeed;
-        treeText.text = treeCnt + "/" + treeNeed;
+        nowMushText.text = mushCnt + "/" + nowMushNeed;
+        nowRockText.text = rockCnt + "/" + nowRockNeed;
+        nowTreeText.text = treeCnt + "/" + nowTreeNeed;
 
-        if (rockCnt == rockNeed)
+        nextMushText.text = "0/" + nextMushNeed;
+        nextRockText.text = "0/" + nextRockNeed;
+        nextTreeText.text = "0/" + nextTreeNeed;
+
+        if (rockCnt == nowRockNeed)
         {
             rockCheck.GetComponent<RecipeDawnCheck>().check();
         }
-        if (mushCnt == mushNeed)
+        if (mushCnt == nowMushNeed)
         {
             mushCheck.GetComponent<RecipeDawnCheck>().check();
         }
-        if (treeCnt == treeNeed)
+        if (treeCnt == nowTreeNeed)
         {
             treeCheck.GetComponent<RecipeDawnCheck>().check();
         }
@@ -95,10 +106,10 @@ public class RecipeScript : MonoBehaviour
         //randArray = GetRandomInt(needNum, 0, ingredientArray.Length);
         RecipeOrder();
 
-        needNum = rockNeed + mushNeed + treeNeed;
+        needNum = nowRockNeed + nowMushNeed + nowTreeNeed;
 
         nowRecipe.Clear();
-        
+
         for (int i = 0; i < randArray.Length; i++)
         {
             nowRecipe.Add(ingredientArray[randArray[i]]);
@@ -136,62 +147,102 @@ public class RecipeScript : MonoBehaviour
     {
         if (recipeOrder == 0)
         {
-            randArray = new[] { 0, 3, 6 };
+            randArray = new[] { 0, 3, 6 }; //레시피 용으로 남겨둠
+
+            nowMushNeed = 1;
+            nowRockNeed = 1;
+            nowTreeNeed = 1;
+
+            nextMushNeed = 1;
+            nextRockNeed = 2;
+            nextTreeNeed = 1;
         }
         else if (recipeOrder == 1)
         {
-            randArray = new[] { 1, 3, 6 };
+            randArray = new[] { 0, 4, 6 };
+
+            nowMushNeed = 1;
+            nowRockNeed = 2;
+            nowTreeNeed = 1;
+
+            nextMushNeed = 1;
+            nextRockNeed = 2;
+            nextTreeNeed = 1;
         }
         else if (recipeOrder == 2)
         {
-            randArray = new[] { 1, 3, 6 };
+            randArray = new[] { 0, 4, 6 };
+
+            nowMushNeed = 1;
+            nowRockNeed = 2;
+            nowTreeNeed = 1;
+
+            nextMushNeed = 1;
+            nextRockNeed = 2;
+            nextTreeNeed = 1;
         }
         else if (recipeOrder == 3)
         {
-            randArray = new[] { 1, 3, 6 };
+            randArray = new[] { 0, 4, 6 };
+
+            nowMushNeed = 1;
+            nowRockNeed = 2;
+            nowTreeNeed = 1;
+
+            nextMushNeed = 1;
+            nextRockNeed = 2;
+            nextTreeNeed = 2;
         }
         else if (recipeOrder == 4)
         {
-            randArray = new[] { 1, 3, 7 };
+            randArray = new[] { 0, 4, 7 };
+
+            nowMushNeed = 1;
+            nowRockNeed = 2;
+            nowTreeNeed = 2;
+
+            nextMushNeed = 0;
+            nextRockNeed = 0;
+            nextTreeNeed = 0;
         }
 
 
-        if (randArray[0] == 0)
-        {
-            rockNeed = 1;
-        }
-        else if (randArray[0] == 1)
-        {
-            rockNeed = 2;
-        }
-        else if (randArray[0] == 2)
-        {
-            rockNeed = 3;
-        }
-        if (randArray[1] == 3)
-        {
-            mushNeed = 1;
-        }
-        else if (randArray[1] == 4)
-        {
-            mushNeed = 2;
-        }
-        else if (randArray[1] == 5)
-        {
-            mushNeed = 3;
-        }
-        if (randArray[2] == 6)
-        {
-            treeNeed = 1;
-        }
-        else if (randArray[2] == 7)
-        {
-            treeNeed = 2;
-        }
-        else if (randArray[2] == 8)
-        {
-            treeNeed = 3;
-        }
+        //if (randArray[0] == 0)
+        //{
+        //    nowRockNeed = 1;
+        //}
+        //else if (randArray[0] == 1)
+        //{
+        //    nowRockNeed = 2;
+        //}
+        //else if (randArray[0] == 2)
+        //{
+        //    nowRockNeed = 3;
+        //}
+        //if (randArray[1] == 3)
+        //{
+        //    nowMushNeed = 1;
+        //}
+        //else if (randArray[1] == 4)
+        //{
+        //    nowMushNeed = 2;
+        //}
+        //else if (randArray[1] == 5)
+        //{
+        //    nowMushNeed = 3;
+        //}
+        //if (randArray[2] == 6)
+        //{
+        //    nowTreeNeed = 1;
+        //}
+        //else if (randArray[2] == 7)
+        //{
+        //    nowTreeNeed = 2;
+        //}
+        //else if (randArray[2] == 8)
+        //{
+        //    nowTreeNeed = 3;
+        //}
     }
 
     void CountIngre()

@@ -120,21 +120,21 @@ public class FinalMachineScript : MonoBehaviour
 
                         if (playerItem.name == "Stone_P_2") //넣기 전 재료량을 다 넣었다면 더 넣지 않고 return 한다.
                         {
-                            if (r == recipes.GetComponent<RecipeScript>().rockNeed)
+                            if (r == recipes.GetComponent<RecipeScript>().nowRockNeed)
                             {
                                 return;
                             }
                         }
                         else if (playerItem.name == "Mill_P_2")
                         {
-                            if (m == recipes.GetComponent<RecipeScript>().mushNeed)
+                            if (m == recipes.GetComponent<RecipeScript>().nowMushNeed)
                             {
                                 return;
                             }
                         }
                         else if (playerItem.name == "Wood_P_2")
                         {
-                            if (t == recipes.GetComponent<RecipeScript>().treeNeed)
+                            if (t == recipes.GetComponent<RecipeScript>().nowTreeNeed)
                             {
                                 return;
                             }
