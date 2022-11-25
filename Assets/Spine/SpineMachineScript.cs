@@ -8,7 +8,7 @@ using Random = UnityEngine.Random;
 
 public class SpineMachineScript : MonoBehaviour
 {
-    public GameObject recipecheck;  //레시피 체크용
+    //public GameObject recipecheck;  //레시피 체크용
     public bool isBreak;
     public bool randomON;
 
@@ -17,9 +17,13 @@ public class SpineMachineScript : MonoBehaviour
     public float destroyTime;
     public float workTime;
     public float stopTime;
+    public float breakCoolTime;
+    private float Max_breakCoolTime;
 
     private Animator _animator;
-    public string currentState;
+    public string currentAnimState;
+
+    [SerializeField] private string prefixString;
 
     public enum MachineState
     {
@@ -29,7 +33,7 @@ public class SpineMachineScript : MonoBehaviour
         Breakdown
     }
 
-    public MachineState state;
+    public MachineState currentState;
     public MachineState saveState;
 
     public GameObject ingredient;
@@ -47,58 +51,130 @@ public class SpineMachineScript : MonoBehaviour
     private void Start()
     {
         _animator = GetComponent<Animator>();
+        Max_breakCoolTime = breakCoolTime;
         gaugeBar = Instantiate(prfGaugeBar, canvas.transform).GetComponent<RectTransform>();
         nowGaugebar = gaugeBar.transform.GetChild(0).GetComponent<Image>();
-        state = MachineState.None;
-        saveState = state;
+        currentState = MachineState.None;
+        saveState = currentState;
         if (randomON == true)
         {
             InvokeRepeating("Breakdown", 1f, 1f);
         }
-        ChangeAnimation("Grass_Machine_Idle");
+
+        switch (ingredient.name)
+        {
+            case "chip":
+                prefixString = "Grass";
+                break;
+            case "cobblestone":
+                prefixString = "Rock";
+                break;
+            case "wood":
+                prefixString = "Tree";
+                break;
+            default:
+                break;
+        }
+        ChangeAnimation(prefixString+"_Machine_Idle");
     }
 
     private void Update()
     {
+        Debug.Log(prefixString);
         GaugeBar();
-        if (isBreak == false)
-        {
-            if (state == MachineState.Working)
-            {
-                ChangeAnimation("Grass_Machine_Use");
-                workTime += Time.deltaTime;
-                stopTime = workTime;
-            }
-            else if (state == MachineState.Destroying)
-            {
-                Crafting();
-                workTime += Time.deltaTime;
-                stopTime = workTime;
-            }
-            else if(state == MachineState.Breakdown)
-            {
-                workTime = stopTime;
-            }
+        BreakCoolDown();
 
-            if(state == MachineState.Working)
-            {
+        if (isBreak) {
+            currentState = MachineState.Breakdown;
+        }
+
+        switch (currentState)
+        {
+            case MachineState.None:
+                ChangeAnimation(new String(prefixString + "_Machine_Idle"));
+                break;
+
+            case MachineState.Working:
                 if (workTime >= craftTime)
                 {
+                    ChangeAnimation(prefixString + "_Machine_Overload");
                     workTime = 0;
-                    state = MachineState.Destroying;
+                    currentState = MachineState.Destroying;
                 }
-            }
-            else if (state == MachineState.Destroying)
-            {
+                else
+                {
+                    ChangeAnimation(prefixString + "_Machine_Use");
+                    workTime += Time.deltaTime;
+                    stopTime = workTime;
+                }
+                break;
+
+            case MachineState.Destroying:
                 if (workTime >= destroyTime)
                 {
+                    ChangeAnimation(prefixString + "_Machine_Explosion");
                     ChildDestroy();
-                    state = MachineState.None;
-                    saveState = state;
+                    currentState = MachineState.None;
                     workTime = 0;
                 }
-            }
+                else
+                {
+                    ChangeAnimation(prefixString + "_Machine_Overload");
+                    Crafting();
+                    workTime += Time.deltaTime;
+                    stopTime = workTime;
+                }
+                break;
+
+            case MachineState.Breakdown:
+                {
+                    ChangeAnimation(new String(prefixString + "_Machine_Broken"));
+                    workTime = stopTime;
+                }
+                break;
+
+            default:
+                break;
         }
+            //if (currentState == MachineState.Working)
+            //{
+            //    if (workTime >= craftTime)
+            //    {
+            //        ChangeAnimation(prefixString + "_Machine_Overload");
+            //        workTime = 0;
+            //        currentState = MachineState.Destroying;
+            //    }
+            //    else
+            //    {
+            //        ChangeAnimation(prefixString + "_Machine_Use");
+            //        workTime += Time.deltaTime;
+            //        stopTime = workTime;
+            //    }
+            //}
+            //else if (currentState == MachineState.Destroying)
+            //{
+            //    if (workTime >= destroyTime)
+            //    {
+            //        ChangeAnimation(prefixString + "_Machine_Explosion");
+            //        ChildDestroy();
+            //        currentState = MachineState.None;
+            //        workTime = 0;
+            //    }
+            //    else
+            //    {
+            //        ChangeAnimation(prefixString + "_Machine_Overload");
+            //        Crafting();
+            //        workTime += Time.deltaTime;
+            //        stopTime = workTime;
+            //    }
+            //}
+            //else if(currentState == MachineState.Breakdown)
+            //{
+            //    ChangeAnimation(prefixString + "_Machine_Broken");
+            //    workTime = stopTime;
+            //}
+
+            saveState = currentState;    
     }
 
     void GaugeBar()
@@ -106,28 +182,33 @@ public class SpineMachineScript : MonoBehaviour
         Vector3 _gaugeBarPos = new Vector3(transform.position.x, transform.position.y + height, 0);
         gaugeBar.position = _gaugeBarPos;
 
-        if (state == MachineState.None)
+        if (currentState == MachineState.None)
         {
             gaugeBar.gameObject.SetActive(false);
         }
-        else
+        else if (currentState == MachineState.Working || currentState == MachineState.Destroying)
         {
             gaugeBar.gameObject.SetActive(true);
         }
 
-        if (state == MachineState.Working)
+        if (currentState == MachineState.Working)
         {
             nowGaugebar.fillAmount = workTime / craftTime;
-            nowGaugebar.color = Color.white;
+            nowGaugebar.color = new Color(38 / 255.0f, 162 / 255.0f, 123 / 255.0f);
         }
-        else if (state == MachineState.Destroying)
+        else if (currentState == MachineState.Destroying)
         {
             nowGaugebar.fillAmount = 1 - (workTime / destroyTime);
-            nowGaugebar.color = Color.red;
+            nowGaugebar.color = new Color(172 / 255.0f, 67 / 255.0f, 63 / 255.0f);
         }
-        else if (state == MachineState.Breakdown)
+        else if (currentState == MachineState.Breakdown)
         {
-            nowGaugebar.color = Color.gray;
+            //SpriteRenderer sr = this.gameObject.GetComponent<SpriteRenderer>();
+            //sr.material.color = Color.red;
+            if (gaugeBar.gameObject.activeSelf == true)
+            {
+                nowGaugebar.color = Color.gray;
+            }
         }
 
     }
@@ -136,7 +217,7 @@ public class SpineMachineScript : MonoBehaviour
     {
         if (isBreak == false)
         {
-            if (this.transform.childCount < productionArray.Length && state == MachineState.None)
+            if (this.transform.childCount < 2 && currentState == MachineState.None)
             {
                 GameObject playerItem;
                 playerItem = hand.transform.GetChild(0).gameObject;
@@ -151,11 +232,11 @@ public class SpineMachineScript : MonoBehaviour
 
     public void CraftOn()   //제작 시작
     {
-        if (state == MachineState.None && this.transform.childCount != 0)
+        if (currentState == MachineState.None && this.transform.childCount == 2)
         {
             //Invoke("Crafting", craftTime);
-            state = MachineState.Working;
-            saveState = state;
+            currentState = MachineState.Working;
+            saveState = currentState;
         }
     }
 
@@ -163,25 +244,25 @@ public class SpineMachineScript : MonoBehaviour
     {
         if (isBreak == false)
         {
-            if (state == MachineState.Destroying)
+            if (currentState == MachineState.Destroying)
             {
                 CreateDone(hand);
-                recipecheck.GetComponent<RecipeDawnCheck>().check();
+                //recipecheck.GetComponent<RecipeDawnCheck>().check();
             }
         }
     }
 
     public void Crafting()      //제작완성 및 삭제중 상태로 이동
     {
-            //state = MachineState.Destroying;
-            saveState = state;
-            //workTime = 0;
+        //state = MachineState.Destroying;
+        saveState = currentState;
+        //workTime = 0;
     }
 
 
     public void CreateDone(GameObject hand)   //완성품 꺼내기
     {
-        var go = Instantiate(productionArray[transform.childCount - 1], Vector2.zero, quaternion.identity);
+        var go = Instantiate(productionArray[1], Vector2.zero, quaternion.identity);
 
         int index = go.name.IndexOf("(Clone)");
         if (index > 0)
@@ -192,8 +273,8 @@ public class SpineMachineScript : MonoBehaviour
         go.transform.SetParent(hand.transform);
         go.transform.localPosition = Vector2.zero;
         go.layer = 0;
-        state = MachineState.None;
-        saveState = state;
+        currentState = MachineState.None;
+        saveState = currentState;
         workTime = 0;
         ChildDestroy();
     }
@@ -209,30 +290,41 @@ public class SpineMachineScript : MonoBehaviour
     public void Breakdown()
     {
         int max = Random.Range(0, 100);
-        if (max < per)
+        if (breakCoolTime <= 0)
         {
-            state = MachineState.Breakdown;
-            isBreak = true;
+            if (max < per)
+            {
+                currentState = MachineState.Breakdown;
+                isBreak = true;
+            }
         }
     }
 
 
     public void MachinePix()
     {
-        state = saveState;
+        currentState = saveState;
         isBreak = false;
+        breakCoolTime = Max_breakCoolTime;
     }
-
-    void ChangeAnimation(string newState)
+    public void BreakCoolDown()
     {
-        if (currentState == newState)
+        breakCoolTime -= Time.deltaTime;
+        if (breakCoolTime <= 0)
+        {
+            breakCoolTime = 0;
+        }
+    }
+    void ChangeAnimation(string newAnimState)
+    {
+        if (currentAnimState == newAnimState)
         {
             return;
         }
 
-        _animator.Play(newState);
+        _animator.Play(newAnimState);
 
-        currentState = newState;
+        currentAnimState = newAnimState;
     }
 
 }

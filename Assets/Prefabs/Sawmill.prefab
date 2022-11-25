@@ -98,7 +98,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ff3e99a4117c74c88515b851cfb891, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  recipecheck: {fileID: 0}
   isBreak: 0
   randomON: 1
   per: 10

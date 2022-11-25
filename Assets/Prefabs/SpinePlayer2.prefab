@@ -413,8 +413,11 @@ MonoBehaviour:
   targetEndObject: {fileID: 0}
   whiteMaterial: {fileID: 2100000, guid: 93c7ef568ea5f314585363389ad1baaf, type: 2}
   originalMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  whiteShader: {fileID: -6465566751694194690, guid: 3079f76fa3f7a2c4fbb8df64f47c0cdb, type: 3}
+  originalShader: {fileID: 4800000, guid: 1e8a610c9e01c3648bac42585e5fc676, type: 3}
   InteractiveKey: 0
   PickupKey: 0
+  isTool: 0
 --- !u!210 &3350735106610723482
 SortingGroup:
   m_ObjectHideFlags: 0

@@ -1,9 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using System.Linq;
 //using UnityEditor.PackageManager;
 using UnityEngine.Serialization;
 
@@ -25,6 +20,9 @@ public class SpinePickUpScript : MonoBehaviour
     [SerializeField] private Material whiteMaterial;
     [SerializeField] private Material originalMaterial;
 
+    [SerializeField] private Shader whiteShader;
+    [SerializeField] private Shader originalShader;
+
     private KeyCode[] ArrayInteractiveKey = new KeyCode[] { KeyCode.LeftControl, KeyCode.RightControl };
     private KeyCode[] ArrayPickupKey = new KeyCode[] { KeyCode.LeftShift, KeyCode.RightShift };
 
@@ -35,7 +33,7 @@ public class SpinePickUpScript : MonoBehaviour
 
     private Animator animator;
 
-    [SerializeField]private bool isTool;
+    [SerializeField] private bool isTool;
 
     // Start is called before the first frame update
     void Start()
@@ -98,10 +96,20 @@ public class SpinePickUpScript : MonoBehaviour
         Gizmos.DrawWireCube(transform.position + boxTransform, size);
     }
 
+    void ChangeShader(GameObject gameObject, Shader shader)
+    {
+        MeshRenderer meshRenderer = gameObject.transform.GetChild(0).GetComponent<MeshRenderer>();
+        Material[] materials = meshRenderer.materials;
+        foreach (var Material in materials)
+        {
+            Material.shader = shader;
+        }
+        Debug.Log("Shader Changed!"); //젭알.... .. .
+    }
     void Interactive()
     {
         Collider2D[] hits = Physics2D.OverlapBoxAll(transform.position + boxTransform, size, 0, whatIsLayer);
-        Collider2D hit=null;
+        Collider2D hit = null;
         isTool = false;
 
         for (int i = 0; i < hits.Length; i++)
@@ -132,10 +140,10 @@ public class SpinePickUpScript : MonoBehaviour
                 {
                     hit = hits[0];
                 }
-                
-                if (Vector2.Distance(this.transform.position,hit.transform.position) > Vector2.Distance(this.transform.position,hits[i].transform.position))
+
+                if (Vector2.Distance(this.transform.position, hit.transform.position) > Vector2.Distance(this.transform.position, hits[i].transform.position))
                 {
-                    hit = hits[i];   
+                    hit = hits[i];
                 }
             }
         }
@@ -149,12 +157,26 @@ public class SpinePickUpScript : MonoBehaviour
         {
             if (targetObject != null)
             {
-                targetObject.GetComponent<SpriteRenderer>().material = originalMaterial;
+                if (targetObject.CompareTag("Machine"))
+                {
+                    ChangeShader(targetObject,originalShader);
+                }
+                else
+                {
+                    targetObject.GetComponent<SpriteRenderer>().material = originalMaterial;
+                }
                 targetObject = null;
             }
             if (targetEndObject != null)
             {
-                targetEndObject.GetComponent<SpriteRenderer>().material = originalMaterial;
+                if (targetEndObject.CompareTag("Machine"))
+                {
+                    ChangeShader(targetEndObject,originalShader);
+                }
+                else
+                {
+                    targetEndObject.GetComponent<SpriteRenderer>().material = originalMaterial;
+                }
                 targetEndObject = null;
             }
             GaugePer = 0.0f;
@@ -166,12 +188,26 @@ public class SpinePickUpScript : MonoBehaviour
 
             if (targetObject != null)
             {
-                targetObject.GetComponent<SpriteRenderer>().material = whiteMaterial;
+                if (targetObject.CompareTag("Machine"))
+                {
+                    ChangeShader(targetObject,whiteShader);
+                }
+                else
+                {
+                    targetObject.GetComponent<SpriteRenderer>().material = whiteMaterial;
+                }
             }
 
             if (targetEndObject != null)
             {
-                targetEndObject.GetComponent<SpriteRenderer>().material = originalMaterial;
+                if (targetEndObject.CompareTag("Machine"))
+                {
+                    ChangeShader(targetEndObject,originalShader);
+                }
+                else
+                {
+                    targetEndObject.GetComponent<SpriteRenderer>().material = originalMaterial;
+                }
             }
             GaugePer = 0.0f;
         }
@@ -187,19 +223,19 @@ public class SpinePickUpScript : MonoBehaviour
 
                 if (isHold == true) // 나무 기계에 넣기
                 {
-                    if (hit.gameObject.name == "Sawmill") // 나무 기계에 넣기
+                    if (hit.gameObject.name == "SpineSawmill") // 나무 기계에 넣기
                     {
-                        hit.GetComponent<MachineScript>().SubCount(Hand);
+                        hit.GetComponent<SpineMachineScript>().SubCount(Hand);
                     }
-                    else if (hit.gameObject.name == "Stonecutter") // 돌 기계에 넣기
+                    else if (hit.gameObject.name == "SpineStonecutter") // 돌 기계에 넣기
                     {
-                        hit.GetComponent<MachineScript>().SubCount(Hand);
+                        hit.GetComponent<SpineMachineScript>().SubCount(Hand);
                     }
-                    else if (hit.gameObject.name == "Mill") // 버섯 기계에 넣기
+                    else if (hit.gameObject.name == "SpineMill") // 버섯 기계에 넣기
                     {
-                        hit.GetComponent<MachineScript>().SubCount(Hand);
+                        hit.GetComponent<SpineMachineScript>().SubCount(Hand);
                     }
-                    else if (hit.gameObject.name == "Last_Machine")  //2차가공 기계에 넣기
+                    else if (hit.gameObject.name == "Spine_Last_Machine")  //2차가공 기계에 넣기
                     {
                         hit.GetComponent<FinalMachineScript>().SubCount(Hand);
                     }
@@ -211,19 +247,19 @@ public class SpinePickUpScript : MonoBehaviour
                 else //물건을 들고있지 않은 상태
                 {
                     //기계가 아이템을 다 만들었다면 꺼냄
-                    if (hit.gameObject.name == "Sawmill")
+                    if (hit.gameObject.name == "SpineSawmill")
                     {
-                        hit.GetComponent<MachineScript>().PickUp(Hand);
+                        hit.GetComponent<SpineMachineScript>().PickUp(Hand);
                     }
-                    else if (hit.gameObject.name == "Stonecutter")
+                    else if (hit.gameObject.name == "SpineStonecutter")
                     {
-                        hit.GetComponent<MachineScript>().PickUp(Hand);
+                        hit.GetComponent<SpineMachineScript>().PickUp(Hand);
                     }
-                    else if (hit.gameObject.name == "Mill")
+                    else if (hit.gameObject.name == "SpineMill")
                     {
-                        hit.GetComponent<MachineScript>().PickUp(Hand);
+                        hit.GetComponent<SpineMachineScript>().PickUp(Hand);
                     }
-                    else if (hit.gameObject.name == "Last_Machine")
+                    else if (hit.gameObject.name == "Spine_Last_Machine")
                     {
                         hit.GetComponent<FinalMachineScript>().PickUp(Hand);
                     }
@@ -309,7 +345,7 @@ public class SpinePickUpScript : MonoBehaviour
                     {
                         if (hit.CompareTag("Machine"))
                         {
-                            GaugePer += (100.0f / animator.GetCurrentAnimatorClipInfo(0).Length* 1.5f) * Time.deltaTime;
+                            GaugePer += (100.0f / animator.GetCurrentAnimatorClipInfo(0).Length * 1.5f) * Time.deltaTime;
                             if (GaugePer >= 100)
                             {
                                 hit.GetComponent<MachineScript>().MachinePix();
@@ -323,7 +359,7 @@ public class SpinePickUpScript : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyUp(InteractiveKey)&& hit != null)
+        if (Input.GetKeyUp(InteractiveKey) && hit != null)
         {
             GaugePer = 0.0f;
             if (hit.CompareTag("Tree") || hit.CompareTag("Stone") || hit.CompareTag("Grass"))
@@ -354,7 +390,7 @@ public class SpinePickUpScript : MonoBehaviour
                             Hand.transform.GetChild(0).gameObject.SetActive(true);
                         }
                         Hand.transform.GetChild(0).gameObject.layer = 6;
-                        Hand.transform.GetChild(0).position = boxTransform + transform.position + new Vector3(0f,-0.3f,0f);
+                        Hand.transform.GetChild(0).position = boxTransform + transform.position + new Vector3(0f, -0.3f, 0f);
                         Hand.transform.DetachChildren();
 
                         //바꿀 아이템 들기
@@ -369,8 +405,8 @@ public class SpinePickUpScript : MonoBehaviour
                 }
                 else
                 {
-                    if (hit.CompareTag("tool") || hit.CompareTag("item")) 
-                        //들기
+                    if (hit.CompareTag("tool") || hit.CompareTag("item"))
+                    //들기
                     {
                         hit.gameObject.transform.SetParent(Hand.transform);
                         hit.transform.localPosition = Vector2.zero;
@@ -392,7 +428,7 @@ public class SpinePickUpScript : MonoBehaviour
                         Hand.transform.GetChild(0).gameObject.SetActive(true);
                     }
                     Hand.transform.GetChild(0).gameObject.layer = 6;
-                    Hand.transform.GetChild(0).position = boxTransform + transform.position + new Vector3(0f,-0.3f,0f);
+                    Hand.transform.GetChild(0).position = boxTransform + transform.position + new Vector3(0f, -0.3f, 0f);
                     Hand.transform.DetachChildren();
                     return;
                 }
