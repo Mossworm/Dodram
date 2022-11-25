@@ -108,7 +108,7 @@ public class MachineScript : MonoBehaviour
         {
             gaugeBar.gameObject.SetActive(false);
         }
-        else
+        else if(state == MachineState.Working || state == MachineState.Destroying)
         {
             gaugeBar.gameObject.SetActive(true);
         }
@@ -125,7 +125,13 @@ public class MachineScript : MonoBehaviour
         }
         else if (state == MachineState.Breakdown)
         {
-            nowGaugebar.color = Color.gray;
+            SpriteRenderer sr = this.gameObject.GetComponent<SpriteRenderer>();
+            sr.material.color = Color.red;
+            if(gaugeBar.gameObject.activeSelf == true)
+            {
+                nowGaugebar.color = Color.gray;
+            }
+            
         }
 
     }
