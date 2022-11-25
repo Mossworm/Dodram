@@ -8,7 +8,7 @@ using Random = UnityEngine.Random;
 
 public class MachineScript : MonoBehaviour
 {
-    public GameObject recipecheck;  //레시피 체크용
+    //public GameObject recipecheck;  //레시피 체크용
     public bool isBreak;
     public bool randomON;
 
@@ -18,6 +18,7 @@ public class MachineScript : MonoBehaviour
     public float workTime;
     public float stopTime;
     public float breakCoolTime;
+    private float Max_breakCoolTime;
 
     public enum MachineState
     {
@@ -44,7 +45,7 @@ public class MachineScript : MonoBehaviour
 
     private void Start()
     {
-        breakCoolTime = 5f;
+        Max_breakCoolTime = breakCoolTime;
         gaugeBar = Instantiate(prfGaugeBar, canvas.transform).GetComponent<RectTransform>();
         nowGaugebar = gaugeBar.transform.GetChild(0).GetComponent<Image>();
         state = MachineState.None;
@@ -221,7 +222,7 @@ public class MachineScript : MonoBehaviour
     {
         state = saveState;
         isBreak = false;
-        breakCoolTime = 10f;
+        breakCoolTime = Max_breakCoolTime;
     }
     public void BreakCoolDown()
     {
