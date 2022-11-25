@@ -105,7 +105,6 @@ namespace Spine.Unity {
 			skeletonData = null;
 			stateData = null;
 		}
-
 		public AnimationStateData GetAnimationStateData () {
 			if (stateData != null)
 				return stateData;
