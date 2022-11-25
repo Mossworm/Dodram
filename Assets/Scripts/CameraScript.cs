@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class CameraScript : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class CameraScript : MonoBehaviour
     public Camera FstCam;
     public Camera SndCam;
 
+    public GameObject UI;
     public GameObject Arrow1;
     public GameObject Arrow2;
     public GameObject Separator;
@@ -22,9 +24,12 @@ public class CameraScript : MonoBehaviour
     {
         mainCam = GameObject.Find("Main Camera").GetComponent<Camera>();
 
+
+        UI.SetActive(false);
         FstCam.enabled = false;
         SndCam.enabled = false;
         currentTime = 0.0f;
+
     }
 
     // Update is called once per frame
