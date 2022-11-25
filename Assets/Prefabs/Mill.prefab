@@ -101,12 +101,12 @@ MonoBehaviour:
   recipecheck: {fileID: 0}
   isBreak: 0
   randomON: 1
-  per: 2
+  per: 10
   craftTime: 5
-  destroyTime: 10
+  destroyTime: 15
   workTime: 0
-  stopTime: 30
-  breakCoolTime: 0
+  stopTime: 0
+  breakCoolTime: 35
   state: 0
   saveState: 0
   ingredient: {fileID: 5549948290299783770, guid: 4390bccc47a2a7b46919c1893e09f63f, type: 3}
