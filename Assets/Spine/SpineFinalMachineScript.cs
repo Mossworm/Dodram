@@ -60,21 +60,21 @@ public class SpineFinalMachineScript : MonoBehaviour
         GaugeBar();
         if (currentState != MachineState.None)
         {
-            ChangeAnimation("Last_Machine_Idle");
+            //ChangeAnimation("Last_Machine_Idle");
             workTime += Time.deltaTime;
         }
         if (currentState == MachineState.Destroying)
         {
             if (workTime >= destroyTime)
             {
-                ChangeAnimation("Last_Machine_Explosion");
+                //("Last_Machine_Explosion");
                 ChildDestroy();
                 currentState = MachineState.None;
                 workTime = 0;
             }
             else
             {
-                ChangeAnimation("Last_Machine_Overload");
+                //ChangeAnimation("Last_Machine_Overload");
             }
         }
 
@@ -112,13 +112,13 @@ public class SpineFinalMachineScript : MonoBehaviour
         GameObject playerItem;
         playerItem = hand.transform.GetChild(0).gameObject;
         
-        if (this.transform.childCount < recipes.GetComponent<RecipeScript>().needNum && currentState == MachineState.None) //기계에 들어간 재료가 레시피 재료보다 적은가?
+        if (this.transform.childCount+1 < recipes.GetComponent<RecipeScript>().needNum && currentState == MachineState.None) //기계에 들어간 재료가 레시피 재료보다 적은가?
         {
             for (int i = 0; i < recipes.GetComponent<RecipeScript>().nowRecipe.Count; i++) //현재 레시피의 배열(필요재료) 수 만큼 루프를 돌림
             {
                 if (playerItem.name == recipes.GetComponent<RecipeScript>().nowRecipe[i].name) //루프를 돌리다가 플레이어가 넣으려 하는 아이템과 현재 필요한 레시피 재료가 같은가?
                 {
-                    for (int j = 0; j < this.transform.childCount; j++)
+                    for (int j = 1; j < this.transform.childCount; j++)
                     {
                         int r = 0;
                         int m = 0;
@@ -168,11 +168,11 @@ public class SpineFinalMachineScript : MonoBehaviour
 
     public void CraftOn()   //제작 시작
     {
-        if (recipes.GetComponent<RecipeScript>().needNum == this.transform.childCount)
+        if (recipes.GetComponent<RecipeScript>().needNum == this.transform.childCount+1)
         {
             if (currentState == MachineState.None)
             {
-                for (int i = 0; i < this.transform.childCount; i++)
+                for (int i = 1; i < this.transform.childCount; i++)
                 { 
                     Destroy(this.transform.GetChild(i).gameObject);
                 }
@@ -218,7 +218,7 @@ public class SpineFinalMachineScript : MonoBehaviour
     
     public void ChildDestroy() //자식 삭제 and 레시피 재생성
     {
-        for (int i = 0; i < this.transform.childCount; i++)
+        for (int i = 1; i < this.transform.childCount; i++)
         { 
             Destroy(this.transform.GetChild(i).gameObject);
         }

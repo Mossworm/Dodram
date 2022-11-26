@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 5855736838834483455}
   m_Layer: 6
   m_Name: Spine_Last_machine
-  m_TagString: Untagged
+  m_TagString: Machine
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -194,7 +194,9 @@ MonoBehaviour:
   craftTime: 15
   destroyTime: 10
   workTime: 0
-  state: 0
+  currentAnimState: 
+  currentState: 0
+  saveState: 0
   production: {fileID: 2147447084779072749, guid: d516f5f450d353b48a044530726d6731, type: 3}
   recipes: {fileID: 0}
   prfGaugeBar: {fileID: 6077395782407935344, guid: 21b0a8999c7a9034d9217db9436dea06, type: 3}

@@ -139,6 +139,7 @@ GameObject:
   - component: {fileID: 1195234875133962577}
   - component: {fileID: 3475668764816430607}
   - component: {fileID: 151820774331049138}
+  - component: {fileID: 1996720047}
   m_Layer: 6
   m_Name: SpineMill
   m_TagString: Machine
@@ -174,7 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a50b4ce19f1cc0742a5f10100f1fa7ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBreak: 1
+  isBreak: 0
   randomON: 1
   per: 10
   craftTime: 5
@@ -230,3 +231,14 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!210 &1996720047
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6790146530951848526}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0

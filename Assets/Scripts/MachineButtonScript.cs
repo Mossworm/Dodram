@@ -8,6 +8,6 @@ public class MachineButtonScript : MonoBehaviour
 
     public void MachineRun()
     {
-        machine.GetComponent<MachineScript>().CraftOn();
+        machine.GetComponent<SpineMachineScript>().CraftOn();
     }
 }

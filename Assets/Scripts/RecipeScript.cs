@@ -18,9 +18,9 @@ public class RecipeScript : MonoBehaviour
     public GameObject treeCheck;
 
     public GameObject[] ingredientArray;
-    public GameObject Stonecutter;
-    public GameObject Mill;
-    public GameObject Sawmill;
+    // public GameObject Stonecutter;
+    // public GameObject Mill;
+    // public GameObject Sawmill;
 
     public GameObject FinalMachine;
     public int rockCnt;     //넣은 개수

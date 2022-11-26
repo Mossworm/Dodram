@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7084288895087114740}
   - component: {fileID: 4080499487664152273}
   - component: {fileID: 1051236841013776557}
+  - component: {fileID: 1122807323197130303}
   m_Layer: 6
   m_Name: SpineSawmill
   m_TagString: Machine
@@ -47,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a50b4ce19f1cc0742a5f10100f1fa7ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBreak: 1
+  isBreak: 0
   randomON: 1
   per: 10
   craftTime: 5
@@ -103,6 +104,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!210 &1122807323197130303
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2941052966679202654}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!1 &8983757250842828390
 GameObject:
   m_ObjectHideFlags: 0

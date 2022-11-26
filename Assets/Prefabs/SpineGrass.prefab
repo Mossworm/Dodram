@@ -12,6 +12,9 @@ GameObject:
   - component: {fileID: 1469986638985857497}
   - component: {fileID: 737103523825457655}
   - component: {fileID: 4585397758863696580}
+  - component: {fileID: 1631829324}
+  - component: {fileID: 1631829326}
+  - component: {fileID: 1631829325}
   m_Layer: 6
   m_Name: SpineGrass
   m_TagString: Grass
@@ -81,7 +84,7 @@ MonoBehaviour:
   canvas: {fileID: 0}
   gaugeBar: {fileID: 0}
   height: 1.5
-  regenTime: 3
+  regenTime: 10
   isTarget: 0
   currentAnimState: 
   prefixString: 
@@ -106,6 +109,50 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!210 &1631829324
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469986638985857479}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!50 &1631829326
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469986638985857479}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
+--- !u!114 &1631829325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469986638985857479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5d21d8c02fe0de4299e7d4601de0e4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5524289652461681758
 GameObject:
   m_ObjectHideFlags: 0
