@@ -41,6 +41,7 @@ public class SpineFarmingObject : MonoBehaviour
 
         gaugeBar = Instantiate(prfGaugeBar, canvas.transform).GetComponent<RectTransform>();
         nowGaugebar = gaugeBar.transform.GetChild(0).GetComponent<Image>();
+        nowGaugebar.color = new Color(143/ 255.0f, 206/ 255.0f, 90/ 255.0f);
 
 
         switch (tag)
@@ -79,7 +80,7 @@ public class SpineFarmingObject : MonoBehaviour
         {
             gaugeBar.gameObject.SetActive(false);
         }
-        else
+        else if(hp > 0)
         {
             gaugeBar.gameObject.SetActive(true);
         }
@@ -91,8 +92,12 @@ public class SpineFarmingObject : MonoBehaviour
     {
         ChangeAnimation(prefixString + "_use");
         hp--;
-        
-        if (hp == 0) Drop();
+
+        if (hp == 0)
+        {
+            Drop();
+            gaugeBar.gameObject.SetActive(false);
+        }
     }
 
     public void Drop()
@@ -106,7 +111,6 @@ public class SpineFarmingObject : MonoBehaviour
 
     IEnumerator Regen()
     {
-        gaugeBar.gameObject.SetActive(false);
         isTarget = false;
         Vector3 tempPosition = this.transform.position;
 
