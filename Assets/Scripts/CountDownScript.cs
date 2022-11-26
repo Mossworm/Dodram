@@ -32,8 +32,13 @@ public class CountDownScript : MonoBehaviour
 
     void CountDown()
     {
-        if(Managers.isReady == true)
+        if(GameObject.Find("Main Camera").GetComponent<Camera>().enabled == false)
         {
+            if (UI.activeSelf == false)
+            {
+                UI.SetActive(true);
+            }
+            
             countDown += Time.deltaTime;
             if (countDown <= 1)
             {
@@ -57,8 +62,8 @@ public class CountDownScript : MonoBehaviour
             else if (countDown >= 4)
             {
                 gameStart.SetActive(false);
-                UI.SetActive(true);
                 countDown = 4f;
+                Managers.isReady = true;
                 this.GetComponent<CountDownScript>().enabled = false;
             }
         }

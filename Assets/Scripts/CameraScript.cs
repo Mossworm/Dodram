@@ -52,7 +52,6 @@ public class CameraScript : MonoBehaviour
             Arrow2.SetActive(false);
             Separator.SetActive(true);
             SecondCameraOn();
-            Managers.isReady = true;
             this.GetComponent<CameraScript>().enabled = false;
         }
         
