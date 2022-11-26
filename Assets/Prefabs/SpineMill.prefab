@@ -194,7 +194,7 @@ MonoBehaviour:
   - {fileID: 7706093404112877944, guid: a130c2067d6a10b41b3a15cb86ed4358, type: 3}
   prfGaugeBar: {fileID: 6077395782407935344, guid: 21b0a8999c7a9034d9217db9436dea06, type: 3}
   canvas: {fileID: 0}
-  height: 1.18
+  height: 2
 --- !u!70 &3475668764816430607
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

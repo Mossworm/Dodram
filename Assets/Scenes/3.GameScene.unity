@@ -914,10 +914,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 3170189469881307081, guid: b8cf9956c44168549963ebe0faeb4829, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5251612841598452405, guid: b8cf9956c44168549963ebe0faeb4829, type: 3}
       propertyPath: m_Materials.Array.size
       value: 4
@@ -12287,6 +12283,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 23636073}
     m_Modifications:
+    - target: {fileID: 737103523825457655, guid: 6cb52fdc60bf04145a0ecc0084b1e242, type: 3}
+      propertyPath: regenTime
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1469986638985857479, guid: 6cb52fdc60bf04145a0ecc0084b1e242, type: 3}
       propertyPath: m_Name
       value: SpineGrass

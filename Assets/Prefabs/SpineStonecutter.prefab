@@ -83,7 +83,7 @@ MonoBehaviour:
   - {fileID: 5816583132714194346, guid: 3ef62a25984a6e1459e55796250d2f21, type: 3}
   prfGaugeBar: {fileID: 6077395782407935344, guid: 21b0a8999c7a9034d9217db9436dea06, type: 3}
   canvas: {fileID: 0}
-  height: 1.18
+  height: 2
 --- !u!95 &2220369975025398274
 Animator:
   serializedVersion: 4

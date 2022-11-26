@@ -47,7 +47,7 @@ public class UI_Timer : MonoBehaviour
             float amount = (_currentTime / _MAX_TIME);
             Timer.GetComponent<Image>().fillAmount = amount;
             float carRect = amount;
-            rect.localPosition = new Vector3(originX-(563+602)*amount, rect.localPosition.y, rect.localPosition.z);
+            rect.localPosition = new Vector3(originX-(696-(-577))*amount, rect.localPosition.y, rect.localPosition.z);
 
 
 

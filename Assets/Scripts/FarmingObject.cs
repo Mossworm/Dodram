@@ -66,7 +66,7 @@ public class FarmingObject : MonoBehaviour
     public void Drop()
     {
         prefab_obj = Instantiate(dropItem);
-        prefab_obj.transform.position = this.transform.position;
+        prefab_obj.transform.position = new Vector3(transform.position.x,transform.position.y,transform.position.z);
         prefab_obj.name = dropItem.name;
         StartCoroutine(Regen());
     }
