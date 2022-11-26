@@ -127,7 +127,7 @@ public class SpinePlayerController : MonoBehaviour
             return;
         }
 
-        UpdateDir();
+        //UpdateDir();
         if (Input.GetKeyDown(DashKey) && canDash)
         {
             StartCoroutine(Dash());
@@ -165,26 +165,53 @@ public class SpinePlayerController : MonoBehaviour
         }
 
         _movement.Normalize();
+        UpdateDir();
         _characterRigidbody.velocity = _movement * speed;
     }
 
     private void UpdateDir()
     {
-        if (_movement.x > 0)
+        if (_movement.y > 0)
         {
-            direction = Dir.Right;
-        }
-        else if (_movement.x < 0)
-        {
-            direction = Dir.Left;
-        }
-        else if (_movement.y > 0)
-        {
-            direction = Dir.Up;
+            if (_movement.x > 0)
+            {
+                direction = Dir.Right;
+            }
+            else if (_movement.x < 0)
+            {
+                direction = Dir.Left;
+            }
+            else
+            {
+                direction = Dir.Up;
+            }
+
         }
         else if (_movement.y < 0)
         {
-            direction = Dir.Down;
+            if (_movement.x > 0)
+            {
+                direction = Dir.Right;
+            }
+            else if (_movement.x < 0)
+            {
+                direction = Dir.Left;
+            }
+            else
+            {
+                direction = Dir.Down;
+            }
+        }
+        else
+        {
+            if (_movement.x > 0)
+            {
+                direction = Dir.Right;
+            }
+            else if (_movement.x < 0)
+            {
+                direction = Dir.Left;
+            }
         }
     }
 

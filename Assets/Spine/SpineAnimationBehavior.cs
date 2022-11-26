@@ -18,7 +18,7 @@ public class SpineAnimationBehavior : StateMachineBehaviour
     private Spine.TrackEntry _trackEntry;
 
     private float normalizedTime;
-    [SerializeField] private float exitTime = 1f;
+    public float exitTime = 0f;
 
     //[SerializeField] private SpinePlayerController _spc;
     //private SpinePickUpScript pickUpScript;

@@ -62,7 +62,6 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 34234011c609b994082f78a04083b52f, type: 2}
   - {fileID: 2100000, guid: 572d0ea83c3164a46ac1375548814149, type: 2}
   - {fileID: 2100000, guid: 34234011c609b994082f78a04083b52f, type: 2}
   - {fileID: 2100000, guid: 572d0ea83c3164a46ac1375548814149, type: 2}
@@ -125,7 +124,7 @@ MonoBehaviour:
   disableRenderingOnOverride: 1
   updateTiming: 1
   unscaledTime: 0
-  _animationName: 
+  _animationName: Grass_machine_Idle
   loop: 1
   timeScale: 1
 --- !u!1 &6790146530951848526

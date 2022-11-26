@@ -157,9 +157,13 @@ public class SpinePickUpScript : MonoBehaviour
         {
             if (targetObject != null)
             {
-                if (targetObject.CompareTag("Machine"))
+                if (targetObject.CompareTag("Machine")
+                    || targetObject.CompareTag("Stone")
+                    || targetObject.CompareTag("Tree")
+                    || targetObject.CompareTag("Grass")
+                    )
                 {
-                    ChangeShader(targetObject,originalShader);
+                    ChangeShader(targetObject, originalShader);
                 }
                 else
                 {
@@ -169,9 +173,13 @@ public class SpinePickUpScript : MonoBehaviour
             }
             if (targetEndObject != null)
             {
-                if (targetEndObject.CompareTag("Machine"))
+                if (targetEndObject.CompareTag("Machine")
+                    || targetEndObject.CompareTag("Stone")
+                    || targetEndObject.CompareTag("Tree")
+                    || targetEndObject.CompareTag("Grass")
+                    )
                 {
-                    ChangeShader(targetEndObject,originalShader);
+                    ChangeShader(targetEndObject, originalShader);
                 }
                 else
                 {
@@ -188,9 +196,13 @@ public class SpinePickUpScript : MonoBehaviour
 
             if (targetObject != null)
             {
-                if (targetObject.CompareTag("Machine"))
+                if (targetObject.CompareTag("Machine")
+                    || targetObject.CompareTag("Stone")
+                    || targetObject.CompareTag("Tree")
+                    || targetObject.CompareTag("Grass")
+                    )
                 {
-                    ChangeShader(targetObject,whiteShader);
+                    ChangeShader(targetObject, whiteShader);
                 }
                 else
                 {
@@ -200,9 +212,13 @@ public class SpinePickUpScript : MonoBehaviour
 
             if (targetEndObject != null)
             {
-                if (targetEndObject.CompareTag("Machine"))
+                if (targetEndObject.CompareTag("Machine")
+                    || targetEndObject.CompareTag("Stone")
+                    || targetEndObject.CompareTag("Tree")
+                    || targetEndObject.CompareTag("Grass")
+                    )
                 {
-                    ChangeShader(targetEndObject,originalShader);
+                    ChangeShader(targetEndObject, originalShader);
                 }
                 else
                 {
@@ -261,7 +277,7 @@ public class SpinePickUpScript : MonoBehaviour
                     }
                     else if (hit.gameObject.name == "Spine_Last_Machine")
                     {
-                        hit.GetComponent<FinalMachineScript>().PickUp(Hand);
+                        hit.GetComponent<SpineFinalMachineScript>().PickUp(Hand);
                     }
                 }
             }
@@ -306,11 +322,11 @@ public class SpinePickUpScript : MonoBehaviour
                     {
                         if (hit.CompareTag("Tree"))
                         {
-                            hit.GetComponent<FarmingObject>().isTarget = true;
+                            hit.GetComponent<SpineFarmingObject>().isTarget = true;
                             GaugePer += (100.0f / animator.GetCurrentAnimatorStateInfo(0).length * 1.5f) * Time.deltaTime;
                             if (GaugePer >= 100.0f)
                             {
-                                hit.GetComponent<FarmingObject>().Digging();
+                                hit.GetComponent<SpineFarmingObject>().Digging();
                                 GaugePer = 0.1f;
                             }
                         }
@@ -319,11 +335,11 @@ public class SpinePickUpScript : MonoBehaviour
                     {
                         if (hit.CompareTag("Stone"))
                         {
-                            hit.GetComponent<FarmingObject>().isTarget = true;
+                            hit.GetComponent<SpineFarmingObject>().isTarget = true;
                             GaugePer += (100.0f / animator.GetCurrentAnimatorClipInfo(0).Length * 1.5f) * Time.deltaTime;
                             if (GaugePer >= 100)
                             {
-                                hit.GetComponent<FarmingObject>().Digging();
+                                hit.GetComponent<SpineFarmingObject>().Digging();
                                 GaugePer = 0.1f;
                             }
                         }
@@ -332,11 +348,11 @@ public class SpinePickUpScript : MonoBehaviour
                     {
                         if (hit.CompareTag("Grass"))
                         {
-                            hit.GetComponent<FarmingObject>().isTarget = true;
+                            hit.GetComponent<SpineFarmingObject>().isTarget = true;
                             GaugePer += (100.0f / animator.GetCurrentAnimatorClipInfo(0).Length * 1.5f) * Time.deltaTime;
                             if (GaugePer >= 100)
                             {
-                                hit.GetComponent<FarmingObject>().Digging();
+                                hit.GetComponent<SpineFarmingObject>().Digging();
                                 GaugePer = 0.1f;
                             }
                         }
@@ -348,7 +364,7 @@ public class SpinePickUpScript : MonoBehaviour
                             GaugePer += (100.0f / animator.GetCurrentAnimatorClipInfo(0).Length * 1.5f) * Time.deltaTime;
                             if (GaugePer >= 100)
                             {
-                                hit.GetComponent<MachineScript>().MachinePix();
+                                hit.GetComponent<SpineMachineScript>().MachinePix();
                                 GaugePer = 0.1f;
                             }
 
@@ -364,8 +380,8 @@ public class SpinePickUpScript : MonoBehaviour
             GaugePer = 0.0f;
             if (hit.CompareTag("Tree") || hit.CompareTag("Stone") || hit.CompareTag("Grass"))
             {
-                hit.GetComponent<FarmingObject>().hp = hit.GetComponent<FarmingObject>().maxhp;
-                hit.GetComponent<FarmingObject>().isTarget = false;
+                hit.GetComponent<SpineFarmingObject>().hp = hit.GetComponent<SpineFarmingObject>().maxhp;
+                hit.GetComponent<SpineFarmingObject>().isTarget = false;
             }
         }
 

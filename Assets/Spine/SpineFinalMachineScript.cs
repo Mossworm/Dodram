@@ -15,14 +15,18 @@ public class SpineFinalMachineScript : MonoBehaviour
     public float destroyTime;
     public float workTime;
 
+    private Animator _animator;
+    public string currentAnimState;
+
     public enum MachineState
     {
         None,
         Working,
         Destroying
     }
-    
-    public MachineState state;
+
+    public MachineState currentState;
+    public MachineState saveState;
 
     public GameObject production;
 
@@ -38,9 +42,15 @@ public class SpineFinalMachineScript : MonoBehaviour
 
     void Start()
     {
+        _animator = GetComponent<Animator>();
+
+        if (canvas == null)
+        {
+            canvas = GameObject.Find("ObjectCanvas");
+        }
         gaugeBar = Instantiate(prfGaugeBar, canvas.transform).GetComponent<RectTransform>();
         nowGaugebar = gaugeBar.transform.GetChild(0).GetComponent<Image>();
-        state = MachineState.None;
+        currentState = MachineState.None;
     }
     
     void Update()
@@ -48,19 +58,27 @@ public class SpineFinalMachineScript : MonoBehaviour
         CraftOn();      //모든 재료가 들어갔을 때 바로 실행되게
 
         GaugeBar();
-        if (state != MachineState.None)
+        if (currentState != MachineState.None)
         {
+            ChangeAnimation("Last_Machine_Idle");
             workTime += Time.deltaTime;
         }
-        if (state == MachineState.Destroying)
+        if (currentState == MachineState.Destroying)
         {
             if (workTime >= destroyTime)
             {
+                ChangeAnimation("Last_Machine_Explosion");
                 ChildDestroy();
-                state = MachineState.None;
+                currentState = MachineState.None;
                 workTime = 0;
             }
+            else
+            {
+                ChangeAnimation("Last_Machine_Overload");
+            }
         }
+
+        saveState = currentState;
     }
     
     void GaugeBar()
@@ -68,7 +86,7 @@ public class SpineFinalMachineScript : MonoBehaviour
         Vector3 _gaugeBarPos = new Vector3(transform.position.x, transform.position.y + height, 0);
         gaugeBar.position = _gaugeBarPos;
 
-        if (state == MachineState.None)
+        if (currentState == MachineState.None)
         {
             gaugeBar.gameObject.SetActive(false);
         }
@@ -77,12 +95,12 @@ public class SpineFinalMachineScript : MonoBehaviour
             gaugeBar.gameObject.SetActive(true);
         }
 
-        if (state == MachineState.Working)
+        if (currentState == MachineState.Working)
         {
             nowGaugebar.fillAmount = workTime / craftTime;   
             nowGaugebar.color= new Color(38/255.0f, 162 / 255.0f, 123 / 255.0f);
         }
-        else if (state == MachineState.Destroying)
+        else if (currentState == MachineState.Destroying)
         {
             nowGaugebar.fillAmount = 1 - (workTime / destroyTime);
             nowGaugebar.color= new Color(172 / 255.0f, 67 / 255.0f, 63 / 255.0f);
@@ -94,7 +112,7 @@ public class SpineFinalMachineScript : MonoBehaviour
         GameObject playerItem;
         playerItem = hand.transform.GetChild(0).gameObject;
         
-        if (this.transform.childCount < recipes.GetComponent<RecipeScript>().needNum && state == MachineState.None) //기계에 들어간 재료가 레시피 재료보다 적은가?
+        if (this.transform.childCount < recipes.GetComponent<RecipeScript>().needNum && currentState == MachineState.None) //기계에 들어간 재료가 레시피 재료보다 적은가?
         {
             for (int i = 0; i < recipes.GetComponent<RecipeScript>().nowRecipe.Count; i++) //현재 레시피의 배열(필요재료) 수 만큼 루프를 돌림
             {
@@ -152,21 +170,21 @@ public class SpineFinalMachineScript : MonoBehaviour
     {
         if (recipes.GetComponent<RecipeScript>().needNum == this.transform.childCount)
         {
-            if (state == MachineState.None)
+            if (currentState == MachineState.None)
             {
                 for (int i = 0; i < this.transform.childCount; i++)
                 { 
                     Destroy(this.transform.GetChild(i).gameObject);
                 }
                 Invoke("Crafting", craftTime);
-                state = MachineState.Working;
+                currentState = MachineState.Working;
             }   
         }
     }
 
     public void PickUp(GameObject hand) //꺼내기
     {
-        if (state == MachineState.Destroying)
+        if (currentState == MachineState.Destroying)
         {
             CreateDone(hand);
             recipcheck.GetComponent<RecipeScript>().recipeOrder++;
@@ -175,7 +193,7 @@ public class SpineFinalMachineScript : MonoBehaviour
 
     public void Crafting()      //제작완성 및 삭제중 상태로 이동
     {
-        state = MachineState.Destroying;
+        currentState = MachineState.Destroying;
         workTime = 0;
     }
     
@@ -193,7 +211,7 @@ public class SpineFinalMachineScript : MonoBehaviour
         go.transform.SetParent(hand.transform);
         go.transform.localPosition = Vector2.zero;
         go.layer = 0;
-        state = MachineState.None;
+        currentState = MachineState.None;
         workTime = 0;
         ChildDestroy();
     }
@@ -208,6 +226,18 @@ public class SpineFinalMachineScript : MonoBehaviour
         rockcheck.GetComponent<RecipeDawnCheck>().checkInit();
         treecheck.GetComponent<RecipeDawnCheck>().checkInit();
         recipes.GetComponent<RecipeScript>().RecipeSetting();
-    } 
-    
+    }
+
+    void ChangeAnimation(string newAnimState)
+    {
+        if (currentAnimState == newAnimState)
+        {
+            return;
+        }
+
+        _animator.Play(newAnimState);
+
+        currentAnimState = newAnimState;
+    }
+
 }

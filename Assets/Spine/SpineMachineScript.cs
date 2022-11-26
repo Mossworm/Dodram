@@ -52,6 +52,12 @@ public class SpineMachineScript : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
         Max_breakCoolTime = breakCoolTime;
+
+        if (canvas == null)
+        {
+            canvas = GameObject.Find("ObjectCanvas");
+        }
+
         gaugeBar = Instantiate(prfGaugeBar, canvas.transform).GetComponent<RectTransform>();
         nowGaugebar = gaugeBar.transform.GetChild(0).GetComponent<Image>();
         currentState = MachineState.None;
@@ -80,7 +86,6 @@ public class SpineMachineScript : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(prefixString);
         GaugeBar();
         BreakCoolDown();
 
@@ -136,44 +141,6 @@ public class SpineMachineScript : MonoBehaviour
             default:
                 break;
         }
-            //if (currentState == MachineState.Working)
-            //{
-            //    if (workTime >= craftTime)
-            //    {
-            //        ChangeAnimation(prefixString + "_Machine_Overload");
-            //        workTime = 0;
-            //        currentState = MachineState.Destroying;
-            //    }
-            //    else
-            //    {
-            //        ChangeAnimation(prefixString + "_Machine_Use");
-            //        workTime += Time.deltaTime;
-            //        stopTime = workTime;
-            //    }
-            //}
-            //else if (currentState == MachineState.Destroying)
-            //{
-            //    if (workTime >= destroyTime)
-            //    {
-            //        ChangeAnimation(prefixString + "_Machine_Explosion");
-            //        ChildDestroy();
-            //        currentState = MachineState.None;
-            //        workTime = 0;
-            //    }
-            //    else
-            //    {
-            //        ChangeAnimation(prefixString + "_Machine_Overload");
-            //        Crafting();
-            //        workTime += Time.deltaTime;
-            //        stopTime = workTime;
-            //    }
-            //}
-            //else if(currentState == MachineState.Breakdown)
-            //{
-            //    ChangeAnimation(prefixString + "_Machine_Broken");
-            //    workTime = stopTime;
-            //}
-
             saveState = currentState;    
     }
 

@@ -83,9 +83,9 @@ public class RecipeScript : MonoBehaviour
         nowRockText.text = rockCnt + "/" + nowRockNeed;
         nowTreeText.text = treeCnt + "/" + nowTreeNeed;
 
-        nextMushText.text = "0/" + nextMushNeed;
-        nextRockText.text = "0/" + nextRockNeed;
-        nextTreeText.text = "0/" + nextTreeNeed;
+        nextMushText.text = nextMushNeed.ToString();
+        nextRockText.text =  nextRockNeed.ToString();
+        nextTreeText.text =  nextTreeNeed.ToString();
 
         if (rockCnt == nowRockNeed)
         {

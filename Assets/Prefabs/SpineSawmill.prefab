@@ -228,6 +228,6 @@ MonoBehaviour:
   disableRenderingOnOverride: 1
   updateTiming: 1
   unscaledTime: 0
-  _animationName: 
+  _animationName: Tree_Machine_Idle
   loop: 1
   timeScale: 1

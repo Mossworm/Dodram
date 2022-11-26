@@ -13,7 +13,7 @@ public class FarmingObject : MonoBehaviour
 
     public GameObject prfGaugeBar;
     public GameObject canvas;
-    private RectTransform gaugeBar;
+    [SerializeField]private RectTransform gaugeBar;
     public float height = 0.0f;
     private Image nowGaugebar;
     
