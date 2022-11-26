@@ -81,7 +81,7 @@ public class SpineMachineScript : MonoBehaviour
             default:
                 break;
         }
-        ChangeAnimation(prefixString+"_Machine_Idle");
+        ChangeAnimation(prefixString+"_machine_Idle");
     }
 
     private void Update()
@@ -96,7 +96,7 @@ public class SpineMachineScript : MonoBehaviour
         switch (currentState)
         {
             case MachineState.None:
-                ChangeAnimation(new String(prefixString + "_Machine_Idle"));
+                ChangeAnimation(new String(prefixString + "_machine_Idle"));
                 break;
 
             case MachineState.Working:
@@ -273,6 +273,7 @@ public class SpineMachineScript : MonoBehaviour
         currentState = saveState;
         isBreak = false;
         breakCoolTime = Max_breakCoolTime;
+        currentState = MachineState.None;
     }
     public void BreakCoolDown()
     {
