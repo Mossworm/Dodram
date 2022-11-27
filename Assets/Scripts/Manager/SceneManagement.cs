@@ -24,9 +24,19 @@ public class SceneManagement : MonoBehaviour
             PlayerPrefs.SetFloat("volume",0.5f);
         }
 
+        if (!PlayerPrefs.HasKey("FullScreen"))
+        {
+            PlayerPrefs.SetInt("FullScreen",System.Convert.ToInt16(false));
+        }
+
         if (volumeSlider != null)
         {
             volumeSlider.value = PlayerPrefs.GetFloat("volume");
+        }
+
+        if (toggle != null)
+        {
+            toggle.isOn = System.Convert.ToBoolean(PlayerPrefs.GetInt("FullScreen"));
         }
     }
 
@@ -36,6 +46,12 @@ public class SceneManagement : MonoBehaviour
         if (volumeSlider != null)
         {
             PlayerPrefs.SetFloat("volume",volumeSlider.value);
+        }
+
+        if (toggle != null)
+        {
+            PlayerPrefs.SetInt("FullScreen",System.Convert.ToInt16(toggle.isOn));
+            SetResolution();
         }
     }
 
@@ -66,7 +82,7 @@ public class SceneManagement : MonoBehaviour
 
     public void SetResolution()
     {
-        Screen.SetResolution(1920,1080,toggle.isOn);
+        Screen.SetResolution(1920,1080,System.Convert.ToBoolean(PlayerPrefs.GetInt("FullScreen")));
     }
 
 

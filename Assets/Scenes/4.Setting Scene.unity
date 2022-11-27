@@ -2423,7 +2423,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1453279733}
         m_TargetAssemblyTypeName: SceneManagement, Assembly-CSharp
         m_MethodName: SetResolution
         m_Mode: 1
@@ -2434,7 +2434,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 0
   m_IsOn: 1
 --- !u!1 &1232588653
 GameObject:
@@ -2839,11 +2839,11 @@ PrefabInstance:
     - target: {fileID: 1848814200512153271, guid: 40df0bef21f2d7843a2de06db2e2fefc, type: 3}
       propertyPath: toggle
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1231824325}
     - target: {fileID: 1848814200512153271, guid: 40df0bef21f2d7843a2de06db2e2fefc, type: 3}
       propertyPath: volumeSlider
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1526447685}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40df0bef21f2d7843a2de06db2e2fefc, type: 3}
 --- !u!114 &1453279733 stripped
