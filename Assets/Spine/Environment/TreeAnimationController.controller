@@ -58,7 +58,7 @@ AnimatorStateMachine:
     m_Position: {x: 405, y: 39, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -7187051763991834552}
-    m_Position: {x: 504, y: -18, z: 0}
+    m_Position: {x: 500, y: -20, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 8640933662392930344}
     m_Position: {x: 521, y: 89, z: 0}
@@ -115,7 +115,7 @@ MonoBehaviour:
   isLoop: 0
   layer: 0
   timeScale: 1
-  exitTime: 1
+  exitTime: 0
 --- !u!114 &-420765260913340405
 MonoBehaviour:
   m_ObjectHideFlags: 1

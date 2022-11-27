@@ -251,7 +251,7 @@ public class SpinePickUpScript : MonoBehaviour
                     {
                         hit.GetComponent<SpineMachineScript>().SubCount(Hand);
                     }
-                    else if (hit.gameObject.name == "Spine_Last_machine")  //2차가공 기계에 넣기
+                    else if (hit.gameObject.name == "Spine_Last_Machine")  //2차가공 기계에 넣기
                     {
                         Debug.Log("2차가공 실행");
                         hit.GetComponent<SpineFinalMachineScript>().SubCount(Hand);

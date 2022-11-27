@@ -58,29 +58,45 @@ public class SpineFinalMachineScript : MonoBehaviour
         CraftOn();      //모든 재료가 들어갔을 때 바로 실행되게
 
         GaugeBar();
-        if (currentState != MachineState.None)
+
+        if (currentState == MachineState.None)
         {
-            //ChangeAnimation("Last_Machine_Idle");
+            ChangeAnimation("Last_Machine_Idle");
+        }
+        else
+        { 
             workTime += Time.deltaTime;
         }
+
+        if (currentState == MachineState.Working)
+        {
+            ChangeAnimation("Last_Machine_Use");
+        }
+
         if (currentState == MachineState.Destroying)
         {
             if (workTime >= destroyTime)
             {
-                //("Last_Machine_Explosion");
+                ChangeAnimation("Last_Machine_Explosion");
+                StartCoroutine(WaitNonLoopAnim());
                 ChildDestroy();
                 currentState = MachineState.None;
                 workTime = 0;
             }
             else
             {
-                //ChangeAnimation("Last_Machine_Overload");
+                ChangeAnimation("Last_Machine_Overload");
             }
         }
 
         saveState = currentState;
     }
-    
+
+    IEnumerator WaitNonLoopAnim()
+    {
+        yield return new WaitForSeconds(2);
+    }
+
     void GaugeBar()
     {
         Vector3 _gaugeBarPos = new Vector3(transform.position.x, transform.position.y + height, 0);
@@ -112,7 +128,7 @@ public class SpineFinalMachineScript : MonoBehaviour
         GameObject playerItem;
         playerItem = hand.transform.GetChild(0).gameObject;
         
-        if (this.transform.childCount+1 < recipes.GetComponent<RecipeScript>().needNum && currentState == MachineState.None) //기계에 들어간 재료가 레시피 재료보다 적은가?
+        if (this.transform.childCount-1 < recipes.GetComponent<RecipeScript>().needNum && currentState == MachineState.None) //기계에 들어간 재료가 레시피 재료보다 적은가?
         {
             for (int i = 0; i < recipes.GetComponent<RecipeScript>().nowRecipe.Count; i++) //현재 레시피의 배열(필요재료) 수 만큼 루프를 돌림
             {
@@ -168,7 +184,7 @@ public class SpineFinalMachineScript : MonoBehaviour
 
     public void CraftOn()   //제작 시작
     {
-        if (recipes.GetComponent<RecipeScript>().needNum == this.transform.childCount+1)
+        if (recipes.GetComponent<RecipeScript>().needNum == this.transform.childCount-1) //스켈레톤 개수 1개 제외
         {
             if (currentState == MachineState.None)
             {
@@ -212,6 +228,7 @@ public class SpineFinalMachineScript : MonoBehaviour
         go.transform.localPosition = Vector2.zero;
         go.layer = 0;
         currentState = MachineState.None;
+        saveState = currentState;
         workTime = 0;
         ChildDestroy();
     }

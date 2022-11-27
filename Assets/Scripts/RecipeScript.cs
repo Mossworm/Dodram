@@ -250,7 +250,7 @@ public class RecipeScript : MonoBehaviour
         int rc = 0;
         int mc = 0;
         int tc = 0;
-        for (int a = 0; a < FinalMachine.transform.childCount; a++)
+        for (int a = 1; a < FinalMachine.transform.childCount; a++)
         {
             if (FinalMachine.transform.GetChild(a).name == "Stone_P_2")
             {

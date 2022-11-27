@@ -81,7 +81,7 @@ public class SpineMachineScript : MonoBehaviour
             default:
                 break;
         }
-        ChangeAnimation(prefixString+"_machine_Idle");
+        ChangeAnimation(prefixString+"_Machine_Idle");
     }
 
     private void Update()
@@ -96,13 +96,20 @@ public class SpineMachineScript : MonoBehaviour
         switch (currentState)
         {
             case MachineState.None:
-                ChangeAnimation(new String(prefixString + "_machine_Idle"));
+                ChangeAnimation(new String(prefixString + "_Machine_Idle"));
                 break;
 
             case MachineState.Working:
                 if (workTime >= craftTime)
                 {
-                    ChangeAnimation(prefixString + "_Machine_Overload");
+                    if (prefixString == "Grass")
+                    {
+                        ChangeAnimation(prefixString + "_Muchine_Overload");
+                    }
+                    else
+                    {
+                        ChangeAnimation(prefixString + "_Machine_Overload");
+                    }
                     workTime = 0;
                     currentState = MachineState.Destroying;
                 }
@@ -118,13 +125,21 @@ public class SpineMachineScript : MonoBehaviour
                 if (workTime >= destroyTime)
                 {
                     ChangeAnimation(prefixString + "_Machine_Explosion");
+                    StartCoroutine(WaitNonLoopAnim());
                     ChildDestroy();
                     currentState = MachineState.None;
                     workTime = 0;
                 }
                 else
                 {
-                    ChangeAnimation(prefixString + "_Machine_Overload");
+                    if (prefixString == "Grass")
+                    {
+                        ChangeAnimation(prefixString + "_Muchine_Overload");
+                    }
+                    else
+                    {
+                        ChangeAnimation(prefixString + "_Machine_Overload");
+                    }
                     Crafting();
                     workTime += Time.deltaTime;
                     stopTime = workTime;
@@ -142,6 +157,11 @@ public class SpineMachineScript : MonoBehaviour
                 break;
         }
             saveState = currentState;    
+    }
+
+    IEnumerator WaitNonLoopAnim()
+    {
+        yield return new WaitForSeconds(2);
     }
 
     void GaugeBar()
@@ -199,7 +219,7 @@ public class SpineMachineScript : MonoBehaviour
 
     public void CraftOn()   //제작 시작
     {
-        if (currentState == MachineState.None && this.transform.childCount == 3)
+        if (currentState == MachineState.None && this.transform.childCount == 2+1) //2:필요한재료개수, 1:스파인스켈레톤
         {
             //Invoke("Crafting", craftTime);
             currentState = MachineState.Working;

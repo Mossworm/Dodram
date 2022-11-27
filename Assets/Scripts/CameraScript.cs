@@ -36,24 +36,25 @@ public class CameraScript : MonoBehaviour
     void Update()
     {
         CameraMove();
+
     }
 
     void CameraMove()
     {
         currentTime += Time.deltaTime;
 
-        if (CamMoveTime >= currentTime)
-        {
-            mainCam.transform.position += new Vector3(0.15f,0,0) * Time.deltaTime;
-        }
-        else
-        {
+        //if (CamMoveTime >= currentTime)
+        //{
+        //    mainCam.transform.position += new Vector3(0.15f,0,0) * Time.deltaTime;
+        //}
+        //else
+        //{
             Arrow1.SetActive(false);
             Arrow2.SetActive(false);
             Separator.SetActive(true);
             SecondCameraOn();
             this.GetComponent<CameraScript>().enabled = false;
-        }
+        //}
         
         
         

@@ -30,7 +30,7 @@ public class SpineFarmingObject : MonoBehaviour
     private void Start()
     {
         _animator = GetComponent<Animator>();
-        dropAnimTime = 2; /*_animator.GetComponent<SpineAnimationBehavior>().exitTime;*/
+        dropAnimTime = 1; /*_animator.GetComponent<SpineAnimationBehavior>().exitTime;*/
 
         maxhp = hp;
         isTarget = false;
