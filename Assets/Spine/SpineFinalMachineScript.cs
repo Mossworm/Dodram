@@ -17,6 +17,7 @@ public class SpineFinalMachineScript : MonoBehaviour
 
     private Animator _animator;
     public string currentAnimState;
+    [SerializeField] private float explosionAnimTime;
 
     public enum MachineState
     {
@@ -42,6 +43,7 @@ public class SpineFinalMachineScript : MonoBehaviour
 
     void Start()
     {
+        explosionAnimTime = 2f;
         _animator = GetComponent<Animator>();
 
         if (canvas == null)
@@ -78,10 +80,9 @@ public class SpineFinalMachineScript : MonoBehaviour
             if (workTime >= destroyTime)
             {
                 ChangeAnimation("Last_Machine_Explosion");
-                StartCoroutine(WaitNonLoopAnim());
                 ChildDestroy();
-                currentState = MachineState.None;
-                workTime = 0;
+
+                StartCoroutine(WaitNonLoopAnim());
             }
             else
             {
@@ -94,7 +95,10 @@ public class SpineFinalMachineScript : MonoBehaviour
 
     IEnumerator WaitNonLoopAnim()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(explosionAnimTime);
+        workTime = 0;
+        currentState = MachineState.None;
+
     }
 
     void GaugeBar()

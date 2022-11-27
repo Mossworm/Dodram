@@ -22,6 +22,7 @@ public class SpineMachineScript : MonoBehaviour
 
     private Animator _animator;
     public string currentAnimState;
+    [SerializeField]private float explosionAnimTime;
 
     [SerializeField] private string prefixString;
 
@@ -50,6 +51,7 @@ public class SpineMachineScript : MonoBehaviour
 
     private void Start()
     {
+        explosionAnimTime = 2f;
         _animator = GetComponent<Animator>();
         Max_breakCoolTime = breakCoolTime;
 
@@ -110,8 +112,9 @@ public class SpineMachineScript : MonoBehaviour
                     {
                         ChangeAnimation(prefixString + "_Machine_Overload");
                     }
-                    workTime = 0;
-                    currentState = MachineState.Destroying;
+                    //workTime = 0;
+                    Crafting();
+                    //currentState = MachineState.Destroying;
                 }
                 else
                 {
@@ -127,8 +130,8 @@ public class SpineMachineScript : MonoBehaviour
                     ChangeAnimation(prefixString + "_Machine_Explosion");
                     StartCoroutine(WaitNonLoopAnim());
                     ChildDestroy();
-                    currentState = MachineState.None;
-                    workTime = 0;
+
+                    
                 }
                 else
                 {
@@ -140,7 +143,6 @@ public class SpineMachineScript : MonoBehaviour
                     {
                         ChangeAnimation(prefixString + "_Machine_Overload");
                     }
-                    Crafting();
                     workTime += Time.deltaTime;
                     stopTime = workTime;
                 }
@@ -155,13 +157,16 @@ public class SpineMachineScript : MonoBehaviour
 
             default:
                 break;
-        }
-            saveState = currentState;    
+        } 
     }
 
     IEnumerator WaitNonLoopAnim()
-    {
-        yield return new WaitForSeconds(2);
+    {        
+        yield return new WaitForSeconds(explosionAnimTime);
+        workTime = 0;
+        saveState = currentState;
+        currentState = MachineState.None;
+
     }
 
     void GaugeBar()
@@ -241,9 +246,9 @@ public class SpineMachineScript : MonoBehaviour
 
     public void Crafting()      //제작완성 및 삭제중 상태로 이동
     {
-        //state = MachineState.Destroying;
+        currentState = MachineState.Destroying;
         saveState = currentState;
-        //workTime = 0;
+        workTime = 0;
     }
 
 
@@ -293,7 +298,6 @@ public class SpineMachineScript : MonoBehaviour
         currentState = saveState;
         isBreak = false;
         breakCoolTime = Max_breakCoolTime;
-        currentState = MachineState.None;
     }
     public void BreakCoolDown()
     {
