@@ -15,6 +15,8 @@ public class HouseScript : MonoBehaviour
     private float changeValue;
     public int checkIndex;
     
+    public GameObject HouseEffect;
+    
     void Start()
     {
         countNum = 0;
@@ -41,7 +43,9 @@ public class HouseScript : MonoBehaviour
                 // go.transform.localPosition = new Vector3(0, 0,go.transform.position.z);
 
                 checkIndex += 1;
-            }
+                Vector3 effectPos = new Vector3(transform.position.x, transform.position.y, 0);
+                Instantiate(HouseEffect, effectPos,quaternion.identity);
+;            }
         }
         if(checkIndex==buildingParts.Length)
         {

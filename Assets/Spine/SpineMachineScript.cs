@@ -48,6 +48,10 @@ public class SpineMachineScript : MonoBehaviour
     public float height = 0.0f;
     private Image nowGaugebar;
 
+    public GameObject breakIcon;
+    public Vector3 breakIconPos;
+    private RectTransform breakIconRect;
+
 
     private void Start()
     {
@@ -62,6 +66,10 @@ public class SpineMachineScript : MonoBehaviour
 
         gaugeBar = Instantiate(prfGaugeBar, canvas.transform).GetComponent<RectTransform>();
         nowGaugebar = gaugeBar.transform.GetChild(0).GetComponent<Image>();
+
+        breakIconRect = Instantiate(breakIcon, canvas.transform).GetComponent<RectTransform>();
+        breakIconPos = new Vector3(transform.position.x, transform.position.y + height, 0);
+        
         currentState = MachineState.None;
         saveState = currentState;
         if (randomON == true)
@@ -91,8 +99,15 @@ public class SpineMachineScript : MonoBehaviour
         GaugeBar();
         BreakCoolDown();
 
+        breakIconRect.position = breakIconPos;
+
         if (isBreak) {
             currentState = MachineState.Breakdown;
+            breakIconRect.gameObject.SetActive(true);
+        }
+        else
+        {
+            breakIconRect.gameObject.SetActive(false);
         }
 
         switch (currentState)
@@ -130,8 +145,6 @@ public class SpineMachineScript : MonoBehaviour
                     ChangeAnimation(prefixString + "_Machine_Explosion");
                     StartCoroutine(WaitNonLoopAnim());
                     ChildDestroy();
-
-                    
                 }
                 else
                 {
@@ -265,14 +278,15 @@ public class SpineMachineScript : MonoBehaviour
         go.transform.SetParent(hand.transform);
         go.transform.localPosition = Vector2.zero;
         go.layer = 0;
-        currentState = MachineState.None;
-        saveState = currentState;
-        workTime = 0;
         ChildDestroy();
     }
 
     public void ChildDestroy() //자식 삭제
     {
+        workTime = 0;
+        stopTime = 0;
+        currentState = MachineState.None;
+        saveState = MachineState.None;
         for (int i = 1; i < this.transform.childCount; i++)
         {
             Destroy(this.transform.GetChild(i).gameObject);
@@ -282,12 +296,20 @@ public class SpineMachineScript : MonoBehaviour
     public void Breakdown()
     {
         int max = Random.Range(0, 100);
-        if (breakCoolTime <= 0)
+        if (breakCoolTime <= 0 && isBreak == false)
         {
             if (max < per)
             {
                 currentState = MachineState.Breakdown;
                 isBreak = true;
+                if (workTime > 0)
+                {
+                    breakIconPos = new Vector3(transform.position.x, transform.position.y + height + 0.8f, 0);
+                }
+                else
+                {
+                    breakIconPos = new Vector3(transform.position.x, transform.position.y + height, 0);
+                }
             }
         }
     }
