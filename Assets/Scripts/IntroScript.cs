@@ -20,6 +20,7 @@ public class IntroScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && currentImage < introImages.Length-1)
         {
+            SoundController.Instance.PlaySFXSound("버튼");
             currentImage++;
             for (int i = 0; i < introImages.Length; i++)
             {
@@ -36,6 +37,7 @@ public class IntroScript : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Return) && currentImage == introImages.Length - 1) 
         {
+            SoundController.Instance.PlaySFXSound("버튼");
             sceneChanger.GetComponent<SceneManagement>().SceneChanger();
         }
     }

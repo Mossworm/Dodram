@@ -57,6 +57,7 @@ public class SceneManagement : MonoBehaviour
 
     public void SceneChanger()
     {
+        SoundController.Instance.PlaySFXSound("페이드인");
         StartCoroutine(LoadScene());
     }
 
@@ -85,6 +86,10 @@ public class SceneManagement : MonoBehaviour
         Screen.SetResolution(1920,1080,System.Convert.ToBoolean(PlayerPrefs.GetInt("FullScreen")));
     }
 
+    public void PlayButtonSound()
+    {
+        SoundController.Instance.PlaySFXSound("버튼");
+    }
 
 
 }

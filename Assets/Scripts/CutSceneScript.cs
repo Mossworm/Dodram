@@ -47,6 +47,7 @@ public class CutSceneScript : MonoBehaviour
             
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                SoundController.Instance.PlaySFXSound("버튼");
                 cutSceneSpeed = 0.0f;
             }
         }
@@ -64,6 +65,7 @@ public class CutSceneScript : MonoBehaviour
             
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                SoundController.Instance.PlaySFXSound("버튼");
                 isCutEnd = true;
                 nextButton.SetActive(false);
                 currentTime = 0;
@@ -82,6 +84,7 @@ public class CutSceneScript : MonoBehaviour
                 {
                     t.SetActive(false);
                 }  
+                this.gameObject.SetActive(false);
                 nextCutScene.SetActive(true);
             }
         }

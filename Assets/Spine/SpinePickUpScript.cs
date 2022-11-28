@@ -327,6 +327,7 @@ public class SpinePickUpScript : MonoBehaviour
                             GaugePer += (100.0f / animator.GetCurrentAnimatorStateInfo(0).length * 1.5f) * Time.deltaTime;
                             if (GaugePer >= 100.0f)
                             {
+                                SoundController.Instance.PlaySFXSound("채집2");
                                 hit.GetComponent<SpineFarmingObject>().Digging();
                                 GaugePer = 0.1f;
                             }
@@ -340,6 +341,7 @@ public class SpinePickUpScript : MonoBehaviour
                             GaugePer += (100.0f / animator.GetCurrentAnimatorClipInfo(0).Length * 1.5f) * Time.deltaTime;
                             if (GaugePer >= 100)
                             {
+                                SoundController.Instance.PlaySFXSound("채집2");
                                 hit.GetComponent<SpineFarmingObject>().Digging();
                                 GaugePer = 0.1f;
                             }
@@ -353,6 +355,7 @@ public class SpinePickUpScript : MonoBehaviour
                             GaugePer += (100.0f / animator.GetCurrentAnimatorClipInfo(0).Length * 1.5f) * Time.deltaTime;
                             if (GaugePer >= 100)
                             {
+                                SoundController.Instance.PlaySFXSound("채집2");
                                 hit.GetComponent<SpineFarmingObject>().Digging();
                                 GaugePer = 0.1f;
                             }
@@ -365,6 +368,7 @@ public class SpinePickUpScript : MonoBehaviour
                             GaugePer += (100.0f / animator.GetCurrentAnimatorClipInfo(0).Length * 1.5f) * Time.deltaTime;
                             if (GaugePer >= 100)
                             {
+                                SoundController.Instance.PlaySFXSound("채집2");
                                 hit.GetComponent<SpineMachineScript>().MachinePix();
                                 GaugePer = 0.1f;
                             }
@@ -418,6 +422,8 @@ public class SpinePickUpScript : MonoBehaviour
                         {
                             changeHold.SetActive(false);
                         }
+                        
+                        SoundController.Instance.PlaySFXSound("들기");
                     }
                 }
                 else
@@ -432,6 +438,7 @@ public class SpinePickUpScript : MonoBehaviour
                         {
                             hit.gameObject.SetActive(false);
                         }
+                        SoundController.Instance.PlaySFXSound("들기");
                     }
                 }
             }
@@ -447,7 +454,7 @@ public class SpinePickUpScript : MonoBehaviour
                     Hand.transform.GetChild(0).gameObject.layer = 6;
                     Hand.transform.GetChild(0).position = boxTransform + transform.position + new Vector3(0f, -0.3f, 0f);
                     Hand.transform.DetachChildren();
-                    return;
+                    SoundController.Instance.PlaySFXSound("들기");
                 }
             }
         }

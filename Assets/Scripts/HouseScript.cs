@@ -51,6 +51,7 @@ public class HouseScript : MonoBehaviour
         {
             Time.timeScale = 0f;
             endCanvas.SetActive(true);
+            SoundController.Instance.PlaySFXSound("건축 성공시 결과화면에서 나오는 소리");
         }
 
 

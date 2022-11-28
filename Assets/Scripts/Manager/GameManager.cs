@@ -74,6 +74,7 @@ public class GameManager : MonoBehaviour
             _win_Icon.SetActive(false);
             _loseText.SetActive(true);
             _winText.SetActive(false);
+            SoundController.Instance.PlaySFXSound("건축 실패시 결과화면 소리");
         }
 
 

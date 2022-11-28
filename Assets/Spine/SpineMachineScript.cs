@@ -240,6 +240,7 @@ public class SpineMachineScript : MonoBehaviour
         if (currentState == MachineState.None && this.transform.childCount == 2+1+1) //2:필요한재료개수, 1:스파인스켈레톤, 1:말풍선오브젝트
         {
             //Invoke("Crafting", craftTime);
+            SoundController.Instance.PlaySFXSound("기계작동");
             currentState = MachineState.Working;
             saveState = currentState;
         }
@@ -259,6 +260,7 @@ public class SpineMachineScript : MonoBehaviour
 
     public void Crafting()      //제작완성 및 삭제중 상태로 이동
     {
+        SoundController.Instance.PlaySFXSound("기계완료");
         currentState = MachineState.Destroying;
         saveState = currentState;
         workTime = 0;
@@ -301,6 +303,7 @@ public class SpineMachineScript : MonoBehaviour
             if (max < per)
             {
                 currentState = MachineState.Breakdown;
+                SoundController.Instance.PlaySFXSound("고장경고음");
                 isBreak = true;
                 if (workTime > 0)
                 {

@@ -145,14 +145,17 @@ public class SpineFinalMachineScript : MonoBehaviour
                         int t = 0;
                         if (this.transform.GetChild(j).name == "Stone_P_2")
                         {
+                            SoundController.Instance.PlaySFXSound("최종 기계에 가공 재료 들어가는 소리");
                             r++;
                         }
                         else if (this.transform.GetChild(j).name == "Mill_P_2")
                         {
+                            SoundController.Instance.PlaySFXSound("최종 기계에 가공 재료 들어가는 소리");
                             m++;
                         }
                         else if (this.transform.GetChild(j).name == "Wood_P_2")
                         {
+                            SoundController.Instance.PlaySFXSound("최종 기계에 가공 재료 들어가는 소리");
                             t++;
                         }
 

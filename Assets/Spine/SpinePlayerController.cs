@@ -30,6 +30,7 @@ public class SpinePlayerController : MonoBehaviour
     [SerializeField] private bool canPickUp = true;
     public bool pickAnimEnd { get; set; } = false;
 
+    private float currentTime;
 
 
 
@@ -133,6 +134,21 @@ public class SpinePlayerController : MonoBehaviour
             StartCoroutine(Dash());
         }
 
+        if (IsInputMoveKey())
+        {
+            currentTime += Time.deltaTime;
+        }
+        else
+        {
+            currentTime = 0;
+        }
+
+        if (currentTime >= 0.3f)
+        {
+            currentTime -= 0.3f;
+            SoundController.Instance.PlaySFXSound("발걸음");
+        }
+
     }
 
     private void FixedUpdate()
@@ -221,6 +237,7 @@ public class SpinePlayerController : MonoBehaviour
         canDash = false;
         isDashing = true;
         tr.emitting = true;
+        SoundController.Instance.PlaySFXSound("대쉬");
         yield return new WaitForSeconds(dashingTime);
         tr.emitting = false;
         isDashing = false;
