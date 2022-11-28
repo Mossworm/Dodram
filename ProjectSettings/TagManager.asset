@@ -13,6 +13,9 @@ TagManager:
   - Object
   - artefact
   - Machine
+  - BGM
+  - Scene
+  - SceneSetting
   layers:
   - Default
   - TransparentFX

@@ -15,11 +15,38 @@ MonoBehaviour:
   Path: Assets/FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638049268893407920
+  lastModified: 638052716084849975
   FileSizes:
   - Name: Desktop
-    Value: 896
+    Value: 1032
   Exists: 1
+--- !u!114 &-5600721196906773744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/BG_StartScene_1
+  m_EditorClassIdentifier: 
+  Path: event:/BG_StartScene_1
+  Guid:
+    Data1: -301758996
+    Data2: 1090763587
+    Data3: -159271543
+    Data4: 421140582
+  Banks:
+  - {fileID: 2957577208164415010}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 104803
 --- !u!114 &-2769178185763726384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61,12 +88,15 @@ MonoBehaviour:
   - {fileID: 2957577208164415010}
   EditorEvents:
   - {fileID: 3548643193419109195}
+  - {fileID: 9112041803471177117}
+  - {fileID: 7403932719476363484}
+  - {fileID: -5600721196906773744}
   EditorParameters: []
   MasterBanks:
   - {fileID: 2957577208164415010}
   StringsBanks:
   - {fileID: -9061763526721513846}
-  cacheTime: 638049268893407920
+  cacheTime: 638052716084849975
   cacheVersion: 131593
 --- !u!114 &2957577208164415010
 MonoBehaviour:
@@ -83,10 +113,10 @@ MonoBehaviour:
   Path: Assets/FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638049268893397921
+  lastModified: 638052716084839972
   FileSizes:
   - Name: Desktop
-    Value: 1742624
+    Value: 5302304
   Exists: 1
 --- !u!114 &3548643193419109195
 MonoBehaviour:
@@ -142,6 +172,33 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &7403932719476363484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/BG_EndCanvas
+  m_EditorClassIdentifier: 
+  Path: event:/BG_EndCanvas
+  Guid:
+    Data1: 431240736
+    Data2: 1256063460
+    Data3: 1774150041
+    Data4: 2074753372
+  Banks:
+  - {fileID: 2957577208164415010}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 26153
 --- !u!114 &8078565543437062803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,3 +226,30 @@ MonoBehaviour:
   - HalfTime
   - QuarterTime
   Exists: 1
+--- !u!114 &9112041803471177117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/BG_CutScene_1
+  m_EditorClassIdentifier: 
+  Path: event:/BG_CutScene_1
+  Guid:
+    Data1: -65656043
+    Data2: 1224997919
+    Data3: 1092803492
+    Data4: 700987592
+  Banks:
+  - {fileID: 2957577208164415010}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 134948

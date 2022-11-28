@@ -21,7 +21,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 3309332711511819241, guid: 68c44f30f472a0047b6533a60f6efb21, type: 2}
+  m_Motion: {fileID: 5540977989106730146, guid: 68c44f30f472a0047b6533a60f6efb21, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -61,7 +61,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c33a5f82de9de3247a49dc64e19c3384, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  motion: {fileID: -7151399179957161956, guid: 68c44f30f472a0047b6533a60f6efb21, type: 2}
+  motion: {fileID: -1895177871952383774, guid: 68c44f30f472a0047b6533a60f6efb21, type: 2}
   isLoop: 1
   layer: 0
   timeScale: 1
@@ -87,7 +87,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 124639287162126400, guid: 68c44f30f472a0047b6533a60f6efb21, type: 2}
+  m_Motion: {fileID: -3677905619670819203, guid: 68c44f30f472a0047b6533a60f6efb21, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -142,7 +142,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -7151399179957161956, guid: 68c44f30f472a0047b6533a60f6efb21, type: 2}
+  m_Motion: {fileID: -1895177871952383774, guid: 68c44f30f472a0047b6533a60f6efb21, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -160,7 +160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c33a5f82de9de3247a49dc64e19c3384, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  motion: {fileID: 3309332711511819241, guid: 68c44f30f472a0047b6533a60f6efb21, type: 2}
+  motion: {fileID: 5540977989106730146, guid: 68c44f30f472a0047b6533a60f6efb21, type: 2}
   isLoop: 0
   layer: 0
   timeScale: 1
@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c33a5f82de9de3247a49dc64e19c3384, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  motion: {fileID: 124639287162126400, guid: 68c44f30f472a0047b6533a60f6efb21, type: 2}
+  motion: {fileID: -3677905619670819203, guid: 68c44f30f472a0047b6533a60f6efb21, type: 2}
   isLoop: 1
   layer: 0
   timeScale: 1

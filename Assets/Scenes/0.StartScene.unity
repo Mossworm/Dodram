@@ -911,6 +911,7 @@ GameObject:
   - component: {fileID: 1389545976}
   - component: {fileID: 1389545975}
   - component: {fileID: 1389545974}
+  - component: {fileID: 1389545978}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1017,6 +1018,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1389545978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389545973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 1917588230}
 --- !u!1001 &1630195202
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1027,6 +1041,10 @@ PrefabInstance:
     - target: {fileID: 1848814200512153264, guid: 40df0bef21f2d7843a2de06db2e2fefc, type: 3}
       propertyPath: m_Name
       value: '@Scene_Setting'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1848814200512153264, guid: 40df0bef21f2d7843a2de06db2e2fefc, type: 3}
+      propertyPath: m_TagString
+      value: SceneSetting
       objectReference: {fileID: 0}
     - target: {fileID: 1848814200512153270, guid: 40df0bef21f2d7843a2de06db2e2fefc, type: 3}
       propertyPath: m_RootOrder
@@ -1173,6 +1191,82 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1914959624}
   m_CullTransparentMesh: 1
+--- !u!1 &1917588230
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1917588232}
+  - component: {fileID: 1917588231}
+  - component: {fileID: 1917588233}
+  m_Layer: 0
+  m_Name: StartSceneBGMController
+  m_TagString: BGM
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1917588231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1917588230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -301758996
+      Data2: 1090763587
+      Data3: -159271543
+      Data4: 421140582
+    Path: event:/BG_StartScene_1
+  Event: 
+  PlayEvent: 11
+  StopEvent: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!4 &1917588232
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1917588230}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.62741065, y: 0.27856025, z: -0.012704416}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1917588233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1917588230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10c83eeed8b0c734f91ffca57d965fab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startSceneBGMController: {fileID: 1917588230}
 --- !u!1001 &1848814200243352803
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1183,6 +1277,10 @@ PrefabInstance:
     - target: {fileID: 1848814200512153264, guid: 40df0bef21f2d7843a2de06db2e2fefc, type: 3}
       propertyPath: m_Name
       value: '@Scene'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1848814200512153264, guid: 40df0bef21f2d7843a2de06db2e2fefc, type: 3}
+      propertyPath: m_TagString
+      value: Scene
       objectReference: {fileID: 0}
     - target: {fileID: 1848814200512153270, guid: 40df0bef21f2d7843a2de06db2e2fefc, type: 3}
       propertyPath: m_RootOrder

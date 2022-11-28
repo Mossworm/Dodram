@@ -3198,6 +3198,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1848814200512153264, guid: 40df0bef21f2d7843a2de06db2e2fefc, type: 3}
+      propertyPath: m_TagString
+      value: Scene
+      objectReference: {fileID: 0}
     - target: {fileID: 1848814200512153270, guid: 40df0bef21f2d7843a2de06db2e2fefc, type: 3}
       propertyPath: m_RootOrder
       value: 3
