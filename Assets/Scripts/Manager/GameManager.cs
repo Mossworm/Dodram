@@ -83,7 +83,14 @@ public class GameManager : MonoBehaviour
             playTime = timer.GetComponent<UI_Timer>()._currentTime;
             string time = "";
 
-            time += ("0" + (int)playTime / 60 + ":");
+            if ((int)playTime / 60 >= 10)
+            {
+                time += ((int)playTime / 60 + ":");
+            }
+            else
+            {
+                time += ("0" + (int)playTime / 60 + ":");
+            }
 
             if ((int)playTime % 60 < 10)
             {
@@ -115,7 +122,14 @@ public class GameManager : MonoBehaviour
 
             string highScore = "";
 
-            highScore += ("0" + (int)highScoreTime / 60 + ":");
+            if ((int)highScoreTime / 60 >= 10)
+            {
+                highScore += ((int)highScoreTime / 60 + ":");
+            }
+            else
+            {
+                highScore += ("0" + (int)highScoreTime / 60 + ":");
+            }
 
             if ((int)highScoreTime % 60 < 10)
             {

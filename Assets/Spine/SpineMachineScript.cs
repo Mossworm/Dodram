@@ -289,7 +289,7 @@ public class SpineMachineScript : MonoBehaviour
         stopTime = 0;
         currentState = MachineState.None;
         saveState = MachineState.None;
-        for (int i = 1; i < this.transform.childCount; i++)
+        for (int i = 2; i < this.transform.childCount; i++)
         {
             Destroy(this.transform.GetChild(i).gameObject);
         }
