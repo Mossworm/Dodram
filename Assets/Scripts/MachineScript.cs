@@ -140,7 +140,7 @@ public class MachineScript : MonoBehaviour
     {
         if (isBreak == false)
         {
-            if (this.transform.childCount < 2 && state == MachineState.None)
+            if (this.transform.childCount < 4 && state == MachineState.None)
             {
                 GameObject playerItem;
                 playerItem = hand.transform.GetChild(0).gameObject;
@@ -155,7 +155,7 @@ public class MachineScript : MonoBehaviour
 
     public void CraftOn()   //제작 시작
     {
-        if (state == MachineState.None && this.transform.childCount == 2)
+        if (state == MachineState.None && this.transform.childCount == 4)
         {
             //Invoke("Crafting", craftTime);
             state = MachineState.Working;
