@@ -237,7 +237,7 @@ public class SpinePickUpScript : MonoBehaviour
                 //  기계에 재료 넣기 & 실행시키기
                 //---------------------------------------
 
-                if (isHold == true) // 나무 기계에 넣기
+                if (isHold == true) // 기계에 넣기
                 {
                     if (hit.gameObject.name == "SpineSawmill") // 나무 기계에 넣기
                     {

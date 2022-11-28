@@ -222,7 +222,7 @@ public class SpineMachineScript : MonoBehaviour
     {
         if (isBreak == false)
         {
-            if (this.transform.childCount < 3 && currentState == MachineState.None)
+            if (this.transform.childCount < 4 && currentState == MachineState.None)
             {
                 GameObject playerItem;
                 playerItem = hand.transform.GetChild(0).gameObject;
@@ -237,7 +237,7 @@ public class SpineMachineScript : MonoBehaviour
 
     public void CraftOn()   //제작 시작
     {
-        if (currentState == MachineState.None && this.transform.childCount == 2+1) //2:필요한재료개수, 1:스파인스켈레톤
+        if (currentState == MachineState.None && this.transform.childCount == 2+1+1) //2:필요한재료개수, 1:스파인스켈레톤, 1:말풍선오브젝트
         {
             //Invoke("Crafting", craftTime);
             currentState = MachineState.Working;
