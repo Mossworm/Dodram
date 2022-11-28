@@ -38,8 +38,8 @@ public class UI_Timer : MonoBehaviour
         
         if (_currentTime >= _MAX_TIME && Time.timeScale != 0f)
         {
-            Time.timeScale = 0f;
-            endCanvas.SetActive(true);
+            //Time.timeScale = 0f;
+            //endCanvas.SetActive(true);
         }
         else
         {

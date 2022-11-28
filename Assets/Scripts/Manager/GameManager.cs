@@ -1,6 +1,8 @@
 using System;
 using TMPro;
 using UnityEngine;
+using System.Collections;
+using Spine.Unity;
 
 
 public class GameManager : MonoBehaviour
@@ -24,6 +26,12 @@ public class GameManager : MonoBehaviour
     private GameObject _win_Cut, _lose_Cut;
     private GameObject _win_Icon, _lose_Icon;
     private GameObject _winText, _loseText;
+
+    public GameObject endingCanvas;
+    public GameObject endingAnim;
+    private Animator _animator;
+    [SerializeField] private string currentState;
+    public GameObject house;
 
     // Start is called before the first frame update
     void Start()
@@ -50,38 +58,41 @@ public class GameManager : MonoBehaviour
         {
             guideCanvas = GameObject.Find("=====UI=====").transform.Find("GuideCanvas").gameObject;
         }
+
+        _animator = endingAnim.GetComponent<Animator>();
+    }
+
+    IEnumerator WaitNonLoopAnim()
+    {
+        yield return new WaitForSeconds(16f);
+
+        isEndflag = true;
+
+    }
+
+    void ChangeAnimation(string newState)
+    {
+        if (currentState == newState)
+        {
+            return;
+        }
+
+        _animator.Play(newState);
+
+        currentState = newState;
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        if (endCanvas.activeSelf && !isEndflag)
-        {
-            isEndflag = true;
-
-        }
-
-        if (timer.GetComponent<UI_Timer>()._currentTime >= timer.GetComponent<UI_Timer>()._MAX_TIME)
-        {
-            isEndflag = true;
-
-            _cutscene_Lose.SetActive(true);
-            _cutscene_Win.SetActive(false);
-            _lose_Cut.SetActive(true);
-            _win_Cut.SetActive(false);
-            _lose_Icon.SetActive(true);
-            _win_Icon.SetActive(false);
-            _loseText.SetActive(true);
-            _winText.SetActive(false);
-            SoundController.Instance.PlaySFXSound("건축 실패시 결과화면 소리");
-        }
-
-
         if (isEndflag)
         {
             playTime = timer.GetComponent<UI_Timer>()._currentTime;
             string time = "";
+
+            Time.timeScale = 0f;
+            endCanvas.SetActive(true);
 
             if ((int)playTime / 60 >= 10)
             {
@@ -142,8 +153,41 @@ public class GameManager : MonoBehaviour
             }
 
             highScoreText.GetComponent<TextMeshProUGUI>().text = highScore;
+            return;
         }
 
+
+
+
+        if (house.GetComponent<HouseScript>().isWin)
+        {
+
+            //endingAnim.gameObject.SetActive(true);
+            //ChangeAnimation("win");
+            //StartCoroutine(WaitNonLoopAnim());
+            SoundController.Instance.PlaySFXSound("건축 성공시 결과화면에서 나오는 소리");
+            isEndflag = true;
+        }
+
+        if (timer.GetComponent<UI_Timer>()._currentTime >= timer.GetComponent<UI_Timer>()._MAX_TIME)
+        {
+            //endingCanvas.SetActive(true);
+            //ChangeAnimation("lose");
+            //StartCoroutine(WaitNonLoopAnim());
+
+            _cutscene_Lose.SetActive(true);
+            _cutscene_Win.SetActive(false);
+            _lose_Cut.SetActive(true);
+            _win_Cut.SetActive(false);
+            _lose_Icon.SetActive(true);
+            _win_Icon.SetActive(false);
+            _loseText.SetActive(true);
+            _winText.SetActive(false);
+            SoundController.Instance.PlaySFXSound("건축 실패시 결과화면 소리");
+            isEndflag = true;
+        }
+
+      
 
 
 

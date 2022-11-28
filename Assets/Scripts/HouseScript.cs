@@ -16,6 +16,8 @@ public class HouseScript : MonoBehaviour
     public int checkIndex;
     
     public GameObject HouseEffect;
+
+    public bool isWin;
     
     void Start()
     {
@@ -23,6 +25,8 @@ public class HouseScript : MonoBehaviour
 
         changeValue = (float)needPartsNum / buildingParts.Length;
         checkIndex = 0;
+
+        isWin = false;
 
     }
 
@@ -49,9 +53,10 @@ public class HouseScript : MonoBehaviour
         }
         if(checkIndex==buildingParts.Length)
         {
-            Time.timeScale = 0f;
-            endCanvas.SetActive(true);
-            SoundController.Instance.PlaySFXSound("건축 성공시 결과화면에서 나오는 소리");
+            isWin = true;
+            //Time.timeScale = 0f;
+            //endCanvas.SetActive(true);
+            //SoundController.Instance.PlaySFXSound("건축 성공시 결과화면에서 나오는 소리");
         }
 
 
