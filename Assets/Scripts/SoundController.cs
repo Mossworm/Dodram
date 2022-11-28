@@ -63,6 +63,7 @@ public class SoundController : MonoBehaviour
     private void Start()
     {
         PlayBGMSound();
+
     }
 
     // 효과 사운드 재생 : 이름을 필수 매개변수, 볼륨을 선택적 매개변수로 지정
