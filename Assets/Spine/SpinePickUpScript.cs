@@ -458,5 +458,20 @@ public class SpinePickUpScript : MonoBehaviour
                 }
             }
         }
+
+        else if (Input.GetKeyDown(KeyCode.R))
+        {
+            if (this.GetComponent<SpinePlayerController>().isMainPlayer)
+            {
+                this.transform.position = new Vector3(-2.88f, 3.75f, 0);
+            }
+        }
+        else if (Input.GetKeyDown(KeyCode.P))
+        {
+            if (!this.GetComponent<SpinePlayerController>().isMainPlayer)
+            {
+                this.transform.position = new Vector3(15f, 0, 0);
+            }
+        }
     }
 }
