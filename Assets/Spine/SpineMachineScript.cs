@@ -1,3 +1,4 @@
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -22,7 +23,7 @@ public class SpineMachineScript : MonoBehaviour
 
     private Animator _animator;
     public string currentAnimState;
-    [SerializeField]private float explosionAnimTime;
+    [SerializeField] private float explosionAnimTime;
 
     [SerializeField] private string prefixString;
 
@@ -36,6 +37,7 @@ public class SpineMachineScript : MonoBehaviour
 
     public MachineState currentState;
     public MachineState saveState;
+    public MachineState destState = MachineState.Destroying;
 
     public GameObject ingredient;
 
@@ -69,7 +71,7 @@ public class SpineMachineScript : MonoBehaviour
 
         breakIconRect = Instantiate(breakIcon, canvas.transform).GetComponent<RectTransform>();
         breakIconPos = new Vector3(transform.position.x, transform.position.y + height, 0);
-        
+
         currentState = MachineState.None;
         saveState = currentState;
         if (randomON == true)
@@ -91,7 +93,7 @@ public class SpineMachineScript : MonoBehaviour
             default:
                 break;
         }
-        ChangeAnimation(prefixString+"_Machine_Idle");
+        ChangeAnimation(prefixString + "_Machine_Idle");
     }
 
     private void Update()
@@ -101,7 +103,8 @@ public class SpineMachineScript : MonoBehaviour
 
         breakIconRect.position = breakIconPos;
 
-        if (isBreak) {
+        if (isBreak)
+        {
             currentState = MachineState.Breakdown;
             breakIconRect.gameObject.SetActive(true);
         }
@@ -170,11 +173,11 @@ public class SpineMachineScript : MonoBehaviour
 
             default:
                 break;
-        } 
+        }
     }
 
     IEnumerator WaitNonLoopAnim()
-    {        
+    {
         yield return new WaitForSeconds(explosionAnimTime);
         workTime = 0;
         saveState = currentState;
@@ -237,10 +240,9 @@ public class SpineMachineScript : MonoBehaviour
 
     public void CraftOn()   //제작 시작
     {
-        if (currentState == MachineState.None && this.transform.childCount == 2+1+1) //2:필요한재료개수, 1:스파인스켈레톤, 1:말풍선오브젝트
+        if (currentState == MachineState.None && this.transform.childCount == 2 + 1 + 1) //2:필요한재료개수, 1:스파인스켈레톤, 1:말풍선오브젝트
         {
             //Invoke("Crafting", craftTime);
-            SoundController.Instance.PlaySFXSound("기계작동");
             currentState = MachineState.Working;
             saveState = currentState;
         }
@@ -260,7 +262,6 @@ public class SpineMachineScript : MonoBehaviour
 
     public void Crafting()      //제작완성 및 삭제중 상태로 이동
     {
-        SoundController.Instance.PlaySFXSound("기계완료");
         currentState = MachineState.Destroying;
         saveState = currentState;
         workTime = 0;
@@ -289,9 +290,12 @@ public class SpineMachineScript : MonoBehaviour
         stopTime = 0;
         currentState = MachineState.None;
         saveState = MachineState.None;
-        for (int i = 2; i < this.transform.childCount; i++)
+        for (int i = 1; i < this.transform.childCount; i++)
         {
-            Destroy(this.transform.GetChild(i).gameObject);
+            if (this.transform.GetChild(i).name == "wood" || this.transform.GetChild(i).name == "chip" || this.transform.GetChild(i).name == "cobblestone")
+            {
+                Destroy(this.transform.GetChild(i).gameObject);
+            }
         }
     }
 
@@ -303,7 +307,6 @@ public class SpineMachineScript : MonoBehaviour
             if (max < per)
             {
                 currentState = MachineState.Breakdown;
-                SoundController.Instance.PlaySFXSound("고장경고음");
                 isBreak = true;
                 if (workTime > 0)
                 {
