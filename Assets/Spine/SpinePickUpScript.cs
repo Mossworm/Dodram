@@ -421,7 +421,7 @@ public class SpinePickUpScript : MonoBehaviour
 
                         //바꿀 아이템 들기
                         changeHold.transform.SetParent(Hand.transform);
-                        changeHold.transform.localPosition = Vector2.zero;
+                        changeHold.transform.localPosition = Vector3.zero;
                         changeHold.layer = 0;
                         if (changeHold.CompareTag("tool"))
                         {
@@ -437,7 +437,7 @@ public class SpinePickUpScript : MonoBehaviour
                     //들기
                     {
                         hit.gameObject.transform.SetParent(Hand.transform);
-                        hit.transform.localPosition = Vector2.zero;
+                        hit.transform.localPosition = Vector3.zero;
                         hit.gameObject.layer = 0; //Default
                         if (hit.CompareTag("tool"))
                         {

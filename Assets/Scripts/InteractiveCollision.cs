@@ -9,11 +9,14 @@ public class InteractiveCollision : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        var temp = (other.transform.position - transform.position).normalized;
-        temp.z = 0.0f;
-        movement = temp;
+        if (other.gameObject.layer == 6 )
+        {
+            var temp = (other.transform.position - transform.position).normalized;
+            temp.z = 0.0f;
+            movement = temp;
         
-        other.transform.Translate(movement * (1f * Time.deltaTime));
+            other.transform.Translate(movement * (1f * Time.deltaTime));   
+        }
     }
 
 
