@@ -30,6 +30,11 @@ public class GameManager : MonoBehaviour
     public GameObject endingCanvasLose, endingCanvasWin;
     public GameObject house;
     public GameObject BGMAudio, EndBGMAudio;
+    private bool isWaitHouseEnd,isPlayedSound;
+
+    public GameObject Managers;
+    float currentTime, CamMoveTime;
+    
 
 
     // Start is called before the first frame update
@@ -48,7 +53,11 @@ public class GameManager : MonoBehaviour
         _winText = ScoreUI.transform.Find("WinText").gameObject;
         _loseText = ScoreUI.transform.Find("LoseText").gameObject;
 
+        isWaitHouseEnd= false;
+        isPlayedSound = false;
         isEndflag = false;
+        currentTime = 0f;
+        CamMoveTime = 1f;
         if (settingCanvas == null)
         {
             settingCanvas = GameObject.Find("=====UI=====").transform.Find("SettingCanvas").gameObject;
@@ -61,10 +70,22 @@ public class GameManager : MonoBehaviour
 
     IEnumerator WaitNonLoopAnim()
     {
-        BGMAudio.SetActive(false);
+       
+
+        Time.timeScale = 1f;
+        
         EndBGMAudio.SetActive(true);
 
-        yield return new WaitForSeconds(16.3f);
+        if (!house.GetComponent<HouseScript>().isWin)
+        {
+            endingCanvasLose.SetActive(true);
+        }
+        else
+        {
+            endingCanvasWin.SetActive(true);
+        }
+
+            yield return new WaitForSeconds(16.3f);
 
         if (!house.GetComponent<HouseScript>().isWin)
         {
@@ -88,6 +109,30 @@ public class GameManager : MonoBehaviour
         }
 
         isEndflag = true;
+
+    }
+    IEnumerator WaitHouse()
+    {
+        if (!isPlayedSound)
+        {
+            BGMAudio.SetActive(false);
+            Managers.GetComponent<CameraScript>().MainCameraOn();
+            SoundController.Instance.PlaySFXSound("집대기");
+        }
+
+        if (currentTime <= CamMoveTime)
+        {
+            currentTime += Time.deltaTime;
+            Managers.GetComponent<CameraScript>().mainCam.orthographicSize -= 9 * Time.deltaTime;
+            Managers.GetComponent<CameraScript>().mainCam.transform.position += new Vector3(1f, -6, 0) * Time.deltaTime;
+        }
+        else
+        {
+            Managers.GetComponent<CameraScript>().mainCam.orthographicSize -= 0.1f * Time.deltaTime;
+        }
+        isPlayedSound = true;
+        yield return new WaitForSeconds(5f);
+        isWaitHouseEnd = true;
 
     }
 
@@ -170,23 +215,26 @@ public class GameManager : MonoBehaviour
 
         if (house.GetComponent<HouseScript>().isWin)
         {
+            SoundController.Instance.PlaySFXSound("집대기");
+            StartCoroutine(WaitHouse());
 
-            //endingAnim.gameObject.SetActive(true);
-            //ChangeAnimation("win");
-            //StartCoroutine(WaitNonLoopAnim());
-
-            endingCanvasWin.SetActive(true);
-            StartCoroutine(WaitNonLoopAnim());
+            if (isWaitHouseEnd)
+            {
+                StartCoroutine(WaitNonLoopAnim());
+            }
         }
 
         if (timer.GetComponent<UI_Timer>()._currentTime >= timer.GetComponent<UI_Timer>()._MAX_TIME)
         {
-            //endingCanvas.SetActive(true);
-            //ChangeAnimation("lose");
-            //StartCoroutine(WaitNonLoopAnim());
 
-            endingCanvasLose.SetActive(true);
-            StartCoroutine(WaitNonLoopAnim());
+            if (isWaitHouseEnd)
+            {
+                StartCoroutine(WaitNonLoopAnim());
+                return;
+            }
+
+            StartCoroutine(WaitHouse());
+
         }
 
       
