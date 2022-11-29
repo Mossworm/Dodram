@@ -49,6 +49,7 @@ public class HouseScript : MonoBehaviour
                 checkIndex += 1;
                 Vector3 effectPos = new Vector3(transform.position.x, transform.position.y, 0);
                 Instantiate(HouseEffect, effectPos,quaternion.identity);
+                SoundController.Instance.PlaySFXSound("집 부품 넣는 소리");
 ;            }
         }
         if(checkIndex==buildingParts.Length)

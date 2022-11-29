@@ -43,6 +43,7 @@ public class MachineButtonScript : MonoBehaviour
 
     public void buttonDown()
     {
+        SoundController.Instance.PlaySFXSound("버튼");
         pushCheck = 0;
     }
 }
