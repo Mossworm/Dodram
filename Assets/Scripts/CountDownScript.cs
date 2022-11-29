@@ -40,32 +40,32 @@ public class CountDownScript : MonoBehaviour
             }
             
             countDown += Time.deltaTime;
-            //if (countDown <= 1)
-            //{
-            //    count3.SetActive(true);
-            //}
-            //else if (1 <= countDown && countDown <= 2)
-            //{
-            //    count3.SetActive(false);
-            //    count2.SetActive(true);
-            //}
-            //else if (2 <= countDown && countDown <= 3)
-            //{
-            //    count2.SetActive(false);
-            //    count1.SetActive(true);
-            //}
-            //else if (3 <= countDown && countDown < 4)
-            //{
-            //    count1.SetActive(false);
-            //    gameStart.SetActive(true);
-            //}
-            //else if (countDown >= 4)
-            //{
+            if (countDown <= 1)
+            {
+                count3.SetActive(true);
+            }
+            else if (1 <= countDown && countDown <= 2)
+            {
+                count3.SetActive(false);
+                count2.SetActive(true);
+            }
+            else if (2 <= countDown && countDown <= 3)
+            {
+                count2.SetActive(false);
+                count1.SetActive(true);
+            }
+            else if (3 <= countDown && countDown < 4)
+            {
+                count1.SetActive(false);
+                gameStart.SetActive(true);
+            }
+            else if (countDown >= 4)
+            {
                 gameStart.SetActive(false);
                 countDown = 4f;
                 Managers.isReady = true;
                 this.GetComponent<CountDownScript>().enabled = false;
-            //}
+            }
         }
     }
 }
