@@ -27,8 +27,10 @@ public class GameManager : MonoBehaviour
     private GameObject _win_Icon, _lose_Icon;
     private GameObject _winText, _loseText;
 
-    public GameObject endingCanvas;
+    public GameObject endingCanvasLose, endingCanvasWin;
     public GameObject house;
+    public GameObject BGMAudio, EndBGMAudio;
+
 
     // Start is called before the first frame update
     void Start()
@@ -59,10 +61,15 @@ public class GameManager : MonoBehaviour
 
     IEnumerator WaitNonLoopAnim()
     {
-        yield return new WaitForSeconds(5f);
+        BGMAudio.SetActive(false);
+        EndBGMAudio.SetActive(true);
+
+        yield return new WaitForSeconds(16.3f);
 
         if (!house.GetComponent<HouseScript>().isWin)
         {
+            endingCanvasLose.SetActive(false);
+
             _cutscene_Lose.SetActive(true);
             _cutscene_Win.SetActive(false);
             _lose_Cut.SetActive(true);
@@ -76,10 +83,10 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            endingCanvasWin.SetActive(false);
             SoundController.Instance.PlaySFXSound("건축 성공시 결과화면에서 나오는 소리");
         }
 
-        endingCanvas.SetActive(false);
         isEndflag = true;
 
     }
@@ -168,7 +175,7 @@ public class GameManager : MonoBehaviour
             //ChangeAnimation("win");
             //StartCoroutine(WaitNonLoopAnim());
 
-            endingCanvas.SetActive(true);
+            endingCanvasWin.SetActive(true);
             StartCoroutine(WaitNonLoopAnim());
         }
 
@@ -178,7 +185,7 @@ public class GameManager : MonoBehaviour
             //ChangeAnimation("lose");
             //StartCoroutine(WaitNonLoopAnim());
 
-            endingCanvas.SetActive(true);
+            endingCanvasLose.SetActive(true);
             StartCoroutine(WaitNonLoopAnim());
         }
 
