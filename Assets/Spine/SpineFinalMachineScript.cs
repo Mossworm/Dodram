@@ -199,6 +199,7 @@ public class SpineFinalMachineScript : MonoBehaviour
                 { 
                     Destroy(this.transform.GetChild(i).gameObject);
                 }
+                SoundController.Instance.PlaySFXSound("기계작동");
                 Invoke("Crafting", craftTime);
                 currentState = MachineState.Working;
             }   
@@ -218,6 +219,7 @@ public class SpineFinalMachineScript : MonoBehaviour
     {
         currentState = MachineState.Destroying;
         workTime = 0;
+        SoundController.Instance.PlaySFXSound("기계완료");
     }
     
 
@@ -231,6 +233,7 @@ public class SpineFinalMachineScript : MonoBehaviour
             go.name = go.name.Substring(0, index);
         }
         
+        SoundController.Instance.PlaySFXSound("들기");
         go.transform.SetParent(hand.transform);
         go.transform.localPosition = Vector2.zero;
         go.layer = 0;
