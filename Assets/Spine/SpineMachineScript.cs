@@ -9,7 +9,7 @@ using Random = UnityEngine.Random;
 
 public class SpineMachineScript : MonoBehaviour
 {
-    //public GameObject recipecheck;  //·¹½ÃÇÇ Ã¼Å©¿ë
+    //public GameObject recipecheck;  //ë ˆì‹œí”¼ ì²´í¬ìš©
     public bool isBreak;
     public bool randomON;
 
@@ -222,7 +222,7 @@ public class SpineMachineScript : MonoBehaviour
 
     }
 
-    public void SubCount(GameObject hand)      //±â°è¿¡ ³Ö±â 
+    public void SubCount(GameObject hand)      //ê¸°ê³„ì— ë„£ê¸° 
     {
         if (isBreak == false)
         {
@@ -239,17 +239,18 @@ public class SpineMachineScript : MonoBehaviour
         }
     }
 
-    public void CraftOn()   //Á¦ÀÛ ½ÃÀÛ
+    public void CraftOn()   //ì œì‘ ì‹œì‘
     {
-        if (currentState == MachineState.None && this.transform.childCount == 2 + 1 + 1) //2:ÇÊ¿äÇÑÀç·á°³¼ö, 1:½ºÆÄÀÎ½ºÄÌ·¹Åæ, 1:¸»Ç³¼±¿ÀºêÁ§Æ®
+        if (currentState == MachineState.None && this.transform.childCount == 2 + 1 + 1) //2:í•„ìš”í•œì¬ë£Œê°œìˆ˜, 1:ìŠ¤íŒŒì¸ìŠ¤ì¼ˆë ˆí†¤, 1:ë§í’ì„ ì˜¤ë¸Œì íŠ¸
         {
             //Invoke("Crafting", craftTime);
             currentState = MachineState.Working;
+            SoundController.Instance.PlaySFXSound("ê¸°ê³„ì‘ë™");
             saveState = currentState;
         }
     }
 
-    public void PickUp(GameObject hand) //²¨³»±â
+    public void PickUp(GameObject hand) //êº¼ë‚´ê¸°
     {
         if (isBreak == false)
         {
@@ -261,15 +262,16 @@ public class SpineMachineScript : MonoBehaviour
         }
     }
 
-    public void Crafting()      //Á¦ÀÛ¿Ï¼º ¹× »èÁ¦Áß »óÅÂ·Î ÀÌµ¿
+    public void Crafting()      //ì œì‘ì™„ì„± ë° ì‚­ì œì¤‘ ìƒíƒœë¡œ ì´ë™
     {
+        SoundController.Instance.PlaySFXSound("ê¸°ê³„ì™„ë£Œ");
         currentState = MachineState.Destroying;
         saveState = currentState;
         workTime = 0;
     }
 
 
-    public void CreateDone(GameObject hand)   //¿Ï¼ºÇ° ²¨³»±â
+    public void CreateDone(GameObject hand)   //ì™„ì„±í’ˆ êº¼ë‚´ê¸°
     {
         var go = Instantiate(productionArray[1], Vector2.zero, quaternion.identity);
 
@@ -279,13 +281,14 @@ public class SpineMachineScript : MonoBehaviour
             go.name = go.name.Substring(0, index);
         }
 
+        SoundController.Instance.PlaySFXSound("ë“¤ê¸°");
         go.transform.SetParent(hand.transform);
         go.transform.localPosition = Vector2.zero;
         go.layer = 0;
         ChildDestroy();
     }
 
-    public void ChildDestroy() //ÀÚ½Ä »èÁ¦
+    public void ChildDestroy() //ìì‹ ì‚­ì œ
     {
         workTime = 0;
         stopTime = 0;
@@ -307,6 +310,7 @@ public class SpineMachineScript : MonoBehaviour
         {
             if (max < per)
             {
+                SoundController.Instance.PlaySFXSound("ê³ ì¥ê²½ê³ ìŒ");
                 currentState = MachineState.Breakdown;
                 isBreak = true;
                 if (workTime > 0)
