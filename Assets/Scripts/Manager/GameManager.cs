@@ -28,9 +28,6 @@ public class GameManager : MonoBehaviour
     private GameObject _winText, _loseText;
 
     public GameObject endingCanvas;
-    public GameObject endingAnim;
-    private Animator _animator;
-    [SerializeField] private string currentState;
     public GameObject house;
 
     // Start is called before the first frame update
@@ -58,28 +55,33 @@ public class GameManager : MonoBehaviour
         {
             guideCanvas = GameObject.Find("=====UI=====").transform.Find("GuideCanvas").gameObject;
         }
-
-        _animator = endingAnim.GetComponent<Animator>();
     }
 
     IEnumerator WaitNonLoopAnim()
     {
-        yield return new WaitForSeconds(16f);
+        yield return new WaitForSeconds(5f);
 
-        isEndflag = true;
-
-    }
-
-    void ChangeAnimation(string newState)
-    {
-        if (currentState == newState)
+        if (!house.GetComponent<HouseScript>().isWin)
         {
-            return;
+            _cutscene_Lose.SetActive(true);
+            _cutscene_Win.SetActive(false);
+            _lose_Cut.SetActive(true);
+            _win_Cut.SetActive(false);
+            _lose_Icon.SetActive(true);
+            _win_Icon.SetActive(false);
+            _loseText.SetActive(true);
+            _winText.SetActive(false);
+
+            SoundController.Instance.PlaySFXSound("건축 실패시 결과화면 소리");
+        }
+        else
+        {
+            SoundController.Instance.PlaySFXSound("건축 성공시 결과화면에서 나오는 소리");
         }
 
-        _animator.Play(newState);
+        endingCanvas.SetActive(false);
+        isEndflag = true;
 
-        currentState = newState;
     }
 
     // Update is called once per frame
@@ -165,8 +167,9 @@ public class GameManager : MonoBehaviour
             //endingAnim.gameObject.SetActive(true);
             //ChangeAnimation("win");
             //StartCoroutine(WaitNonLoopAnim());
-            SoundController.Instance.PlaySFXSound("건축 성공시 결과화면에서 나오는 소리");
-            isEndflag = true;
+
+            endingCanvas.SetActive(true);
+            StartCoroutine(WaitNonLoopAnim());
         }
 
         if (timer.GetComponent<UI_Timer>()._currentTime >= timer.GetComponent<UI_Timer>()._MAX_TIME)
@@ -175,16 +178,8 @@ public class GameManager : MonoBehaviour
             //ChangeAnimation("lose");
             //StartCoroutine(WaitNonLoopAnim());
 
-            _cutscene_Lose.SetActive(true);
-            _cutscene_Win.SetActive(false);
-            _lose_Cut.SetActive(true);
-            _win_Cut.SetActive(false);
-            _lose_Icon.SetActive(true);
-            _win_Icon.SetActive(false);
-            _loseText.SetActive(true);
-            _winText.SetActive(false);
-            SoundController.Instance.PlaySFXSound("건축 실패시 결과화면 소리");
-            isEndflag = true;
+            endingCanvas.SetActive(true);
+            StartCoroutine(WaitNonLoopAnim());
         }
 
       

@@ -37,7 +37,7 @@ public class SpineMachineScript : MonoBehaviour
 
     public MachineState currentState;
     public MachineState saveState;
-    public MachineState destState = MachineState.Destroying;
+    public MachineState destState;
 
     public GameObject ingredient;
 
@@ -73,6 +73,7 @@ public class SpineMachineScript : MonoBehaviour
         breakIconPos = new Vector3(transform.position.x, transform.position.y + height, 0);
 
         currentState = MachineState.None;
+        destState= MachineState.Destroying; 
         saveState = currentState;
         if (randomON == true)
         {
