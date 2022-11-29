@@ -63,6 +63,10 @@ public class SpinePickUpScript : MonoBehaviour
         if (Hand.transform.childCount != 0)
         {
             isHold = true;
+            if (Hand.transform.GetChild(0) != null)
+            {
+                Hand.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().sortingOrder = 2;
+            }
         }
         else
         {
@@ -411,6 +415,7 @@ public class SpinePickUpScript : MonoBehaviour
                             Hand.transform.GetChild(0).gameObject.SetActive(true);
                         }
                         Hand.transform.GetChild(0).gameObject.layer = 6;
+                        Hand.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().sortingOrder = -1;
                         Hand.transform.GetChild(0).position = boxTransform + transform.position + new Vector3(0f, -0.3f, 0f);
                         Hand.transform.DetachChildren();
 
@@ -452,6 +457,7 @@ public class SpinePickUpScript : MonoBehaviour
                         Hand.transform.GetChild(0).gameObject.SetActive(true);
                     }
                     Hand.transform.GetChild(0).gameObject.layer = 6;
+                    Hand.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().sortingOrder = -1;
                     Hand.transform.GetChild(0).position = boxTransform + transform.position + new Vector3(0f, -0.3f, 0f);
                     Hand.transform.DetachChildren();
                     SoundController.Instance.PlaySFXSound("들기");
