@@ -85,7 +85,7 @@ public class GameManager : MonoBehaviour
             endingCanvasWin.SetActive(true);
         }
 
-            yield return new WaitForSeconds(16.3f);
+            yield return new WaitForSeconds(18.5f);
 
         if (!house.GetComponent<HouseScript>().isWin)
         {
